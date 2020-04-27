@@ -154,6 +154,25 @@
         "dryingDescription": "",
         "extractionDescription": ""
       }
+    },
+    "samplePreparation": {
+      "method": "",
+      "protocol": "",
+      "abbreviation": "",
+      "solventProportion": [],
+      "timeByRefill": [],
+      "tlc": [],
+      "contactTime": "",
+      "extractedMass": "",
+      "yield": "",
+      "fraction": {
+          "amount": "",
+          "yield": "",
+          "abbreviation": "",
+          "protocol": "",
+          "solventProportion": [],
+          "tlc": []
+      }
     }
   },
   "$lastModification": "",
