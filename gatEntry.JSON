@@ -71,7 +71,22 @@
       "nd": []
     },
     "biology": {
-      "nucleic": []
+      "nucleic": [],
+      "cellLine": {
+        "growthCondition": {
+          "temperature": "",
+          "pH": "",
+          "concentration":"",
+          "extracts": "",
+          "strain": "",
+          "growthCurves": {
+            "jcamp": "",
+            "misc": ""
+          },
+          "protocol": ""
+        },
+        "biosafetyRisk": ""
+      }
     },
     "image": [],
     "stock": {
