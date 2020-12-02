@@ -1,6 +1,4 @@
-'use strict';
-
-function (doc) {
+const agro_toc = function (doc) {
     if (doc.$type !== 'entry') return;
     var emitWithOwner = function (key, data) {
       for (var i = 0; i < doc.$owners.length; i++) {
@@ -13,14 +11,18 @@ function (doc) {
     };
     var customMap = function(doc) {
         if (doc.$type !== 'entry' || doc.$kind !== 'sample') return;
+        var getGeneralKind = require('views/lib/getGeneralKind').getGeneralKind;
+        var generalKind = getGeneralKind(doc)
+        if (generalKind !== 'agro') return;
         var getReference = require('views/lib/getReference').getReference;
-        var getMetadata = require('views/lib/getMetadata').getMetadata;
+        var getId = require('views/lib/getId').getId;
         var getToc = require('views/lib/getToc').getToc;
         var reference = getReference(doc);
-        var metadata = getMetadata(doc);
+        var id = getId(doc);
         var toc = getToc(doc);
         toc.reference = reference;
-        toc.metadata = metadata;
+        toc.id = id;
+        toc.generalKind = generalKind;
         emitWithOwner(reference, toc);
     };
     customMap(doc);
