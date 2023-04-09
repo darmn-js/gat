@@ -1,5 +1,7 @@
 # gat
 
+Este proyecto contiene los archivos específicos de configuración necesarios para la plataforma https://gat.mylims.org.
+
 ## gatEntry.json
 
 Especificación de la estructura de los documentos en CouchDB
