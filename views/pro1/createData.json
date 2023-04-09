@@ -1,0 +1,2546 @@
+{
+  "version": "2.156.0",
+  "grid": {
+    "layers": {
+      "Default layer": {
+        "name": "Default layer"
+      },
+      "admin": {
+        "name": "admin"
+      },
+      "importdata": {
+        "name": "importdata"
+      },
+      "preferences": {
+        "name": "preferences"
+      }
+    },
+    "xWidth": 10,
+    "yHeight": 10
+  },
+  "modules": [
+    {
+      "url": "modules/types/array_search/smart_array_filter/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "debounce": [
+                100
+              ],
+              "limit": [
+                0
+              ],
+              "initialValue": [
+                ""
+              ],
+              "placeholder": [
+                "Search for gene"
+              ],
+              "fontSize": [
+                24
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 1,
+            "top": 3
+          },
+          "size": {
+            "width": 46,
+            "height": 7
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 1
+          },
+          "size": {
+            "width": 42,
+            "height": 9
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "importdata": {
+          "position": {
+            "left": 1,
+            "top": 3
+          },
+          "size": {
+            "width": 46,
+            "height": 7
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "preferences": {
+          "position": {
+            "left": 1,
+            "top": 3
+          },
+          "size": {
+            "width": 46,
+            "height": 7
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 649,
+      "vars_in": [
+        {
+          "rel": "input",
+          "name": "entries"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "vars_out": [
+        {
+          "event": "onQuery",
+          "rel": "output",
+          "jpath": [],
+          "name": "fileredentry"
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "ORF",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            },
+            {
+              "title": "Gene",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": ""
+    },
+    {
+      "url": "modules/types/edition/slick_grid/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "slickCheck": [
+                [
+                  "enableCellNavigation",
+                  "rowNumbering",
+                  "forceFitColumns",
+                  "highlightScroll",
+                  "editable"
+                ]
+              ],
+              "copyPaste": [
+                []
+              ],
+              "copyPasteOptions": [
+                [
+                  "newRows"
+                ]
+              ],
+              "autoColumns": [
+                [
+                  "select"
+                ]
+              ],
+              "toolbar": [
+                []
+              ],
+              "colorjpath": [
+                []
+              ],
+              "slick.defaultColumnWidth": [
+                null
+              ],
+              "slick.rowHeight": [
+                null
+              ],
+              "slick.headerRowHeight": [
+                30
+              ],
+              "slick.selectionModel": [
+                "row"
+              ],
+              "idProperty": [
+                ""
+              ],
+              "filterType": [
+                "pref"
+              ],
+              "filterRow": [
+                "// Documentation: https://github.com/NPellet/visualizer/blob/46b40ca86345f8fa313563bf9c6ecb80ba323101/src/modules/types/edition/slick_grid/view.js#L1695-L1735"
+              ],
+              "customJpaths": [
+                ""
+              ]
+            }
+          ],
+          "cols": [
+            [
+              {
+                "name": "Gene name",
+                "jpath": [
+                  "$content",
+                  "gene"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "ORF",
+                "jpath": [
+                  "$content",
+                  "orf"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "Modification date",
+                "jpath": [
+                  "$modificationDate"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              }
+            ]
+          ],
+          "actionCols": [
+            [
+              {
+                "backgroundColor": [
+                  255,
+                  255,
+                  255,
+                  0
+                ],
+                "color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "position": "end",
+                "clickMode": "text"
+              }
+            ]
+          ],
+          "groupings": [
+            [
+              {
+                "getter": []
+              }
+            ]
+          ],
+          "actionOutButtons": [
+            [
+              {}
+            ]
+          ],
+          "data": [
+            {
+              "saveInView": [
+                []
+              ],
+              "varname": [
+                ""
+              ],
+              "data": [
+                "[]"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 133,
+            "top": 4
+          },
+          "size": {
+            "width": 49,
+            "height": 60
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Gene DB",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 11
+          },
+          "size": {
+            "width": 42,
+            "height": 45
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "importdata": {
+          "position": {
+            "left": 0,
+            "top": 9
+          },
+          "size": {
+            "width": 46,
+            "height": 50
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Gene DB",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 9
+          },
+          "size": {
+            "width": 46,
+            "height": 50
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Gene DB",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 650,
+      "vars_in": [
+        {
+          "rel": "list",
+          "name": "fileredentry"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "vars_out": [
+        {
+          "event": "onRowActive",
+          "rel": "row",
+          "jpath": [],
+          "name": "activatedentry"
+        },
+        {
+          "event": "onRowsSelect",
+          "rel": "rows",
+          "jpath": [],
+          "name": "showData"
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": ""
+    },
+    {
+      "url": "modules/types/client_interaction/code_editor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "mode": [
+                "json"
+              ],
+              "outputType": [
+                null
+              ],
+              "btnvalue": [
+                "Send script"
+              ],
+              "iseditable": [
+                [
+                  "editable"
+                ]
+              ],
+              "hasButton": [
+                [
+                  "button"
+                ]
+              ],
+              "variable": [
+                []
+              ],
+              "storeOnChange": [
+                []
+              ],
+              "debouncing": [
+                0
+              ],
+              "script": [
+                "{\n    \"type\": \"object\",    \n    \"properties\": {\n        \"Parameters\": {\n            \"type\":\"object\",\n             \"properties\":{\n                \"Gene\": {\n                    \"type\":\"string\",\n                    \"label\":\"Gene\",\n                    \"title\":\"Molecular formula\"\n                },\n                \"orf\": {\n                    \"type\":\"number\",\n                    \"label\":\"ORF\",\n                    \"title\":\"Open reading frame\"\n                }\n            }\n        },\n        \"sample\": {\n            \"type\":\"object\",\n             \"properties\":{\n                \"ypd\": {\n                    \"type\":\"number\",\n                    \"label\":\"YPD\",\n                    \"title\":\"Yeast protein database\"\n                },\n                \"ypdge\": {\n                    \"type\":\"number\",\n                    \"label\":\"YPDGE\",\n                    \"title\":\"ypdge\"\n                },\n                \"ype\": {\n                    \"type\":\"number\",\n                    \"label\":\"YPE\",\n                    \"title\":\"ype\"\n                },\n                \"ypl\": {\n                    \"type\":\"number\",\n                    \"label\":\"YPL\",\n                    \"title\":\"ypl\"\n                },\n                \"ypg\": {\n                    \"type\":\"number\",\n                    \"label\":\"YPG\",\n                    \"title\":\"ypg\"\n                }\n            }\n        },\n        \"info\": {\n            \"label\":\"Submitter\",\n            \"type\":\"object\",\n            \"properties\":{\n                \"firstname\": {\n                    \"type\":\"string\",\n                    \"label\":\"Firstname\"\n                },\n                \"lastname\": {\n                    \"type\":\"string\",\n                    \"label\":\"Lastname\"\n                },\n                \"email\": {\n                    \"type\":\"string\",\n                    \"label\":\"Email\"\n                }\n            }\n        },\n        \"remarks\": {\n            \"type\":\"string\",\n            \"label\":\"Remarks\",\n            \"format\": \"multiline\"\n        },\n        \"submit\": {\n            \"type\":\"boolean\",\n            \"title\":\"Submit new form\",\n            \"label\":\"Submit\"\n        }\n    }\n }"
+              ]
+            }
+          ],
+          "ace": [
+            {
+              "useSoftTabs": [
+                [
+                  "yes"
+                ]
+              ],
+              "tabSize": [
+                4
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 99,
+            "top": 26
+          },
+          "size": {
+            "width": 35,
+            "height": 13
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "JSON schema",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 59
+          },
+          "size": {
+            "width": 52,
+            "height": 74
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "importdata": {
+          "position": {
+            "left": 99,
+            "top": 26
+          },
+          "size": {
+            "width": 35,
+            "height": 13
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "JSON schema",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "preferences": {
+          "position": {
+            "left": 99,
+            "top": 26
+          },
+          "size": {
+            "width": 35,
+            "height": 13
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "JSON schema",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 651,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onEditorChange",
+          "rel": "jsonValue",
+          "jpath": [],
+          "name": "schema"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": ""
+    },
+    {
+      "url": "modules/types/client_interaction/dragdrop/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "label": [
+                "Drop your csv file here"
+              ],
+              "dragoverlabel": [
+                null
+              ],
+              "hoverlabel": [
+                "Drag'n drop or paste here"
+              ],
+              "fileSelectLabel": [
+                "Select file"
+              ],
+              "labelFontSize": [
+                26
+              ],
+              "checkOptions": [
+                [
+                  "promptAmbiguous"
+                ]
+              ],
+              "inputOptions": [
+                [
+                  "allowDrop",
+                  "allowPaste",
+                  "allowFileInput"
+                ]
+              ]
+            }
+          ],
+          "vars": [
+            [
+              {
+                "filter": "ext",
+                "extension": "*",
+                "filetype": "text",
+                "type": "",
+                "variable": "file"
+              }
+            ]
+          ],
+          "string_general": [
+            {
+              "askFilename": [
+                []
+              ]
+            }
+          ],
+          "string": [
+            [
+              {
+                "filter": "ext",
+                "extension": "*",
+                "type": "",
+                "variable": "str"
+              }
+            ]
+          ],
+          "photo": [
+            [
+              {
+                "variable": "photo"
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 9
+          },
+          "size": {
+            "width": 87,
+            "height": 10
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "importdata": {
+          "position": {
+            "left": 161,
+            "top": 7
+          },
+          "size": {
+            "width": 31,
+            "height": 10
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "importdata"
+        },
+        "preferences": {
+          "position": {
+            "left": 161,
+            "top": 7
+          },
+          "size": {
+            "width": 31,
+            "height": 10
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "importdata"
+        }
+      },
+      "id": 652,
+      "vars_out": [
+        {
+          "event": "onRead",
+          "rel": "data",
+          "jpath": [],
+          "name": "csv"
+        }
+      ],
+      "vars_in": [],
+      "actions_in": [
+        {}
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": ""
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "let csv = API.getData(\"csv\");\nlet preferences = API.getData\n\nfunction getForm(csvFile) {\n    let data = Papa.parse(csv.file.content,\n    {\n        delimiter:\",\",\n        header:true\n    });\n    if (data !== undefined) {\n        for (let i = 7; i < 8; i++) {\n            var newItem = {\n              \"$type\": \"entry\",\n              \"$id\": [\n              data.data[i].gene\n              ],\n              \"$kind\": \"dnax\",\n              \"$owners\": [\n                \"admin@cheminfo.org\"\n              ],\n              \"$content\": {\n              \"gene\": data.data[i].gene,\n              \"orf\": data.data[i].orf,\n              \"nofprobes\": data.data[i].nofprobes,\n              \"measurments\": data.data[i].measurments,\n              \"Fstatistic\": data.data[i].Fstatistic,\n              \"YPD\": data.data[i].YPD,\n              \"YPDGE\": data.data[i].YPDGE,\n              \"YPE\": data.data[i].YPE,\n              \"YPL\": data.data[i].YPL,\n              \"YPG\": data.data[i].YPG,\n              \"description\": [],\n              },\n              \"$lastModification\": \"admin@cheminfo.org\"\n            }\n            roc.create(newItem).then(function(sample) {\n                openDefault({\n                    uuid: sample._id,\n                    reference\n                });\n                API.createData('sampleClicked', {id: sample._id});\n            });\n        }\n    }\n}\n\nvar roc = API.cache('rocSample');\nvar couchDB = API.cache('couchDB');\n\nvar printerConfig = API.cache('printerConfig');\nvar user = API.cache('user');\n\nif(this.event === 'load' && printerConfig) {\n    var printer = await printerLib(printerConfig.couchDB);\n    printerHelper.setup(printer, ['sample']);\n}\n\nif(!roc) {\n    roc = await new Roc({\n        url: couchDB.url,\n        database: couchDB.database,\n        processor: elnPlugin,\n        kind: 'dnax'\n    });\n        \n    var userInfo = await roc.getUserInfo();\n    var user=await roc.getUser();\n    API.cache('user', user);\n    API.cache('userInfo', userInfo);\n    var groups = (await roc.getGroupMembership()).map(g => g.name);\n    createForm(groups);\n    refreshSample();\n    API.cache('rocSample', roc);\n    return;\n}\nconsole.log(Roc)\nconsole.log(roc)\n\nlet urlToc = 'http://gat.mylims.org/roc/db/eln/_view/dnatoc';\n\ngetCSV(csv);\n\nconsole.log(roc)\nif(this.variable) {\n    refreshSample();\n}\n\nif(!this.action) return;\n\n\n\nswitch(this.action.name) {\n    case 'printEntry':\n        const sample = await DataObject.check(this.action.value.document).get(true);\n        await printerHelper.askPrintEntry(sample, 'sample');\n        break;\n    case 'createSample':\n        createSample();\n        break;\n    case 'deleteSample': \n        deleteSample(this.action.value);\n        break;\n    case 'refreshSample':\n        refreshSample();\n        break;\n    case 'rowDoubleClicked':\n        openDefault({\n            uuid:this.action.value.id,\n            reference: this.action.value.key.slice(1).join(' ')\n        });\n        break;\n    case 'printSample':\n        const doc = await DataObject.check(this.action.value.document).get(true);\n        printerHelper.askPrintEntry(doc, 'sample');\n        break;\n    case 'handleTileClick':\n        handleTileClick(this.action.value);\n        break;\n    case 'openView': {\n        const viewURL = await ui.enterValue({label: 'Enter view uuid'});\n        let sample = API.getData('sampleClicked');\n        if(sample) {\n            sample = {\n                reference: sample.value.reference,\n                uuid: sample.id\n            }\n        }\n        handleTileClick({\n            sample,\n            tile: {\n                kind: 'dnax',\n                viewURL,\n                id: viewURL.substr(0, 6)\n            }\n        });\n    }\n    default:\n        console.warn('Unhandled sample action');\n        break;\n}\n\nif(!this.action) return;\n\nfunction createSample(sample) {\n    var entrysample = {$content: {}}\n    UI.form(`\n        <div>\n        <form>\n            <table>\n            <tr>\n            <th align=right>Reference<br><span style='font-size: smaller'>Reaction code</span></th>\n            <td><input type=\"text\" name=\"code\" pattern=\"[A-Za-z0-9 .-]{3,}\"/></td>\n            </tr>\n            <tr>\n            <th align=right>Batch<br><span style='font-size: smaller'>Fraction</span></th>\n            <td><input type=\"text\" name=\"batch\" pattern=\"[A-Za-z0-9 .-]*\"/></td>\n            </tr>\n            <!--\n            <tr>\n            <th align=right>Sample<br><span style='font-size: smaller'>(empty most of the time)</span></th>\n            <td><input type=\"text\" name=\"sample\" pattern=\"[A-Za-z0-9 .-]*\"/></td>\n            </tr>\n            -->\n            </table>\n            <input type=\"submit\" value=\"Submit\"/>\n        </form>\n        </div>\n    `,{}).then(function(result){\n        if (!result || !result.code || result.batch == null) return;\n        entrysample.$id = [result.code, result.batch];\n        if (result.sample) entrysample.$id.push(result.sample);\n        var reference=result.code + ( result.batch ? ' '+result.batch : '');\n        var userInfo = API.cache('userInfo');\n        \n        if (userInfo && userInfo.allGroups) {\n            entrysample.$owners=userInfo.allGroups;\n        }\n\n        roc.create(entrysample).then(function(sample) {\n            openDefault({\n                uuid: sample._id,\n                reference\n            });\n            // we do like if we would have click on the line we just added\n            API.createData('sampleClicked', {id: sample._id});\n        });\n    });\n}\n\n\n\nfunction deleteSample(entry) {\n    ui.confirm('Are you sure you want to delete ' + entry.value.reference)\n    .then(function(res) {\n        if(!res) return;\n        roc.delete(entry.id);\n    });\n}\n\nfunction refreshSample() {\n    \n    var uuid=(API.getData('sampleClicked') || {}).id;\n    \n    var options = {varName: 'samples'};\n    var form = API.getData('formSample'), group;\n    if(!form) return;\n    group = form.group;\n    \n    window.localStorage.setItem('eln-default-sample-group', String(group));\n    \n    if(group === 'mine') {\n        options.mine = 1;\n    } else if(group !== 'all') {\n        options.groups = group;\n    }\n    \n    options.sort = function(a, b) {\n        if(a.value.modificationDate > b.value.modificationDate) {\n            return -1;\n        } else if(a.value.modificationDate < b.value.modificationDate) {\n            return 1;\n        } else {\n            return 0;\n        }\n    }\n    \n    roc.query('dnax_toc', options).then(function(data) {\n        API.cache('nbSamples', data.length);\n        API.doAction('renderTiles');\n        // we need to select the previously selected element\n        const index = data.findIndex(sample => String(sample.id) == uuid);\n        if (index !== -1) {\n            API.doAction('clickRow', index);\n        }\n    });\n}\n\nfunction createForm(groups) {\n    var possibleGroups = [\"all\", \"mine\"].concat(groups);\n    var defaultGroup = window.localStorage.getItem('eln-default-sample-group');\n    if(possibleGroups.indexOf(defaultGroup) === -1) {\n        defaultGroup = 'all';\n    }\n    var schema = {\n        type: 'object',\n        properties: {\n            group: {\n                type: 'string',\n                enum: possibleGroups,\n                default: defaultGroup,\n                required: true\n            }\n        }\n    }\n    API.createData('formSchema', schema)\n}\n\nfunction openDefault(sample) {\n    var defaultTileURL='15c9a2dcd55c963fdedf2c18a1471b03';\n    var defaultTile=API.getData('tiles').filter(a => String(a.viewURL)===defaultTileURL);\n    if (defaultTile.length!==1) {\n        console.log('Default tile not found !!!');\n        return;\n    }\n    var tile=defaultTile[0];\n    handleTileClick({\n            tile,\n            sample\n        }\n    );\n}\n\nfunction handleTileClick(value={}) {\n    var {\n        tile,\n        sample={}\n    } = value;\n    \n    var uuid = sample.uuid;\n    var reference = sample.reference;\n\n    var referer=document.location.href.replace(/(\\/\\/.*?\\/).*/,'$1').replace('blob:','');\n    var viewURL=tile.viewURL;\n    viewURL+='?referer='+encodeURIComponent(referer);\n    if (tile.rev) viewURL+='&rev='+tile.rev;\n    \n    switch (String(tile.kind)) {\n        case 'sample':\n            if (! uuid || ! reference) return;\n            IframeBridge.postMessage('tab.open', {\n                id: `${tile.id} ${reference}`,\n                url: viewURL,\n                data: {\n                    printer: printerConfig,\n                    couchDB,\n                    uuid: String(uuid),\n                    data: tile.data ? JSON.parse(tile.data) : undefined,\n                    reference\n                }\n            });\n            break;\n        case 'optionalSample':\n            uuid = uuid || '';\n            IframeBridge.postMessage('tab.open', {\n                id: tile.id,\n                url: viewURL,\n                data: {\n                    printer: printerConfig,\n                    couchDB,\n                    uuid: String(uuid),\n                    data: tile.data ? JSON.parse(tile.data) : undefined,\n                }\n            });\n            break;\n        case 'newTab':\n            console.log('new tab');\n            break;\n        case 'rawIframe':\n            IframeBridge.postMessage('tab.open', {\n                id: tile.id,\n                url: window.parent.location.origin + tile.viewURL,\n                rawIframe: true,\n                data: {\n                    couchDB,\n                    data: tile.data ? JSON.parse(tile.data) : undefined,\n                }\n            });\n            break;\n    }\n    \n}\n\n/*\nconsole.log(analysis.content)\nfunction Request(method, url) {\n  var xhr = new XMLHttpRequest();\n  xhr.withCredentials = true;\n  xhr.open(method, url, true);\n  xhr.setRequestHeader('Authorization', 'Bearer ' + 'access_token');\n  xhr.setRequestHeader(\"Content-Type\", \"application/json;charset=UTF-8\");\n    xhr.onreadystatechange = function () {\n        if (xhr.readyState == 4 && xhr.status == 200 ) {\n            var data = JSON.parse(JSON.stringify(xhr.responseText));\n            console.log(xhr)\n        }\n    };\n  return xhr;\n}\n\nasync function entry() {\n    for (let i = 0; i < 40; i++) {\n        let prom = new Promise((resolve) => {\n            var newitem = {\n              \"$type\": \"entry\",\n              \"$id\": [\n              analysis.data[i].gene\n              ],\n              \"$kind\": \"dna\",\n              \"$owners\": [\n                \"admin@cheminfo.org\"\n              ],\n              \"$content\": {\n              \"gene\": analysis.data[i].gene,\n              \"orf\": analysis.data[i].orf,\n              \"nofprobes\": analysis.data[i].nofprobes,\n              \"measurments\": analysis.data[i].measurments,\n              \"Fstatistic\": analysis.data[i].Fstatistic,\n              \"YPD\": analysis.data[i].YPD,\n              \"YPDGE\": analysis.data[i].YPDGE,\n              \"YPE\": analysis.data[i].YPE,\n              \"YPL\": analysis.data[i].YPL,\n              \"YPG\": analysis.data[i].YPG,\n              \"description\": [],\n              },\n              \"$lastModification\": \"admin@cheminfo.org\"\n            }\n            console.log(newitem);\n            let url = 'https://gat.mylims.org/roc/db/eln/entry/'\n            var xhr = Request('POST', url);\n            xhr.send(JSON.stringify(newitem));\n            console.log(xhr);\n            setTimeout(() => resolve() ,200) // *  try to fix this... number of entries change because this. If is running entries gives fake genes.\n        });\n        await prom;\n    }\n} entry()\n*/\n"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {
+                "lib": "components/papa-parse/papaparse.min",
+                "alias": "Papa"
+              },
+              {
+                "lib": "vh/rest-on-couch/Roc",
+                "alias": "Roc"
+              },
+              {
+                "lib": "https://www.lactame.com/lib/eln-plugin/0.0.2/eln-plugin.js",
+                "alias": "elnPlugin"
+              },
+              {
+                "lib": "src/util/ui",
+                "alias": "UI"
+              }
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 11
+          },
+          "size": {
+            "width": 59,
+            "height": 92
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "importdata": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 71,
+            "height": 62
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "importdata"
+        },
+        "preferences": {
+          "position": {
+            "left": 161,
+            "top": 61
+          },
+          "size": {
+            "width": 55,
+            "height": 62
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "importdata"
+        }
+      },
+      "id": 653,
+      "vars_in": [
+        {
+          "rel": "inputValue",
+          "name": "csv"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": ""
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "let couchDB = API.cache('couchDB');\nlet sampleToc = API.cache('sampleToc')\nlet roc = API.cache('roc');\n\nroc.query('gat_toc').then(function(samples) {\n    API.createData('dataGatToc', samples)\n})\n"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {
+                "lib": "vh/rest-on-couch/Roc",
+                "alias": "Roc"
+              },
+              {
+                "lib": "https://www.lactame.com/lib/eln-plugin/0.0.2/eln-plugin.js",
+                "alias": "elnPlugin"
+              }
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "importdata": {
+          "position": {
+            "left": 0,
+            "top": 63
+          },
+          "size": {
+            "width": 71,
+            "height": 53
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "importdata"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 63
+          },
+          "size": {
+            "width": 71,
+            "height": 53
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "importdata"
+        }
+      },
+      "id": 654,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {
+          "rel": "execute",
+          "name": "afterInit"
+        },
+        {
+          "rel": "execute",
+          "name": "clearForm"
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": ""
+    },
+    {
+      "url": "modules/types/edition/slick_grid/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "slickCheck": [
+                [
+                  "enableCellNavigation",
+                  "rowNumbering",
+                  "forceFitColumns",
+                  "highlightScroll",
+                  "forgetLastActive"
+                ]
+              ],
+              "copyPaste": [
+                []
+              ],
+              "copyPasteOptions": [
+                [
+                  "newRows"
+                ]
+              ],
+              "autoColumns": [
+                []
+              ],
+              "toolbar": [
+                []
+              ],
+              "colorjpath": [
+                []
+              ],
+              "slick.defaultColumnWidth": [
+                null
+              ],
+              "slick.rowHeight": [
+                null
+              ],
+              "slick.headerRowHeight": [
+                30
+              ],
+              "slick.selectionModel": [
+                "row"
+              ],
+              "idProperty": [
+                ""
+              ],
+              "filterType": [
+                "pref"
+              ],
+              "filterRow": [
+                "// Documentation: https://github.com/NPellet/visualizer/blob/46b40ca86345f8fa313563bf9c6ecb80ba323101/src/modules/types/edition/slick_grid/view.js#L1695-L1735"
+              ],
+              "customJpaths": [
+                ""
+              ]
+            }
+          ],
+          "cols": [
+            [
+              {
+                "name": "Gene",
+                "jpath": [
+                  "document",
+                  "$content",
+                  "gene"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "ORF",
+                "jpath": [
+                  "document",
+                  "$content",
+                  "orf"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "Nª Probes",
+                "jpath": [
+                  "document",
+                  "$content",
+                  "nofprobes"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "Measurements",
+                "jpath": [
+                  "document",
+                  "$content",
+                  "measurments"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "F-statistic",
+                "jpath": [
+                  "document",
+                  "$content",
+                  "Fstatistic"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "toPrecision: 3",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "YPD",
+                "jpath": [
+                  "document",
+                  "$content",
+                  "YPD"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "toPrecision: 3",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "YPDGE",
+                "jpath": [
+                  "document",
+                  "$content",
+                  "YPDGE"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "toPrecision: 3",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "YPE",
+                "jpath": [
+                  "document",
+                  "$content",
+                  "YPE"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "toPrecision: 3",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "YPL",
+                "jpath": [
+                  "document",
+                  "$content",
+                  "YPL"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "toPrecision: 3",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "YPG",
+                "jpath": [
+                  "document",
+                  "$content",
+                  "YPG"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "toPrecision: 3",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "Owner",
+                "jpath": [
+                  "document",
+                  "$owners",
+                  "0"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "toPrecision: 3",
+                "editorOptions": "",
+                "hideColumn": []
+              }
+            ]
+          ],
+          "actionCols": [
+            [
+              {
+                "backgroundColor": [
+                  255,
+                  255,
+                  255,
+                  0
+                ],
+                "color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "position": "end",
+                "clickMode": "text"
+              }
+            ]
+          ],
+          "groupings": [
+            [
+              {
+                "getter": []
+              }
+            ]
+          ],
+          "actionOutButtons": [
+            [
+              {}
+            ]
+          ],
+          "data": [
+            {
+              "saveInView": [
+                []
+              ],
+              "varname": [
+                ""
+              ],
+              "data": [
+                "[]"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 20
+          },
+          "size": {
+            "width": 87,
+            "height": 28
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "importdata": {
+          "position": {
+            "left": 72,
+            "top": 0
+          },
+          "size": {
+            "width": 67,
+            "height": 54
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "importdata"
+        },
+        "preferences": {
+          "position": {
+            "left": 72,
+            "top": 0
+          },
+          "size": {
+            "width": 67,
+            "height": 54
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "importdata"
+        }
+      },
+      "id": 655,
+      "vars_in": [
+        {
+          "rel": "list",
+          "name": "dataGatToc"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              []
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": ""
+    },
+    {
+      "url": "modules/types/client_interaction/code_editor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "mode": [
+                "html"
+              ],
+              "outputType": [
+                null
+              ],
+              "btnvalue": [
+                "Send script"
+              ],
+              "iseditable": [
+                [
+                  "editable"
+                ]
+              ],
+              "hasButton": [
+                [
+                  "button"
+                ]
+              ],
+              "variable": [
+                []
+              ],
+              "storeOnChange": [
+                [
+                  "store"
+                ]
+              ],
+              "debouncing": [
+                0
+              ],
+              "script": [
+                "<style>\n    #extendedForm {\n        padding: 10px;\n    }\n    #extendedForm .addRow {\n        color: green;\n        font-weight: bold;\n        font-size: 12px;\n        padding: .4em .6em;\n    }\n    #extendedForm .removeRow {\n        color: red;\n        font-weight: bold;\n        font-size: 12px;\n        padding: .4em .8em;\n    }\n    #extendedForm h1 {\n        font-size: 16px;\n        padding-top: 12px;\n        padding-bottom: 4px;\n        space\n    }\n    #extendedForm h2 {\n        font-size: 12px;\n        margin-top: 12px;\n        margin-bottom: 4px;\n        space\n    }\n    #extendedForm input[type=number]{\n        width: 60px;\n    }\n    #extendedForm input, #extendedForm select {\n        margin-top: 3px;\n        margin-bottom: 3px;\n    } \n</style>\n\n<div id='extendedForm'>\n    <form id = 'idForm'>\n    <h1>Sample</h1>\n    <table >\n        <tbody id = 'table'>\n            <tr>\n                <th></th><th></th>\n                <th> Gene </th>\n                <th> ORF </th>\n                <th> Measurements </th>\n                <th> F-statistic </th>\n                <th> YPD </th>\n                <th> YPDGE </th>\n                <th> YPE </th>\n                <th> YPL </th>\n                <th> YPG </th>\n            </tr>\n            <tr data-repeat=\"input\">\n                <td>\n                    <input data-field =\"gene\" size=\"6\" type=\"string\">\n                </td>\n                <td>\n                    <input data-field =\"orf\" size=\"6\" type=\"string\">\n                </td>\n                <td>\n                    <input data-field=\"measurement\" size=\"12\" type=\"number\">\n                </td>\n                <td>\n                     <input data-field=\"fstatistic\" size=\"4\" type=\"number\">\n                </td>\n                <td>\n                     <input data-field=\"ypd\" size=\"4\" type=\"number\">\n                </td>\n                <td>\n                     <input data-field =\"ypdge\" size=\"4\" type=\"number\">\n                </td>\n                <td>\n                     <input data-field=\"ype\" size=\"4\" type=\"number\">\n                </td>\n                <td>\n                     <input data-field=\"ypl\" size=\"4\" type=\"number\">\n                </td>\n                <td>\n                     <input data-field=\"ypg\" size=\"4\" type=\"number\">\n                </td>\n                <td>\n                    <table>\n                        <tr>\n\n                        </tr>\n                    </table>\n                </td>\n            </tr>\n        </tbody>\n    </table>\n</div>\n\n<script>\n    function toggle(element) {\n        let nextStyle=element.nextElementSibling.style\n        if (nextStyle.display===\"none\") {\n            nextStyle.display = \"block\";\n            element.innerHTML='▼';\n        } else {\n            nextStyle.display = \"none\";\n            element.innerHTML='▶';\n        }\n    }\n</script>\n\n<script>\n    require(['vh/util/twigAdvancedForm'], function(AF) {\n        AF('extendedForm', {debug:false});\n    });\n</script>\n\n"
+              ]
+            }
+          ],
+          "ace": [
+            {
+              "useSoftTabs": [
+                [
+                  "yes"
+                ]
+              ],
+              "tabSize": [
+                4
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "importdata": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "importdata"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 65,
+            "height": 85
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        }
+      },
+      "id": 656,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onEditorChange",
+          "rel": "data",
+          "jpath": [],
+          "name": "twigTemplate"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": ""
+    },
+    {
+      "url": "modules/types/display/template-twig/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "selectable": [
+                []
+              ],
+              "template": [
+                ""
+              ],
+              "modifyInForm": [
+                [
+                  "yes"
+                ]
+              ],
+              "debouncing": [
+                0
+              ],
+              "formOptions": [
+                []
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 49
+          },
+          "size": {
+            "width": 87,
+            "height": 31
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "importdata": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "importdata"
+        },
+        "preferences": {
+          "position": {
+            "left": 66,
+            "top": 0
+          },
+          "size": {
+            "width": 75,
+            "height": 55
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        }
+      },
+      "id": 657,
+      "vars_in": [
+        {
+          "rel": "tpl",
+          "name": "twigTemplate"
+        },
+        {
+          "rel": "form",
+          "name": "preferences"
+        }
+      ],
+      "actions_in": [
+        {
+          "rel": "clearForm",
+          "name": "clearForm"
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              []
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": ""
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "let preferences = API.getData('preferences').resurrect();\nlet roc = API.cache('roc');\nconsole.log(preferences)\nif (preferences.input.length !== 0) {\n    for (let i = 0; i < preferences.input.length; i++) {\n        console.log(preferences.input[i])\n        var newItem = {\n          \"$type\": \"entry\",\n          \"$id\": [\n          preferences.input[i].gene\n          ],\n          \"$kind\": \"dnax\",\n          \"$owners\": [\n            \"admin@cheminfo.org\"\n          ],\n          \"$content\": {\n          \"gene\": preferences.input[i].gene,\n          \"orf\": preferences.input[i].orf,\n          \"nofprobes\": preferences.input[i].nofprobes,\n          \"measurement\": preferences.input[i].measurement,\n          \"Fstatistic\": preferences.input[i].fstatistic,\n          \"YPD\": preferences.input[i].ypd,\n          \"YPDGE\": preferences.input[i].ypdge,\n          \"YPE\": preferences.input[i].ype,\n          \"YPL\": preferences.input[i].ypl,\n          \"YPG\": preferences.input[i].ypg,\n          \"description\": [],\n          },\n          \"$lastModification\": \"admin@cheminfo.org\"\n        }\n        console.log(newItem)\n        roc.create(newItem);\n        API.doAction('clearForm');\n    }\n}\n\n"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {}
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Insert entry",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 36,
+            "top": 80
+          },
+          "size": {
+            "width": 11,
+            "height": 4
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "importdata": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "importdata"
+        },
+        "preferences": {
+          "position": {
+            "left": 66,
+            "top": 56
+          },
+          "size": {
+            "width": 66,
+            "height": 54
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        }
+      },
+      "id": 658,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": ""
+    }
+  ],
+  "variables": [
+    {
+      "varname": "tiles",
+      "jpath": [
+        "tiles"
+      ]
+    },
+    {
+      "varname": "twigTemplate",
+      "jpath": [
+        "twigTemplate"
+      ]
+    },
+    {
+      "varname": "labelPrinters",
+      "jpath": [
+        "labelPrinters"
+      ]
+    },
+    {
+      "varname": "labelPrintFormats",
+      "jpath": [
+        "labelPrintFormats"
+      ]
+    },
+    {
+      "varname": "printServers",
+      "jpath": [
+        "printServers"
+      ]
+    },
+    {
+      "varname": "allIds",
+      "jpath": [
+        "allIds"
+      ]
+    },
+    {
+      "varname": "sampleFormats",
+      "jpath": [
+        "sampleFormats"
+      ]
+    },
+    {
+      "varname": "formSchema",
+      "jpath": [
+        "formSchema"
+      ]
+    },
+    {
+      "varname": "formSample",
+      "jpath": [
+        "formSample"
+      ]
+    },
+    {
+      "varname": "samples",
+      "jpath": [
+        "samples"
+      ]
+    },
+    {
+      "varname": "filteredSamples",
+      "jpath": [
+        "filteredSamples"
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "path": "https://www.lactame.com/github/cheminfo-js/visualizer-helper/29bdf14fc76befab0a5a21bebd0aceb630e67e8c/",
+      "alias": "vh"
+    },
+    {
+      "path": "https://www.lactame.com/lib/eln-plugin/0.0.2/eln-plugin.js",
+      "alias": "elnPlugin"
+    }
+  ],
+  "configuration": {
+    "title": "datain"
+  },
+  "actionscripts": [
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          {
+            "name": [
+              null
+            ],
+            "script": [
+              null
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "init_script": [
+    {
+      "sections": {},
+      "groups": {
+        "general": [
+          {
+            "script": [
+              "const loadTwig = API.require('vh/eln/templates/loadTwig');\nconst baseUrl = document.location.href.replace(/(\\/\\/.*?\\/).*/,'$1').replace('blob:', ''); \nlet rocUrl = `${baseUrl}roc`;\nlet printerRocUrl = rocUrl;\nlet printerProxy = `${baseUrl}printer-proxy`;\n\nAPI.createData('preferences', {});\n\nconst [\n    Roc,\n    Toc,\n    elnPlugin\n] = await API.require([\n    'vh/rest-on-couch/Roc',\n    'vh/eln/Toc',\n    'https://www.lactame.com/lib/eln-plugin/0.0.2/eln-plugin.js'\n]);\n\nvar database = 'eln';\nvar couchDB = {\n    url: rocUrl,\n    database: database,\n    kind: 'dnax'\n}\n\nAPI.cache('domain', 'de.mpg.');\n\nlet roc = await new Roc({\n    url: couchDB.url,\n    database: couchDB.database,\n    processor: elnPlugin,\n    kind: 'dnax'\n});\n\nAPI.cache('roc', roc)\n\nroc.getAll().then(function(entries){\n    API.createData('entries', roc)\n})\n\nvar sampleToc = new Toc(roc, {varName: 'sampleToc', viewName: 'gat_toc'});\nsampleToc.initializeGroupForm();\nAPI.cache('sampleToc', sampleToc);\n\nvar printer = {\n    couchDB: {\n        url: printerRocUrl,\n        database: 'printers',\n        proxy: printerProxy\n     },\n     proxy: printerProxy\n};\n    \n\nAPI.cache('printerConfig', printer);\n\nAPI.cache('couchDB',couchDB);\n\n// For demonstration purpose\nif((typeof IframeBridge)!='undefined'){\n    IframeBridge.onMessage(function(data) {\n        switch (data.type) {\n            case 'tab.message':\n                switch (data.message.action) {\n                    case 'selectEntry':\n                        return selectEntry(data.message.uuid);\n                    default:\n                        console.log('got an unknown message', data.message);\n                        return;\n                }\n                break;\n            case 'tab.focus':\n                API.doAction('refreshSample');\n                break;\n        }\n    });\n    IframeBridge.ready();\n}\n\nfunction selectEntry(uuid) {\n    if (!uuid) return;\n    const samples = API.getData('filteredSamples');\n    if (samples) {\n        const index = samples.findIndex(sample => String(sample.id) === uuid);\n        if (index !== -1) {\n            API.doAction('clickRow', index);\n        }\n    }\n}\n\n\nAPI.doAction('afterInit');\n\n// Load custom font\nrequire(['src/util/util'], function(Util) {\n    Util.loadCss('https://www.lactame.com/lib/cheminfo-font/0.7.2/style.css');\n})"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "custom_filters": [
+    {
+      "sections": {
+        "modules": [
+          {
+            "sections": {},
+            "groups": {
+              "modules": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ],
+        "filtersLib": [
+          {
+            "sections": {},
+            "groups": {
+              "filters": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ],
+        "filters": [
+          {
+            "sections": {},
+            "groups": {
+              "filter": [
+                {
+                  "name": [
+                    null
+                  ],
+                  "script": [
+                    null
+                  ]
+                }
+              ],
+              "libs": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "groups": {}
+    }
+  ],
+  "actionfiles": [
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          [
+            {}
+          ]
+        ]
+      }
+    }
+  ]
+}

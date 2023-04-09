@@ -1,0 +1,1317 @@
+{
+  "version": "2.156.0",
+  "grid": {
+    "layers": {
+      "Default layer": {
+        "name": "Default layer"
+      },
+      "admin": {
+        "name": "admin"
+      }
+    },
+    "xWidth": 10,
+    "yHeight": 10
+  },
+  "modules": [
+    {
+      "url": "modules/types/array_search/smart_array_filter/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "debounce": [
+                250
+              ],
+              "limit": [
+                0
+              ],
+              "initialValue": [
+                ""
+              ],
+              "placeholder": [
+                "Search for samples"
+              ],
+              "fontSize": [
+                24
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 1,
+            "top": 7
+          },
+          "size": {
+            "width": 40,
+            "height": 9
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 1,
+            "top": 7
+          },
+          "size": {
+            "width": 40,
+            "height": 9
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 321,
+      "vars_in": [
+        {
+          "rel": "input",
+          "name": "sampleToc"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onQuery",
+          "rel": "output",
+          "jpath": [],
+          "name": "sampleTocFiltered"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 1
+    },
+    {
+      "url": "modules/types/edition/slick_grid/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "slickCheck": [
+                [
+                  "enableCellNavigation",
+                  "rowNumbering",
+                  "forceFitColumns",
+                  "highlightScroll",
+                  "forgetLastActive",
+                  "editable",
+                  "enableAddRow",
+                  "autoEdit",
+                  "filterColumns"
+                ]
+              ],
+              "copyPaste": [
+                []
+              ],
+              "copyPasteOptions": [
+                [
+                  "newRows"
+                ]
+              ],
+              "autoColumns": [
+                []
+              ],
+              "toolbar": [
+                []
+              ],
+              "colorjpath": [
+                []
+              ],
+              "slick.defaultColumnWidth": [
+                null
+              ],
+              "slick.rowHeight": [
+                "30"
+              ],
+              "slick.headerRowHeight": [
+                30
+              ],
+              "slick.selectionModel": [
+                "row"
+              ],
+              "idProperty": [
+                ""
+              ],
+              "filterType": [
+                "pref"
+              ],
+              "filterRow": [
+                "// Documentation: https://github.com/NPellet/visualizer/blob/46b40ca86345f8fa313563bf9c6ecb80ba323101/src/modules/types/edition/slick_grid/view.js#L1695-L1735"
+              ],
+              "customJpaths": [
+                ""
+              ]
+            }
+          ],
+          "cols": [
+            [
+              {
+                "name": "Batch",
+                "jpath": [
+                  "value",
+                  "ids",
+                  "1"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 142,
+                "hideColumn": []
+              },
+              {
+                "name": "identifier",
+                "jpath": [
+                  "value",
+                  "sampleIdentifier"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 166,
+                "hideColumn": []
+              },
+              {
+                "name": "Reference",
+                "jpath": [
+                  "value",
+                  "ids",
+                  "0"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 116,
+                "hideColumn": []
+              },
+              {
+                "name": "Kind",
+                "jpath": [
+                  "value",
+                  "generalKind"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 141,
+                "hideColumn": []
+              }
+            ]
+          ],
+          "actionCols": [
+            [
+              {
+                "backgroundColor": [
+                  255,
+                  255,
+                  255,
+                  0
+                ],
+                "color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "position": "end",
+                "clickMode": "text"
+              }
+            ]
+          ],
+          "groupings": [
+            [
+              {
+                "getter": []
+              }
+            ]
+          ],
+          "actionOutButtons": [
+            [
+              {}
+            ]
+          ],
+          "data": [
+            {
+              "saveInView": [
+                []
+              ],
+              "varname": [
+                ""
+              ],
+              "data": [
+                "[]"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 12
+          },
+          "size": {
+            "width": 58,
+            "height": 49
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 12
+          },
+          "size": {
+            "width": 58,
+            "height": 49
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 322,
+      "vars_in": [
+        {
+          "rel": "list",
+          "name": "sampleTocFiltered"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onRowActive",
+          "rel": "row",
+          "jpath": [],
+          "name": "sampleClicked"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "Refresh data",
+              "icon": "fa-sync",
+              "action": "refreshDB",
+              "position": "begin",
+              "color": [
+                56,
+                118,
+                29,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 1
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                [
+                  "yes"
+                ]
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "this.getButton('update').setColor('blue');\nconst couchDB = API.cache('couchDB');\nconst sampleTocFiltered = API.getData('sampleTocFiltered').resurrect();\n\nif (this.button === 'update') {\n    updateSamples()\n}\n\nfunction updateSamples() {\n  let counter = 0;\n  let id = setInterval(update, 1000);\n  function update() {\n    if (counter == sampleTocFiltered.length) {\n        clearInterval(id);\n    } else {\n        if (counter !== 0) API.doAction('save');\n        const testSample = sampleTocFiltered[counter];\n        const batch = testSample.value.ids[1];\n        const sample = new Sample(couchDB, testSample.id, {\n            track: false,\n            onSync(synced) {\n                console.log('received synced event', synced);\n            }\n        });\n        \n        sample.waitSampleLoaded().then(() => {\n            sample.sample.$content.general.title = batch;\n            API.cache('sample', sample);\n        });\n        counter++;\n    }\n  }\n}\n"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {
+                "lib": "vh/eln/Sample",
+                "alias": "Sample"
+              }
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "update",
+                "label": "Update",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 51,
+            "top": 62
+          },
+          "size": {
+            "width": 63,
+            "height": 61
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Modify samples",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 61,
+            "top": 19
+          },
+          "size": {
+            "width": 46,
+            "height": 51
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Modify samples",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 323,
+      "vars_in": [
+        {
+          "rel": "inputValue",
+          "name": "sampleTocFiltered"
+        },
+        {
+          "rel": "inputValue",
+          "name": "sampleIndex"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              []
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "Modify samples",
+      "zindex": 1
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "let sample = API.cache('sample');\n\nif (this.action) {\n    if (this.action.name === 'save') {\n        sample.handleAction(this.action);\n    }\n}"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {}
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 108
+          },
+          "size": {
+            "width": 47,
+            "height": 24
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Sample update handler",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 61,
+            "top": 0
+          },
+          "size": {
+            "width": 46,
+            "height": 18
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Sample update handler",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 324,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {
+          "rel": "execute",
+          "name": "save"
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "Sample update handler",
+      "zindex": 0
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "const sampleTocFiltered = API.getData('sampleTocFiltered').resurrect();\nconst selectedSamples = sampleTocFiltered.filter((sample) => sample.value.ids[1].includes('This'))\nconst selectedSample = selectedSamples[0]\nconst couchDB = API.cache('couchDB');\n\n// const sample = new Sample(couchDB, selectedSample.id, {\n//     track: false,\n//     onSync(synced) {\n//         console.log('received synced event', synced);\n//     }\n// });\n\n// console.log(selectedSample)\n\n// return;\n\nfor (let i = 0; i < sampleTocFiltered.length; i++) {\n    console.log(\n        `Index ${i}`,\n        sampleTocFiltered[i].value.title,\n        sampleTocFiltered[i].value.ids[1],\n        sampleTocFiltered[i].value.title == sampleTocFiltered[i].value.ids[1])\n}"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {
+                "lib": "vh/eln/Sample",
+                "alias": "Sample"
+              }
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 62
+          },
+          "size": {
+            "width": 50,
+            "height": 45
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Check result",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 108,
+            "top": 0
+          },
+          "size": {
+            "width": 51,
+            "height": 70
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Check result",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 325,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "Check result",
+      "zindex": 7
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                [
+                  "yes"
+                ]
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "this.getButton('toc').setColor('blue');\nthis.getButton('sample').setColor('green');\nthis.getButton('replicate').setColor('red');\n\nconst roc = API.cache('roc');\nconst couchDB = API.cache('couchDB');\n\nif (this.button) {\n    if (!API.getData('sampleClicked')) UI.showNotification(\"There's no selected sample\", \"error\")\n    let sampleClicked = API.getData('sampleClicked').resurrect();\n    switch(this.button) {\n        case 'toc': {\n            API.createData('currentSample', sampleClicked);\n            break;\n        }\n        case 'sample': {\n            const sample = new Sample(couchDB, sampleClicked.id, {\n                track: false,\n                onSync(synced) {\n                    console.log('received synced event', synced);\n                }\n            });\n            sample.waitSampleLoaded().then(() => {\n                API.createData('currentSample', sample.sample);\n            });\n            \n            \n            break;\n        }\n        case 'replicate': {\n            const sample = new Sample(couchDB, sampleClicked.id, {\n                track: false,\n                onSync(synced) {\n                    console.log('received synced event', synced);\n                }\n            });\n            \n            sample.waitSampleLoaded().then(() => {\n                createSample(sample.sample)\n            });\n            break;\n        }\n    }\n}\n\n\nasync function createSample(sample) {\n    UI.form(`\n        <div>\n            <table>\n                <tr>\n                    <th>Reference</th>\n                    <th>Batch</th>\n                    <th>title</th>\n                    <th>Identifier</th>\n                    <th>Suggestion</th>\n                </tr>\n                <tr>\n                    <td>${sample.$id[0]}</td>\n                    <td>${sample.$id[1]}</td>\n                    <td>${sample.$content.general.title}</td>\n                    <td>${sample.$content.general.metadata.sampleIdentifier}</td>\n                    <td>${makeid(24)}</td>\n                </tr>\n            </table>\n        </div>\n        <div>\n        <form>\n            <table>\n            <tr>\n            <th align=right>Reference<br><span style='font-size: smaller'>Reaction code</span></th>\n            <td>\n                <input type=\"text\" name=\"code\" pattern=\"[A-Za-z0-9 .,-]{3,}\"/><br>\n                <i>\n                    At least 3 characters and only letters, numbers, space, point, comma and dash\n                </i>\n            </td>\n            </tr>\n            <tr>\n            <th align=right>Batch<br><span style='font-size: smaller'>Fraction</span></th>\n            <td>\n                <input type=\"text\" name=\"batch\" pattern=\"[A-Za-z0-9 .,-]*\"/><br>\n                <i>\n                    Only letters, numbers, space, point, comma and dash\n                </i>\n            </td>\n            </tr>\n            <!--\n            <tr>\n            <th align=right>Sample<br><span style='font-size: smaller'>(empty most of the time)</span></th>\n            <td><input type=\"text\" name=\"sample\" pattern=\"[A-Za-z0-9 .-]*\"/></td>\n            </tr>\n            -->\n            </table>\n            <input type=\"submit\" value=\"Submit\"/>\n        </form>\n        </div>\n    `,{}).then(function(result){\n        if (!result || !result.code) return;\n        const entrysample = {\n          \"$type\": \"entry\",\n          \"$id\": [result.code, result.batch],\n          \"$kind\": \"sample\",\n          \"$owners\": sample.$owners,\n          \"$content\": sample.$content,\n          \"$lastModification\": \"\",\n          \"$modificationDate\": \"\",\n          \"$creationDate\": \"\",\n          \"attachmentList\": sample.attachmentList,\n        };\n        roc.create(entrysample);\n    });\n}\n\nfunction makeid(length) {\n    let result = [];\n    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';\n    let charactersLength = characters.length;\n    for (let i = 0; i < length; i++ ) {\n        result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));\n    }\n   return result.join('');\n}\n"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {
+                "lib": "src/util/ui",
+                "alias": "UI"
+              },
+              {
+                "lib": "vh/eln/Sample",
+                "alias": "Sample"
+              }
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "toc",
+                "label": "Show TOC",
+                "hide": [],
+                "disable": []
+              },
+              {
+                "name": "sample",
+                "label": "Show Sample",
+                "hide": [],
+                "disable": []
+              },
+              {
+                "name": "replicate",
+                "label": "Replicate sample",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 61,
+            "top": 7
+          },
+          "size": {
+            "width": 48,
+            "height": 4
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 60,
+            "height": 70
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 326,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 0
+    },
+    {
+      "url": "modules/types/edition/object_editor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "editable": [
+                "view"
+              ],
+              "expanded": [
+                []
+              ],
+              "storeObject": [
+                []
+              ],
+              "displayValue": [
+                []
+              ],
+              "searchBox": [
+                [
+                  "search"
+                ]
+              ],
+              "sendButton": [
+                []
+              ],
+              "output": [
+                "new"
+              ],
+              "storedObject": [
+                "{}"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 59,
+            "top": 12
+          },
+          "size": {
+            "width": 48,
+            "height": 49
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 59,
+            "top": 12
+          },
+          "size": {
+            "width": 48,
+            "height": 49
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 327,
+      "vars_in": [
+        {
+          "rel": "value",
+          "name": "currentSample"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 0
+    }
+  ],
+  "variables": [
+    {
+      "jpath": [
+        ""
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "path": "../../github/cheminfo-js/visualizer-helper/09a60b3009accc237c7d9e4265e32216574f5bf4",
+      "alias": "vh"
+    }
+  ],
+  "configuration": {
+    "title": "Sample edit"
+  },
+  "actionscripts": [
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          {
+            "name": [
+              null
+            ],
+            "script": [
+              null
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "init_script": [
+    {
+      "sections": {},
+      "groups": {
+        "general": [
+          {
+            "script": [
+              "const [\n    Roc,\n    Toc,\n    elnPlugin\n] = await API.require([\n    'vh/rest-on-couch/Roc',\n    'vh/eln/Toc',\n    'https://www.lactame.com/lib/eln-plugin/0.0.2/eln-plugin.js'\n]);\nconst baseUrl = document.location.href.replace(/(\\/\\/.*?\\/).*/,'$1').replace('blob:', ''); \nlet rocUrl = `${baseUrl}roc`;\n\nvar database = 'eln';\nvar couchDB = {\n    url: rocUrl,\n    database: database,\n    kind: 'sample'\n}\n\nlet printerRocUrl = rocUrl;\nlet printerProxy = `${baseUrl}printer-proxy`;\nvar printer = {\n    couchDB: {\n        url: printerRocUrl,\n        database: 'printers'\n     },\n     proxy: printerProxy\n};\n    \nAPI.cache('printerConfig', printer);\nAPI.cache('couchDB',couchDB);\nconst roc = new Roc(couchDB);\nAPI.cache('roc', roc)\n\n\n// For demonstration purpose\nif((typeof IframeBridge)!='undefined'){\n    IframeBridge.onMessage(function(data) {\n        switch (data.type) {\n            case 'tab.message':\n                switch (data.message.action) {\n                    case 'selectEntry':\n                        return selectEntry(data.message.uuid);\n                    default:\n                        console.log('got an unknown message', data.message);\n                        return;\n                }\n                break;\n            case 'tab.focus':\n                API.doAction('refreshSample');\n                break;\n        }\n    });\n    IframeBridge.ready();\n}\n\nfunction selectEntry(uuid) {\n    if (!uuid) return;\n    const samples = API.getData('filteredSamples');\n    if (samples) {\n        const index = samples.findIndex(sample => String(sample.id) === uuid);\n        if (index !== -1) {\n            API.doAction('clickRow', index);\n        }\n    }\n}\n\nvar sampleToc = new Toc(roc, {varName: 'sampleToc', viewName: 'sample_toc'});\nsampleToc.initializeGroupForm({autoRefresh: false});\nAPI.cache('sampleToc', sampleToc);\n\nAPI.createData('preferences', {\n    showHiddenEntries: false\n})\n\n// Load custom font\nrequire(['src/util/util'], function(Util) {\n    Util.loadCss('https://www.lactame.com/lib/cheminfo-font/0.7.2/style.css');\n})"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "custom_filters": [
+    {
+      "sections": {
+        "modules": [
+          {
+            "sections": {},
+            "groups": {
+              "modules": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ],
+        "filtersLib": [
+          {
+            "sections": {},
+            "groups": {
+              "filters": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ],
+        "filters": [
+          {
+            "sections": {},
+            "groups": {
+              "filter": [
+                {
+                  "name": [
+                    null
+                  ],
+                  "script": [
+                    null
+                  ]
+                }
+              ],
+              "libs": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "groups": {}
+    }
+  ],
+  "actionfiles": [
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          [
+            {}
+          ]
+        ]
+      }
+    }
+  ]
+}

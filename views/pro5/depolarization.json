@@ -1,0 +1,947 @@
+{
+  "version": "2.156.0",
+  "grid": {
+    "layers": {
+      "Default layer": {
+        "name": "Default layer"
+      }
+    },
+    "xWidth": 10,
+    "yHeight": 10
+  },
+  "modules": [
+    {
+      "url": "modules/types/edition/slick_grid/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "slickCheck": [
+                [
+                  "enableCellNavigation",
+                  "rowNumbering",
+                  "forceFitColumns",
+                  "highlightScroll",
+                  "forgetLastActive",
+                  "editable",
+                  "filterColumns"
+                ]
+              ],
+              "copyPaste": [
+                []
+              ],
+              "copyPasteOptions": [
+                [
+                  "newRows"
+                ]
+              ],
+              "autoColumns": [
+                [
+                  "select"
+                ]
+              ],
+              "toolbar": [
+                []
+              ],
+              "colorjpath": [
+                []
+              ],
+              "slick.defaultColumnWidth": [
+                null
+              ],
+              "slick.rowHeight": [
+                null
+              ],
+              "slick.headerRowHeight": [
+                30
+              ],
+              "slick.selectionModel": [
+                "row"
+              ],
+              "idProperty": [
+                ""
+              ],
+              "filterType": [
+                "invar"
+              ],
+              "filterRow": [
+                "console.log(this.rows)\nconsole.log(this)\n// if (this.event==='rowsChanged') {\n//         console.log('---::>>>>', this.rows);\n//     }\n// }"
+              ],
+              "customJpaths": [
+                ""
+              ]
+            }
+          ],
+          "cols": [
+            [
+              {
+                "name": "Batch",
+                "jpath": [
+                  "batch"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              }
+            ]
+          ],
+          "actionCols": [
+            [
+              {
+                "backgroundColor": [
+                  255,
+                  255,
+                  255,
+                  0
+                ],
+                "color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "position": "end",
+                "clickMode": "text"
+              }
+            ]
+          ],
+          "groupings": [
+            [
+              {
+                "getter": []
+              }
+            ]
+          ],
+          "actionOutButtons": [
+            [
+              {}
+            ]
+          ],
+          "data": [
+            {
+              "saveInView": [
+                []
+              ],
+              "varname": [
+                ""
+              ],
+              "data": [
+                "[]"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 7
+          },
+          "size": {
+            "width": 21,
+            "height": 52
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Fractions and extracts",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 298,
+      "vars_in": [
+        {
+          "rel": "list",
+          "name": "extract"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onRowsSelect",
+          "rel": "rows",
+          "jpath": [],
+          "name": "selectedExtracts"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              []
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "Fractions and extracts",
+      "zindex": 5
+    },
+    {
+      "url": "modules/types/edition/slick_grid/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "slickCheck": [
+                [
+                  "enableCellNavigation",
+                  "rowNumbering",
+                  "forceFitColumns",
+                  "highlightScroll",
+                  "forgetLastActive",
+                  "editable",
+                  "filterColumns"
+                ]
+              ],
+              "copyPaste": [
+                []
+              ],
+              "copyPasteOptions": [
+                [
+                  "newRows"
+                ]
+              ],
+              "autoColumns": [
+                [
+                  "select"
+                ]
+              ],
+              "toolbar": [
+                []
+              ],
+              "colorjpath": [
+                []
+              ],
+              "slick.defaultColumnWidth": [
+                null
+              ],
+              "slick.rowHeight": [
+                null
+              ],
+              "slick.headerRowHeight": [
+                30
+              ],
+              "slick.selectionModel": [
+                "row"
+              ],
+              "idProperty": [
+                ""
+              ],
+              "filterType": [
+                "pref"
+              ],
+              "filterRow": [
+                "// Documentation: https://github.com/NPellet/visualizer/blob/46b40ca86345f8fa313563bf9c6ecb80ba323101/src/modules/types/edition/slick_grid/view.js#L1695-L1735"
+              ],
+              "customJpaths": [
+                ""
+              ]
+            }
+          ],
+          "cols": [
+            [
+              {
+                "name": "Batch",
+                "jpath": [
+                  "batch"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 86,
+                "hideColumn": []
+              }
+            ]
+          ],
+          "actionCols": [
+            [
+              {
+                "backgroundColor": [
+                  255,
+                  255,
+                  255,
+                  0
+                ],
+                "color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "position": "end",
+                "clickMode": "text"
+              }
+            ]
+          ],
+          "groupings": [
+            [
+              {
+                "getter": []
+              }
+            ]
+          ],
+          "actionOutButtons": [
+            [
+              {}
+            ]
+          ],
+          "data": [
+            {
+              "saveInView": [
+                []
+              ],
+              "varname": [
+                ""
+              ],
+              "data": [
+                "[]"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 22,
+            "top": 7
+          },
+          "size": {
+            "width": 24,
+            "height": 52
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Stock from DB",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 299,
+      "vars_in": [
+        {
+          "rel": "list",
+          "name": "stock"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onRowsSelect",
+          "rel": "rows",
+          "jpath": [],
+          "name": "selectedStock"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              []
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "Stock from DB",
+      "zindex": 4
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "if (this.variable) {\n    switch(this.variable) {\n        case 'selectedStock':\n        case 'selectedExtracts': {\n            let selectedStock = API.getData('selectedStock');\n            selectedStock = selectedStock ? selectedStock.resurrect() : [];\n            let selectedExtracts = API.getData('selectedExtracts');\n            selectedExtracts = selectedExtracts ? selectedExtracts.resurrect() : [];\n            const reagents = selectedExtracts.concat(selectedStock);\n            console.log(reagents)\n            API.createData('reagents', reagents);\n            break;\n        }\n    }\n}"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {}
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 67,
+            "top": 70
+          },
+          "size": {
+            "width": 61,
+            "height": 39
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 300,
+      "vars_in": [
+        {
+          "rel": "inputValue",
+          "name": "selectedStock"
+        },
+        {
+          "rel": "inputValue",
+          "name": "selectedExtracts"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": ""
+    },
+    {
+      "url": "modules/types/display/template-twig/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "selectable": [
+                []
+              ],
+              "template": [
+                ""
+              ],
+              "modifyInForm": [
+                [
+                  "yes"
+                ]
+              ],
+              "debouncing": [
+                0
+              ],
+              "formOptions": [
+                [
+                  "keepFormValueIfDataUndefined"
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 47,
+            "top": 7
+          },
+          "size": {
+            "width": 61,
+            "height": 52
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 301,
+      "vars_in": [
+        {
+          "rel": "tpl",
+          "name": "template"
+        },
+        {
+          "rel": "form",
+          "name": "preferences"
+        },
+        {
+          "rel": "value",
+          "name": "reagents"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": ""
+    },
+    {
+      "url": "modules/types/client_interaction/code_editor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "mode": [
+                "html"
+              ],
+              "outputType": [
+                null
+              ],
+              "btnvalue": [
+                "Send script"
+              ],
+              "iseditable": [
+                [
+                  "editable"
+                ]
+              ],
+              "hasButton": [
+                [
+                  "button"
+                ]
+              ],
+              "variable": [
+                []
+              ],
+              "storeOnChange": [
+                [
+                  "store"
+                ]
+              ],
+              "debouncing": [
+                0
+              ],
+              "script": [
+                "<style>\n    #basicForm {\n        padding: 10px;\n    }\n    #basicForm .addRow {\n        color: green;\n        font-weight: bold;\n        font-size: 12px;\n        padding: .4em .6em;\n    }\n    #basicForm .removeRow {\n        color: red;\n        font-weight: bold;\n        font-size: 12px;\n        padding: .4em .8em;\n    }\n    #basicForm h1 {\n        font-size: 16px;\n        padding-top: 12px;\n        padding-bottom: 4px;\n        space\n    }\n    #basicForm h2 {\n        font-size: 12px;\n        margin-top: 12px;\n        margin-bottom: 4px;\n        space\n    }\n    #basicForm input[type=number]{\n        width: 60px;\n    }\n    #basicForm input, #basicForm select {\n        margin-top: 3px;\n        margin-bottom: 3px;\n    } \n</style>\n\n\n\n<div id='basicForm'>\n    <table>\n        <tr>\n            <td>\n                Cell line: <select id =\"selectCellLine\", name=\"cellLine\"> \n                    <option value=\"\">  </option>\n                </select>\n            </td>\n            <td>\n                Extract: <select id=\"selectExtract\" name=\"extract\"> \n                    <option value=\"\">  </option>\n                </select>\n            </td>\n            <td>\n                Control:  <select id=\"selectControl\" name=\"control\"> \n                    <option value=\"\">  </option>\n                </select>\n            </td>\n        </tr>\n    </table>\n    <table>\n        <tr>\n            <th></th>\n            <th></th>\n            <th>Hours</th>\n            <th>Replicates</th>\n        </tr>\n        <tr data-repeat='time'>\n            <td>\n                <select data-field = \"hours\"> \n                  <option value=\"\">  </option> \n                  <option value= \"6\" > 6 </option>\n                  <option value= \"12\"> 12 </option>\n                  <option value= \"24\"> 24 </option>\n                </select>\n            </td>\n            <td>\n                <div>\n                    <table>\n                        <tr>\n                            <th></th>\n                            <th></th>\n                            <th>Q1</th>\n                            <th>Q2</th>\n                            <th>Q3</th>\n                            <th>Q4</th>\n                        </tr>\n                        <tr data-repeat='values'>\n                            <td>\n                                <div>\n                                    <input data-field=\"q1\" type=\"number\" size=\"12px\"></input>\n                                </div>\n                            </td>\n                            <td>\n                                <div>\n                                    <input data-field=\"q2\" type=\"number\" size=\"12px\"></input>\n                                </div>\n                            </td>\n                            <td>\n                                <div>\n                                    <input data-field=\"q3\" type=\"number\" size=\"12px\"></input>\n                                </div>\n                            </td>\n                            <td>\n                                <div>\n                                    <input data-field=\"q4\" type=\"number\" size=\"12px\"></input>\n                                </div>\n                            </td>\n                        </tr>\n                    </table>\n                </div>\n            </td>\n        </tr>\n    </table>\n</div>\n\n<script>\n    require(['src/util/api'], function(API) {\n        if (!API.getData('reagents')) return;\n        const reagents = API.getData('reagents').resurrect()\n        for (reagent of reagents) {\n            const option = new Option(\n                reagent.batch,\n                JSON.stringify({\n                    batch: reagent.batch,\n                    uuid: reagent.uuid,\n                    reference: reagent.reference\n                })\n            )\n            $(\"#selectCellLine\").append(option);\n            $(\"#selectExtract\").append(option);\n            $(\"#selectControl\").append(option);\n        }\n    })\n</script>\n\n<script>\n    require(['vh/util/twigAdvancedForm'], function(AF) {\n        AF('basicForm', {debug:false});\n    });\n</script>"
+              ]
+            }
+          ],
+          "ace": [
+            {
+              "useSoftTabs": [
+                [
+                  "yes"
+                ]
+              ],
+              "tabSize": [
+                4
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 70
+          },
+          "size": {
+            "width": 66,
+            "height": 69
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 302,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onEditorChange",
+          "rel": "data",
+          "jpath": [],
+          "name": "template"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": ""
+    }
+  ],
+  "variables": [
+    {
+      "jpath": [
+        ""
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "path": "https://www.lactame.com/github/cheminfo-js/visualizer-helper/846622f04a45cf0883350b664784df27a882b743",
+      "alias": "vh"
+    },
+    {
+      "path": "https://www.lactame.com/github/cheminfo-js/visualizer-helper/97f3ea58a23269f2ebd6deecd1d037005e61cd22/rest-on-couch/Roc",
+      "alias": "Roc"
+    }
+  ],
+  "configuration": {
+    "title": "No title"
+  },
+  "actionscripts": [
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          {
+            "name": [
+              null
+            ],
+            "script": [
+              null
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "init_script": [
+    {
+      "sections": {},
+      "groups": {
+        "general": [
+          {
+            "script": [
+              "const [\n    Roc,\n    Toc,\n    elnPlugin,\n    Sample,\n    loadTwig,\n    UserAnalysisResults,\n] = await API.require([\n    'vh/rest-on-couch/Roc',\n    'vh/eln/Toc',\n    'https://www.lactame.com/lib/eln-plugin/0.0.2/eln-plugin.js',\n    'vh/eln/Sample',\n    'vh/eln/templates/loadTwig',\n    'vh/rest-on-couch/UserAnalysisResults',\n]);\n\nif((typeof IframeBridge)!=='undefined') {\n    IframeBridge.onMessage(onMessage);\n    IframeBridge.ready();\n} else {\n    console.log('There is no IframeBridge')\n}\n\nasync function onMessage(data) {\n    if(data.type === 'tab.data') {\n        const couchDB = data.message.couchDB;\n        const uuid = data.message.uuid;\n        API.cache('couchDB', couchDB);\n        API.cache('uuid', uuid);\n        const roc = new Roc(couchDB);\n        API.cache('roc', roc);\n        const userInfo = await roc.getUserInfo();\n        API.cache('userInfo', userInfo)\n        const userAnalysisResults = new UserAnalysisResults(roc, data.message.uuid);\n        API.cache(\"userAnalysisResults\", userAnalysisResults);\n        userAnalysisResults.refresh();\n        \n        // available until create the view on the couch to build the toc\n        await roc.query('sample_toc', {varName: \"samples\"}).then(function(output) {\n            let extract = [];\n            let stock = [];\n            for (let item of output) {\n                if (\n                    item.value.generalKind === 'fraction' ||\n                    item.value.generalKind === 'extract'\n                ) extract.push(extracts(item))\n                if (item.value.generalKind === 'stock') stock.push(extracts(item))\n            }\n            API.createData('stock', stock);\n            API.createData('extract', extract);\n        })\n    }\n}\n\nfunction extracts(element) {\n    return {\n        reference: element.value.ids[0],\n        batch: element.value.ids[1],\n        uuid: element.id\n    }\n}\n\nAPI.createData('preferences', {\n    typeOfPlate: 'Hx12',\n    compounds: [],\n    direction: 'horizontal'\n});\n\n"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "custom_filters": [
+    {
+      "sections": {
+        "modules": [
+          {
+            "sections": {},
+            "groups": {
+              "modules": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ],
+        "filtersLib": [
+          {
+            "sections": {},
+            "groups": {
+              "filters": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ],
+        "filters": [
+          {
+            "sections": {},
+            "groups": {
+              "filter": [
+                {
+                  "name": [
+                    null
+                  ],
+                  "script": [
+                    null
+                  ]
+                }
+              ],
+              "libs": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "groups": {}
+    }
+  ],
+  "actionfiles": [
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          [
+            {}
+          ]
+        ]
+      }
+    }
+  ]
+}

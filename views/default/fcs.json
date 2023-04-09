@@ -1,0 +1,4986 @@
+{
+  "version": "2.156.0",
+  "grid": {
+    "layers": {
+      "Default layer": {
+        "name": "Default layer"
+      },
+      "admin": {
+        "name": "admin"
+      },
+      "roc": {
+        "name": "roc"
+      },
+      "preferences": {
+        "name": "preferences"
+      }
+    },
+    "xWidth": 10,
+    "yHeight": 10
+  },
+  "modules": [
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "const parseFCS = FCS.parseFCS;\nconst Matrix = ML.Matrix;\nlet preferences = API.getData('scatterPreferences').resurrect();\nlet spectraProcessor = new SP.SpectraProcessor({ maxMemory: 256 * 1024 * 1024 });\nspectraProcessor.setNormalization(preferences.normalization);\nconst fcsFileSelected = API.getData('fcsFileSelected').resurrect();\n\nconst content = await fetch(fcsFileSelected.url,\n    {credentials:'include'})\n    .then(r => fetchStatus(r, 'dataView'));\n\nconst parsed = parseFCS(content);\nlet fcsData = new Matrix(parsed.data);\nfcsData = fcsData.transpose();\nconst xAxis = new Array(fcsData.columns)\n    .fill()\n    .map((value, index) => index)\n\nfor (let i = 0; i < fcsData.rows; i++){\n    spectraProcessor.addFromData({\n            x: xAxis,\n            y: fcsData.getRow(i),\n        }, {\n            id: parsed.parameters[i][`$P${i+1}N`],\n            // meta: {\n            //     category: `class${i + 1}`,\n            //     color: colors[i]\n            // }\n        });\n}\n\nAPI.cache('spectraProcessor', spectraProcessor);\n\nlet askToDisplay = new Array(fcsData.rows)\n    .fill()\n    .map((value, index) => value = {\n        index: index,\n        display: false\n    })\n\nAPI.createData('askToDisplay', askToDisplay)\n\nconst parameters = parsed.parameters;\nconsole.log({parameters})\nconst text = parsed.text;\n\nlet labelsList = [];\nfor (let i = 0; i < parameters.length; i++) {\n    labelsList.push(parameters[i][`\\$P${i + 1}N`])\n}\n\nlet parametersList = [];\nfor (let i = 0; i < parameters.length; i++) {\n    let entry = {};\n    const entries = Object.entries(parameters[i]);\n    for (let j = 0; j < entries.length; j++) {\n        const label = entries[j][0].replace(/[0-9]/g, '');\n        entry[label] = entries[j][1];\n    }\n    parametersList.push(entry)\n}\n\nAPI.createData('fileInfo', {\n    fileName: text.$FIL,\n    flowCytometer: text.$CYT,\n    events: text.$TOT,\n    parameters: text.$PAR,\n    operator: text.$OP,\n    specimen: text.$SRC\n})\n\nAPI.createData('parameters', parametersList)\nawait API.createData('labelsList', labelsList)\n    .then(() => API.doAction('buildPlots', ''));\n\nasync function fetchStatus(content, type) {\n    const stream = content.body.getReader();\n    const contentLength = content.headers.get('Content-Length');\n    let data = new Uint8Array(contentLength);\n    let chunkLength = 0;\n    while (chunkLength < contentLength) {\n        const {done, value} = await stream.read();\n        data.set(value, chunkLength);\n        chunkLength += value.length;\n        let status = chunkLength < contentLength? chunkLength: 0;\n        API.createData('statusProgress', {\n            currentStatus: status,\n            iterationsNumber: parseInt(contentLength)\n        });\n    }\n    let result;\n    const decoder = new TextDecoder(\"utf-8\");\n    switch (type) {\n        case 'string': \n            result = decoder.decode(data);\n            break\n        \n        case 'JSON':\n            result = JSON.parse(decoder.decode(data));\n            break\n        \n        case 'dataView':\n            result = new DataView(data.buffer)\n            break\n    }\n    return result\n}\n\n"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {
+                "lib": "FCS",
+                "alias": "FCS"
+              },
+              {
+                "lib": "ML",
+                "alias": "ML"
+              },
+              {
+                "lib": "SpectraProcessor",
+                "alias": "SP"
+              }
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 87,
+            "top": 73
+          },
+          "size": {
+            "width": 49,
+            "height": 53
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 49,
+            "height": 72
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "roc": {
+          "position": {
+            "left": 87,
+            "top": 73
+          },
+          "size": {
+            "width": 49,
+            "height": 53
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "preferences": {
+          "position": {
+            "left": 87,
+            "top": 73
+          },
+          "size": {
+            "width": 49,
+            "height": 53
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 256,
+      "vars_in": [
+        {
+          "rel": "inputValue",
+          "name": "fcsFileSelected"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/client_interaction/dragdrop/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "label": [
+                "Drop your .fcs file here"
+              ],
+              "dragoverlabel": [
+                null
+              ],
+              "hoverlabel": [
+                "Drag'n drop or paste here"
+              ],
+              "fileSelectLabel": [
+                "Select file"
+              ],
+              "labelFontSize": [
+                26
+              ],
+              "checkOptions": [
+                [
+                  "promptAmbiguous"
+                ]
+              ],
+              "inputOptions": [
+                [
+                  "allowDrop",
+                  "allowPaste",
+                  "allowFileInput"
+                ]
+              ]
+            }
+          ],
+          "vars": [
+            [
+              {
+                "filter": "ext",
+                "extension": "*",
+                "filetype": "base64",
+                "type": "",
+                "variable": "file"
+              }
+            ]
+          ],
+          "string_general": [
+            {
+              "askFilename": [
+                []
+              ]
+            }
+          ],
+          "string": [
+            [
+              {
+                "filter": "ext",
+                "extension": "*",
+                "type": "",
+                "variable": "str"
+              }
+            ]
+          ],
+          "photo": [
+            [
+              {
+                "variable": "photo"
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 51
+          },
+          "size": {
+            "width": 40,
+            "height": 13
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 52
+          },
+          "size": {
+            "width": 41,
+            "height": 10
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "roc": {
+          "position": {
+            "left": 0,
+            "top": 51
+          },
+          "size": {
+            "width": 22,
+            "height": 13
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 51
+          },
+          "size": {
+            "width": 28,
+            "height": 13
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 257,
+      "vars_out": [
+        {
+          "event": "onRead",
+          "rel": "dataarray",
+          "jpath": [],
+          "name": "droppedOther"
+        }
+      ],
+      "vars_in": [],
+      "actions_in": [
+        {}
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              []
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "const spectraProcessor = API.cache('spectraProcessor');console.log(spectraProcessor)\n\nconst kdTree = KDTree.kdTree;\nconst getMax = ML.Array.max;\nconst getMin = ML.Array.min;\n\nconst scatterPreferences = API.getData('scatterPreferences').resurrect();\nconst display = JSON.parse(JSON.stringify(API.getData('askToDisplay')));\nconst xParameter = spectraProcessor.getSpectrum(scatterPreferences.xAxis).normalized.y;\nconst yParameter = spectraProcessor.getSpectrum(scatterPreferences.yAxis).normalized.y;\n\nlet colorScale = scatterPreferences.density ?\n    getDensityScaleColor() :\n    new Array(xParameter.length).fill('rgba(0,0,255,1)');\n\nconst unselected = xParameter.map((entry, index) => {\n    return {\n      shape: 'circle',\n      fill: colorScale[index],\n      r: 1.5\n    };\n  }\n);\n\nlet info = [];\nfor (let i = 0; i < xParameter.length; i++) {\n    info[i] = { index: i }\n};\n\nconst scatter = {\n    info: info,\n    x: xParameter,\n    y: yParameter,\n    type: 'scatter',\n    styles: {\n      unselected,\n      selected: unselected\n    }\n};\n\nAPI.createData('scatter', scatter);\n\nfunction getDensityScaleColor() {\n    let points = [];\n    for (let i = 0; i < xParameter.length; i++) {\n        points[i] = { x: xParameter[i], y: yParameter[i] }\n    }\n\n    const tree = new kdTree(\n        JSON.parse(JSON.stringify(points)),\n        distance, \n        [\"x\", \"y\"]\n    );\n    \n    let nnArray = [];\n    for (let i = 0; i < points.length; i++) {\n        const nearest = tree.nearest(points[i], 20);\n        let counter = 0;\n        for (const item of nearest) {\n            if (item[1] < 300) counter++;\n        }\n        nnArray.push(counter)\n    }\n\n    const max = getMax(nnArray)\n    const min = getMin(nnArray)\n    \n    const densityScale = chroma.scale(['blue', 'cyan',  'yellow', 'red'])\n        .domain([min, max]).mode('lch');\n\n    return nnArray.map((x, j) => densityScale(x));\n}\n\nfunction distance(a, b){\n  return Math.sqrt(Math.pow(a.x - b.x, 2) +  Math.pow(a.y - b.y, 2));\n}\n"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {
+                "lib": "https://dl.dropboxusercontent.com/s/906wu6xr54ymi5x/kdTree-min.js?dl=0",
+                "alias": "KDTree"
+              },
+              {
+                "lib": "ML",
+                "alias": "ML"
+              },
+              {
+                "lib": "chroma",
+                "alias": "chroma"
+              },
+              {
+                "lib": "delay",
+                "alias": "delay"
+              }
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 132,
+            "top": 15
+          },
+          "size": {
+            "width": 58,
+            "height": 58
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Scatter plot of parameters",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 50,
+            "top": 0
+          },
+          "size": {
+            "width": 60,
+            "height": 72
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Scatter plot of parameters",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "roc": {
+          "position": {
+            "left": 132,
+            "top": 15
+          },
+          "size": {
+            "width": 58,
+            "height": 58
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Scatter plot of parameters",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "preferences": {
+          "position": {
+            "left": 132,
+            "top": 15
+          },
+          "size": {
+            "width": 58,
+            "height": 58
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Scatter plot of parameters",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 258,
+      "vars_in": [
+        {
+          "rel": "inputValue",
+          "name": "scatterPreferences"
+        },
+        {
+          "rel": "inputValue",
+          "name": "fcsData"
+        }
+      ],
+      "actions_in": [
+        {
+          "rel": "execute",
+          "name": "buildPlots"
+        },
+        {
+          "rel": "execute",
+          "name": "activatedGroup"
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "Scatter plot of parameters",
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/science/spectra/spectra_displayer/",
+      "configuration": {
+        "sections": {
+          "graph": [
+            {
+              "sections": {},
+              "groups": {
+                "graph": [
+                  {
+                    "url": [
+                      ""
+                    ],
+                    "zoom": [
+                      "xy"
+                    ],
+                    "wheelAction": [
+                      "zoomY"
+                    ],
+                    "wheelbaseline": [
+                      0
+                    ],
+                    "fullOut": [
+                      "both"
+                    ],
+                    "legend": [
+                      null
+                    ],
+                    "legendOptions": [
+                      [
+                        "isSerieHideable",
+                        "isSerieSelectable"
+                      ]
+                    ],
+                    "mouseTracking": [
+                      []
+                    ],
+                    "trackingAxis": [
+                      ""
+                    ],
+                    "selectScatter": [
+                      []
+                    ],
+                    "independantYZoom": [
+                      []
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "axis": [
+            {
+              "sections": {},
+              "groups": {
+                "xAxis": [
+                  {
+                    "checkboxes": [
+                      [
+                        "display"
+                      ]
+                    ],
+                    "label": [
+                      ""
+                    ],
+                    "beforeSpacing": [
+                      "0"
+                    ],
+                    "afterSpacing": [
+                      0
+                    ],
+                    "min": [
+                      "0"
+                    ],
+                    "max": [
+                      "263000"
+                    ],
+                    "nbTicksPrimary": [
+                      5
+                    ],
+                    "axismodification": [
+                      "none"
+                    ]
+                  }
+                ],
+                "yAxis": [
+                  {
+                    "checkboxes": [
+                      [
+                        "display"
+                      ]
+                    ],
+                    "label": [
+                      ""
+                    ],
+                    "beforeSpacing": [
+                      "0"
+                    ],
+                    "afterSpacing": [
+                      0
+                    ],
+                    "min": [
+                      "0"
+                    ],
+                    "max": [
+                      "263000"
+                    ],
+                    "nbTicksPrimary": [
+                      5
+                    ],
+                    "fitToAxisOnFromTo": [
+                      []
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "series": [
+            {
+              "sections": {},
+              "groups": {
+                "series": [
+                  {
+                    "overflow": [
+                      []
+                    ],
+                    "stackVerticalSpacing": [
+                      0
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "variables": [
+            {
+              "sections": {},
+              "groups": {
+                "variables": [
+                  [
+                    {
+                      "variable": "scatter",
+                      "axis": "0",
+                      "adaptTo": "0",
+                      "plotcolor": [
+                        1,
+                        1,
+                        255,
+                        1
+                      ],
+                      "strokewidth": "1",
+                      "strokestyle": "1",
+                      "plotcontinuous": "continuous",
+                      "peakpicking": [],
+                      "markers": [
+                        "markers"
+                      ],
+                      "markerShape": "1",
+                      "markerSize": 2,
+                      "normalize": "none",
+                      "optimizeSlots": [],
+                      "tracking": []
+                    }
+                  ]
+                ]
+              }
+            }
+          ],
+          "misc": [
+            {
+              "sections": {},
+              "groups": {
+                "misc": [
+                  {
+                    "highlightOptions": [
+                      "{}"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "groups": {}
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 87,
+            "top": 16
+          },
+          "size": {
+            "width": 49,
+            "height": 48
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 111,
+            "top": 23
+          },
+          "size": {
+            "width": 58,
+            "height": 49
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "2D Scatter plot",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "roc": {
+          "position": {
+            "left": 57,
+            "top": 16
+          },
+          "size": {
+            "width": 58,
+            "height": 48
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "2D Scatter plot",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "preferences": {
+          "position": {
+            "left": 63,
+            "top": 16
+          },
+          "size": {
+            "width": 58,
+            "height": 48
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "2D Scatter plot",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 259,
+      "vars_in": [
+        {
+          "rel": "annotations",
+          "name": "annotations"
+        },
+        {
+          "rel": "chart",
+          "name": "scatter"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onSelectScatter",
+          "rel": "selectedData",
+          "jpath": [],
+          "name": "selectedPoints"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              []
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 1
+    },
+    {
+      "url": "modules/types/display/template-twig/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "selectable": [
+                []
+              ],
+              "template": [
+                "<div>\n    <table>\n        <tr>\n            <td>\n                X Axis:\n            </td>\n            <td>\n                <select id='xAxis' value='0' name='xAxis'></select>\n            </td>\n            <td>\n                Y Axis:\n            </td>\n            <td>\n                <select id='yAxis' value='1' name=\"yAxis\"></select>\n            </td>\n            <td>\n                density:\n            </td>\n            <td>\n                <input name='density' type='checkbox' value='false'>\n            </td>\n        </tr>\n    </table>\n</div>\n\n<script> \n    require(['src/util/api'], function(API) {\n        if (API.getData('labelsList') == null) return;\n        const labelsList = API.getData('labelsList').resurrect();\n        for (let i = 0; i < labelsList.length; i++) {\n            $('#xAxis').append(new Option(labelsList[i], labelsList[i]))\n            $('#yAxis').append(new Option(labelsList[i], labelsList[i]))\n        }\n        $('#xAxis option[value=\"0\"]').attr(\"selected\",true);\n        $('#yAxis option[value=\"1\"]').attr(\"selected\",true);\n    })\n</script>"
+              ],
+              "modifyInForm": [
+                [
+                  "yes"
+                ]
+              ],
+              "debouncing": [
+                0
+              ],
+              "formOptions": [
+                [
+                  "keepFormValueIfDataUndefined"
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 91,
+            "top": 16
+          },
+          "size": {
+            "width": 43,
+            "height": 3
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 91,
+            "top": 13
+          },
+          "size": {
+            "width": 51,
+            "height": 3
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "roc": {
+          "position": {
+            "left": 69,
+            "top": 16
+          },
+          "size": {
+            "width": 43,
+            "height": 3
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "preferences": {
+          "position": {
+            "left": 75,
+            "top": 16
+          },
+          "size": {
+            "width": 43,
+            "height": 3
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 260,
+      "vars_in": [
+        {
+          "rel": "form",
+          "name": "scatterPreferences"
+        }
+      ],
+      "actions_in": [
+        {
+          "rel": "_editPreferences",
+          "name": "buildPlots"
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/edition/slick_grid/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "slickCheck": [
+                [
+                  "enableCellNavigation",
+                  "rowNumbering",
+                  "forceFitColumns",
+                  "highlightScroll",
+                  "forgetLastActive"
+                ]
+              ],
+              "copyPaste": [
+                []
+              ],
+              "copyPasteOptions": [
+                [
+                  "newRows"
+                ]
+              ],
+              "autoColumns": [
+                []
+              ],
+              "toolbar": [
+                []
+              ],
+              "colorjpath": [
+                []
+              ],
+              "slick.defaultColumnWidth": [
+                null
+              ],
+              "slick.rowHeight": [
+                null
+              ],
+              "slick.headerRowHeight": [
+                30
+              ],
+              "slick.selectionModel": [
+                "row"
+              ],
+              "idProperty": [
+                ""
+              ],
+              "filterType": [
+                "pref"
+              ],
+              "filterRow": [
+                "// Documentation: https://github.com/NPellet/visualizer/blob/46b40ca86345f8fa313563bf9c6ecb80ba323101/src/modules/types/edition/slick_grid/view.js#L1695-L1735"
+              ],
+              "customJpaths": [
+                ""
+              ]
+            }
+          ],
+          "cols": [
+            [
+              {
+                "jpath": [],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              }
+            ]
+          ],
+          "actionCols": [
+            [
+              {
+                "backgroundColor": [
+                  255,
+                  255,
+                  255,
+                  0
+                ],
+                "color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "position": "end",
+                "clickMode": "text"
+              }
+            ]
+          ],
+          "groupings": [
+            [
+              {
+                "getter": []
+              }
+            ]
+          ],
+          "actionOutButtons": [
+            [
+              {}
+            ]
+          ],
+          "data": [
+            {
+              "saveInView": [
+                []
+              ],
+              "varname": [
+                ""
+              ],
+              "data": [
+                "[]"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 137,
+            "top": 15
+          },
+          "size": {
+            "width": 33,
+            "height": 48
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Parameters",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 13
+          },
+          "size": {
+            "width": 41,
+            "height": 38
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Parameters",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "roc": {
+          "position": {
+            "left": 23,
+            "top": 16
+          },
+          "size": {
+            "width": 33,
+            "height": 48
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Parameters",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "preferences": {
+          "position": {
+            "left": 48,
+            "top": 1
+          },
+          "size": {
+            "width": 33,
+            "height": 48
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Parameters",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 261,
+      "vars_in": [
+        {
+          "rel": "list",
+          "name": "parameters"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              []
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "Parameters",
+      "zindex": 8
+    },
+    {
+      "url": "modules/types/edition/rich_text/",
+      "id": 262,
+      "richtext": "<p><a href=\"https://www.javeriana.edu.co/colombia-cientifica/wp-content/uploads/2020/01/cropped-Proyecto-GAT-logo-PNG-1-1.png\"><img alt=\"\" src=\"https://www.javeriana.edu.co/colombia-cientifica/wp-content/uploads/2020/01/cropped-Proyecto-GAT-logo-PNG-1-1.png\" /></a></p>\n",
+      "title": "",
+      "zindex": 2,
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "editable": [
+                [
+                  "isEditable"
+                ]
+              ],
+              "debouncing": [
+                0
+              ],
+              "modifyInVariable": [
+                []
+              ],
+              "storeInView": [
+                [
+                  "yes"
+                ]
+              ],
+              "autoHeight": [
+                []
+              ],
+              "bgColor": [
+                [
+                  255,
+                  255,
+                  255,
+                  1
+                ]
+              ],
+              "postit": [
+                []
+              ],
+              "html": [
+                [
+                  "yes"
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "wrapper": false,
+          "created": true,
+          "name": "Add data",
+          "position": {
+            "left": -3,
+            "top": 0
+          },
+          "size": {
+            "width": 21,
+            "height": 20
+          },
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ]
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "roc": {
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "wrapper": false,
+          "created": true,
+          "name": "Add data",
+          "position": {
+            "left": -3,
+            "top": 0
+          },
+          "size": {
+            "width": 21,
+            "height": 20
+          },
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ]
+        },
+        "preferences": {
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "wrapper": false,
+          "created": true,
+          "name": "Add data",
+          "position": {
+            "left": -3,
+            "top": 0
+          },
+          "size": {
+            "width": 21,
+            "height": 20
+          },
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ]
+        }
+      },
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/display/template-twig/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "selectable": [
+                []
+              ],
+              "template": [
+                "{% if fileInfo %}\n<div>\n    <table>\n        <tr>\n            <td style='font-size:15px; color: blue'> File name: </td>\n            <td>\n                {{fileInfo.fileName}}\n            </td>\n        </tr>\n        <tr>\n            <td style='font-size:15px; color: blue'> Flow cytometer: </td>\n            <td>\n                {{fileInfo.flowCytometer}}\n            </td>\n        </tr>\n        <tr>\n            <td style='font-size:15px; color: blue'> Number of events: </td>\n            <td>\n                {{fileInfo.events}}\n            </td>\n        </tr>\n        <tr>\n            <td style='font-size:15px; color: blue'> Number of parameters: </td>\n            <td>\n                {{fileInfo.parameters}}\n            </td>\n        </tr>\n         <tr>\n            <td style='font-size:15px; color: blue'> Operator: </td>\n            <td>\n                {{fileInfo.operator}}\n            </td> \n         </tr>\n        <tr>\n            <td style='font-size:15px; color: blue'> Specimen: </td>\n            <td>\n                {{fileInfo.specimen}}\n            </td>\n        </tr>\n    </table>\n</div>\n{% endif %}"
+              ],
+              "modifyInForm": [
+                []
+              ],
+              "debouncing": [
+                0
+              ],
+              "formOptions": [
+                [
+                  "keepFormValueIfDataUndefined"
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 19,
+            "top": 2
+          },
+          "size": {
+            "width": 47,
+            "height": 15
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 15,
+            "top": 62
+          },
+          "size": {
+            "width": 46,
+            "height": 17
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "roc": {
+          "position": {
+            "left": 19,
+            "top": 1
+          },
+          "size": {
+            "width": 47,
+            "height": 15
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "preferences": {
+          "position": {
+            "left": 19,
+            "top": 2
+          },
+          "size": {
+            "width": 47,
+            "height": 15
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 263,
+      "vars_in": [
+        {
+          "rel": "value",
+          "name": "fileInfo"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/edition/slick_grid/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "slickCheck": [
+                [
+                  "enableCellNavigation",
+                  "rowNumbering",
+                  "forceFitColumns",
+                  "highlightScroll",
+                  "forgetLastActive",
+                  "editable"
+                ]
+              ],
+              "copyPaste": [
+                []
+              ],
+              "copyPasteOptions": [
+                [
+                  "newRows"
+                ]
+              ],
+              "autoColumns": [
+                []
+              ],
+              "toolbar": [
+                []
+              ],
+              "colorjpath": [
+                []
+              ],
+              "slick.defaultColumnWidth": [
+                null
+              ],
+              "slick.rowHeight": [
+                null
+              ],
+              "slick.headerRowHeight": [
+                30
+              ],
+              "slick.selectionModel": [
+                "row"
+              ],
+              "idProperty": [
+                ""
+              ],
+              "filterType": [
+                "pref"
+              ],
+              "filterRow": [
+                "// Documentation: https://github.com/NPellet/visualizer/blob/46b40ca86345f8fa313563bf9c6ecb80ba323101/src/modules/types/edition/slick_grid/view.js#L1695-L1735"
+              ],
+              "customJpaths": [
+                ""
+              ]
+            }
+          ],
+          "cols": [
+            [
+              {
+                "name": "File",
+                "jpath": [
+                  "name"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 302,
+                "hideColumn": []
+              },
+              {
+                "name": "download",
+                "jpath": [
+                  "url"
+                ],
+                "editor": "none",
+                "forceType": "downloadlink",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 58,
+                "hideColumn": []
+              }
+            ]
+          ],
+          "actionCols": [
+            [
+              {
+                "name": "🗑",
+                "tooltip": "Delete file",
+                "icon": "fa-trash",
+                "backgroundColor": [
+                  255,
+                  255,
+                  255,
+                  0
+                ],
+                "color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "action": "unattach",
+                "position": "begin",
+                "clickMode": "text",
+                "isAction": true
+              }
+            ]
+          ],
+          "groupings": [
+            [
+              {
+                "getter": []
+              }
+            ]
+          ],
+          "actionOutButtons": [
+            [
+              {}
+            ]
+          ],
+          "data": [
+            {
+              "saveInView": [
+                []
+              ],
+              "varname": [
+                ""
+              ],
+              "data": [
+                "[]"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 16
+          },
+          "size": {
+            "width": 40,
+            "height": 22
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "FCS files available in the sample",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "FCS files available in the sample",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "roc": {
+          "position": {
+            "left": 0,
+            "top": 16
+          },
+          "size": {
+            "width": 22,
+            "height": 34
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "FCS files available in the sample",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 16
+          },
+          "size": {
+            "width": 28,
+            "height": 22
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "FCS files available in the sample",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 264,
+      "vars_in": [
+        {
+          "rel": "list",
+          "name": "fcsAttachments"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onRowActive",
+          "rel": "row",
+          "jpath": [],
+          "name": "fcsFileSelected"
+        },
+        {
+          "event": "onRowActive",
+          "rel": "row",
+          "jpath": [
+            "name"
+          ],
+          "name": "selectedSample"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              []
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "FCS files available in the sample",
+      "zindex": 12
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "const action=getAction() || {name:''};\nconst sample=API.cache('sample');\nconsole.log(\"Receive action: \",action);\nif (!sample) return;\n\nif(this.action) {\n    switch (action.name) {\n    default:\n        sample.handleAction(action);\n    }    \n} else if (this.variable) {\n    await removeAlphanumericNonCaracters(this.variable)\n    sample.handleDrop(this.variable, false, {\n        autoJcamp: true\n    });\n}\n\n\nasync function removeAlphanumericNonCaracters(variable) {\n    let currentVariable = API.getData(variable);\n    console.log(currentVariable)\n    for (let element of currentVariable.file) {\n        element.filename = element.filename.replace( /[^a-zA-Z0-9.]/gi , \" \");\n    }\n}"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {}
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Roc sample",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Roc sample",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "roc": {
+          "position": {
+            "left": 0,
+            "top": 1
+          },
+          "size": {
+            "width": 48,
+            "height": 48
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Roc sample",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "roc"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Roc sample",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 265,
+      "vars_in": [
+        {
+          "rel": "inputValue",
+          "name": "droppedOther"
+        }
+      ],
+      "actions_in": [
+        {
+          "rel": "execute",
+          "name": "refresh"
+        },
+        {
+          "rel": "execute",
+          "name": "save"
+        },
+        {
+          "rel": "execute",
+          "name": "deleteAttachment"
+        },
+        {
+          "rel": "execute",
+          "name": "updateAttachments"
+        },
+        {
+          "rel": "execute",
+          "name": "unattach"
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "Roc sample",
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "let fcsAttachments = [];\nlet miscAttachments = [];\n\nif (this.variable) {\n    if (this.variable === 'otherAttachments') {\n        const otherAttachments = API.getData('otherAttachments').resurrect();\n        for (let attachment of otherAttachments) {\n            const format = attachment.name.split('.')[1];\n            if (format === 'fcs') {\n                fcsAttachments.push(attachment);\n            } else {\n                miscAttachments.push(attachment)\n            }\n        }\n    }\n}\n\nAPI.createData('fcsAttachments', fcsAttachments);\nAPI.createData('miscAttachments', miscAttachments);\n"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {}
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Extract .fcs attachments from otherAttachments",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Extract .fcs attachments from otherAttachments",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "roc": {
+          "position": {
+            "left": 49,
+            "top": 1
+          },
+          "size": {
+            "width": 63,
+            "height": 48
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Extract .fcs attachments from otherAttachments",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "roc"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Extract .fcs attachments from otherAttachments",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 266,
+      "vars_in": [
+        {
+          "rel": "inputValue",
+          "name": "otherAttachments"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "Extract .fcs attachments from otherAttachments",
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/edition/slick_grid/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "slickCheck": [
+                [
+                  "enableCellNavigation",
+                  "rowNumbering",
+                  "forceFitColumns",
+                  "highlightScroll",
+                  "forgetLastActive",
+                  "editable"
+                ]
+              ],
+              "copyPaste": [
+                []
+              ],
+              "copyPasteOptions": [
+                [
+                  "newRows"
+                ]
+              ],
+              "autoColumns": [
+                []
+              ],
+              "toolbar": [
+                []
+              ],
+              "colorjpath": [
+                []
+              ],
+              "slick.defaultColumnWidth": [
+                null
+              ],
+              "slick.rowHeight": [
+                null
+              ],
+              "slick.headerRowHeight": [
+                30
+              ],
+              "slick.selectionModel": [
+                "row"
+              ],
+              "idProperty": [
+                ""
+              ],
+              "filterType": [
+                "pref"
+              ],
+              "filterRow": [
+                "// Documentation: https://github.com/NPellet/visualizer/blob/46b40ca86345f8fa313563bf9c6ecb80ba323101/src/modules/types/edition/slick_grid/view.js#L1695-L1735"
+              ],
+              "customJpaths": [
+                ""
+              ]
+            }
+          ],
+          "cols": [
+            [
+              {
+                "name": "Name",
+                "jpath": [
+                  "name"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 323,
+                "hideColumn": []
+              },
+              {
+                "name": "download",
+                "jpath": [
+                  "url"
+                ],
+                "editor": "none",
+                "forceType": "downloadlink",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 77,
+                "hideColumn": []
+              }
+            ]
+          ],
+          "actionCols": [
+            [
+              {
+                "name": "🗑",
+                "tooltip": "Delete",
+                "icon": "fa-task",
+                "backgroundColor": [
+                  255,
+                  255,
+                  255,
+                  0
+                ],
+                "color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "action": "unattach",
+                "position": "end",
+                "clickMode": "text",
+                "isAction": true
+              }
+            ]
+          ],
+          "groupings": [
+            [
+              {
+                "getter": []
+              }
+            ]
+          ],
+          "actionOutButtons": [
+            [
+              {}
+            ]
+          ],
+          "data": [
+            {
+              "saveInView": [
+                []
+              ],
+              "varname": [
+                ""
+              ],
+              "data": [
+                "[]"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 39
+          },
+          "size": {
+            "width": 40,
+            "height": 11
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "List of miscellaneous attachments",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "List of miscellaneous attachments",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "roc": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "List of miscellaneous attachments",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "roc"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 39
+          },
+          "size": {
+            "width": 28,
+            "height": 11
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "List of miscellaneous attachments",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 267,
+      "vars_in": [
+        {
+          "rel": "list",
+          "name": "miscAttachments"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onRowActive",
+          "rel": "row",
+          "jpath": [],
+          "name": "selectedAnalysis"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "List of miscellaneous attachments",
+      "zindex": 25
+    },
+    {
+      "url": "modules/types/display/template-twig/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "selectable": [
+                []
+              ],
+              "template": [
+                "<style> \n    #fcsFullBar {\n      height: 40px;\n      width: 100%;\n      background-color: #ddd; \n      border-radius: 5px;\n      top: 180px;\n      margin-bottom: 50px;\n      box-shadow:2px 0px 12px 3px rgba(0, 0, 0, 0.3) inset;\n      padding: 8px;\n    } \n    @keyframes move{\n        100%{\n            background-position: 40px 0px;\n        }\n    }  \n    #fcsBar { \n      width: 10%; \n      height: 25px;\n      background: linear-gradient(45deg,rgba(255, 255, 255, 0.5) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.5) 75%, transparent 75%, transparent);\n      background-color: #196C7F;\n      background-size: 40px;\n      border-radius: 5px;\n      padding: 8px;\n      /*animation: move 1.0s linear infinite;*/\n    }\n    \n    #fcsBarLabel {\n      text-align: center;\n      color: white;\n    }\n</style>\n\n<body>\n    {% if (statusProgress.currentStatus)%}\n    <h2 id='label' align='center'></h2> \n    <div id=\"fcsFullBar\">\n        <div id=\"fcsBar\"><p id='fcsBarLabel'> </p></div>\n    </div>\n    {% endif %}\n\n    <script>\n        $('#fcsFullBar').width(390);\n        const currentStatus = {{statusProgress.currentStatus}};\n        const iterationsNumber = {{statusProgress.iterationsNumber}};\n        let label = 'Block '+String(currentStatus + 1)+' of '+String(iterationsNumber);\n        $('#label').text(label);\n        let progress = (currentStatus + 1) / iterationsNumber*100;\n        progress = Math.round(progress * 100) / 100;\n        $('#fcsBar').width(progress * 3.6);\n        $('#fcsBarLabel').text(String(progress) + '%');\n        if (progress === 100) {\n            $('#fcsBarLabel').text('Finished');\n        }\n    </script> \n</body>\n"
+              ],
+              "modifyInForm": [
+                []
+              ],
+              "debouncing": [
+                0
+              ],
+              "formOptions": [
+                [
+                  "keepFormValueIfDataUndefined"
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 41,
+            "top": 3
+          },
+          "size": {
+            "width": 43,
+            "height": 15
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Status progress",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "roc": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "roc"
+        },
+        "preferences": {
+          "position": {
+            "left": 78,
+            "top": 1
+          },
+          "size": {
+            "width": 43,
+            "height": 15
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Status progress",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 268,
+      "vars_in": [
+        {
+          "rel": "value",
+          "name": "statusProgress"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "Status progress",
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/client_interaction/code_editor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "mode": [
+                "html"
+              ],
+              "outputType": [
+                null
+              ],
+              "btnvalue": [
+                "Send script"
+              ],
+              "iseditable": [
+                [
+                  "editable"
+                ]
+              ],
+              "hasButton": [
+                [
+                  "button"
+                ]
+              ],
+              "variable": [
+                []
+              ],
+              "storeOnChange": [
+                [
+                  "store"
+                ]
+              ],
+              "debouncing": [
+                0
+              ],
+              "script": [
+                "<div>\n    <table>\n        <tr>\n            <td>\n                Group name\n            </td>\n            <td>\n                <input id='groupName' type='string' style='width: 80px' value=''>\n            </td>\n            <td>\n                <button onclick=\"createGroup()\" type='submit' value='Submit'>\n                    <i style=\"color: darkgreen\" class=\"far fa-plus-square\"></i>\n                </button>\n            </td>\n        </tr>\n    </table>\n</div>\n\n<script>\n    var createGroup;\n    require(['src/util/api'], function(API){\n        const selectedPoints = API.getData('selectedPoints').resurrect();\n        let display = JSON.parse(JSON.stringify(API.getData('askToDisplay').resurrect()));\n        createGroup = async function(){\n            const cellGroups = API.getData('cellGroups');\n            const groupName = await $('#groupName').val();\n            for (let i = 0; i < selectedPoints.length; i++) {\n                display[selectedPoints[i].index].display = true\n            }\n            cellGroups.push({\n                label: groupName,\n                cells: display,\n                nbCells: selectedPoints.length,\n            })\n            cellGroups.triggerChange();\n        }\n        console.log(createGroup)\n    })\n</script>\n"
+              ]
+            }
+          ],
+          "ace": [
+            {
+              "useSoftTabs": [
+                [
+                  "yes"
+                ]
+              ],
+              "tabSize": [
+                4
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 65
+          },
+          "size": {
+            "width": 47,
+            "height": 50
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "roc": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "roc"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 1
+          },
+          "size": {
+            "width": 47,
+            "height": 50
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 269,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onEditorChange",
+          "rel": "data",
+          "jpath": [],
+          "name": "groupsForm"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "const getMax = ML.Array.max;\nif (!API.getData('parameters')) return;\nconst parameters = API.getData('parameters').resurrect();\nconst spectraProcessor = API.cache('spectraProcessor');\nconst normalized = spectraProcessor.getNormalizedData();\nconst matrix = normalized.matrix;\nconst linePreferences = API.getData('linePreferences').resurrect();\n\nlet styles = {\n    unselected: {\n        lineColor: 'rgb(255,0,100)',\n        lineWidth: 2,\n    },\n    selected: {\n        lineColor: 'rgb(255,0,100)',\n        lineWidth: 2,\n    }\n};\n\nconst colors = Colors.getDistinctColorsAsString(matrix.length)\nfor (let i = 0; i < matrix.length; i++) {\n    const arrayHistogram = histogram(matrix[i], { step: linePreferences.each });\n    const unselected = {\n        lineColor: colors[i]\n    }\n\n    arrayHistogram.pop();\n    const x = arrayHistogram.map((item) => item.size);\n    const y = arrayHistogram.map((item) => item.nbPoints);\n    API.createData(parameters[i].$PN, {\n    data:[{\n            x,\n            y,\n            styles: {\n                unselected,\n                selected: unselected\n            }\n        }]\n    })\n}\n\nfunction histogram(array, options={}){\n    const {step = 10} = options;\n    const max = getMax(array);\n    const nbSteps = Math.ceil(max/step)\n    let result = [];\n    for (let i = 0; i < nbSteps; i++) {\n        let counter = 0;\n        for (let j = 0; j < array.length; j++) {\n            if (i * step < array[j] && array[j] < (i + 1) * step) counter++;\n        }\n        result.push({\n            nbPoints: counter,\n            size: i * step\n        })\n    }\n    return result\n}"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {
+                "lib": "ML",
+                "alias": "ML"
+              },
+              {
+                "lib": "src/util/color",
+                "alias": "Colors"
+              }
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Histograms",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 50,
+            "top": 73
+          },
+          "size": {
+            "width": 60,
+            "height": 31
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Histograms",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "roc": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Histograms",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "roc"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Histograms",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        }
+      },
+      "id": 270,
+      "vars_in": [
+        {
+          "rel": "inputValue",
+          "name": "linePreferences"
+        },
+        {
+          "rel": "inputValue",
+          "name": "fcsData"
+        }
+      ],
+      "actions_in": [
+        {
+          "rel": "execute",
+          "name": "buildPlots"
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "Histograms",
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/science/spectra/spectra_displayer/",
+      "configuration": {
+        "sections": {
+          "graph": [
+            {
+              "sections": {},
+              "groups": {
+                "graph": [
+                  {
+                    "url": [
+                      ""
+                    ],
+                    "zoom": [
+                      "x"
+                    ],
+                    "wheelAction": [
+                      "zoomY"
+                    ],
+                    "wheelbaseline": [
+                      0
+                    ],
+                    "fullOut": [
+                      "both"
+                    ],
+                    "legend": [
+                      "bottom"
+                    ],
+                    "legendOptions": [
+                      [
+                        "isSerieHideable",
+                        "isSerieSelectable"
+                      ]
+                    ],
+                    "mouseTracking": [
+                      []
+                    ],
+                    "trackingAxis": [
+                      "x"
+                    ],
+                    "selectScatter": [
+                      []
+                    ],
+                    "independantYZoom": [
+                      []
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "axis": [
+            {
+              "sections": {},
+              "groups": {
+                "xAxis": [
+                  {
+                    "checkboxes": [
+                      [
+                        "display"
+                      ]
+                    ],
+                    "label": [
+                      ""
+                    ],
+                    "beforeSpacing": [
+                      "0"
+                    ],
+                    "afterSpacing": [
+                      0
+                    ],
+                    "min": [
+                      ""
+                    ],
+                    "max": [
+                      ""
+                    ],
+                    "nbTicksPrimary": [
+                      5
+                    ],
+                    "axismodification": [
+                      "none"
+                    ]
+                  }
+                ],
+                "yAxis": [
+                  {
+                    "checkboxes": [
+                      [
+                        "display"
+                      ]
+                    ],
+                    "label": [
+                      ""
+                    ],
+                    "beforeSpacing": [
+                      "0"
+                    ],
+                    "afterSpacing": [
+                      0
+                    ],
+                    "min": [
+                      ""
+                    ],
+                    "max": [
+                      ""
+                    ],
+                    "nbTicksPrimary": [
+                      5
+                    ],
+                    "fitToAxisOnFromTo": [
+                      []
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "series": [
+            {
+              "sections": {},
+              "groups": {
+                "series": [
+                  {
+                    "overflow": [
+                      []
+                    ],
+                    "stackVerticalSpacing": [
+                      0
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "variables": [
+            {
+              "sections": {},
+              "groups": {
+                "variables": [
+                  [
+                    {
+                      "variable": "",
+                      "axis": "0",
+                      "adaptTo": "none",
+                      "plotcolor": [
+                        1,
+                        1,
+                        255,
+                        1
+                      ],
+                      "strokewidth": "1",
+                      "strokestyle": "1",
+                      "plotcontinuous": "continuous",
+                      "peakpicking": [],
+                      "markers": [],
+                      "markerShape": "1",
+                      "markerSize": 2,
+                      "normalize": "none",
+                      "optimizeSlots": [],
+                      "tracking": []
+                    }
+                  ]
+                ]
+              }
+            }
+          ],
+          "misc": [
+            {
+              "sections": {},
+              "groups": {
+                "misc": [
+                  {
+                    "highlightOptions": [
+                      "{}"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "groups": {}
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 41,
+            "top": 16
+          },
+          "size": {
+            "width": 45,
+            "height": 48
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 73
+          },
+          "size": {
+            "width": 49,
+            "height": 31
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "roc": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "roc"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        }
+      },
+      "id": 271,
+      "vars_in": [
+        {
+          "rel": "chart",
+          "name": "APC-A"
+        },
+        {
+          "rel": "chart",
+          "name": "AQUA-A"
+        },
+        {
+          "rel": "chart",
+          "name": "Alexa Fluor 488-A"
+        },
+        {
+          "rel": "chart",
+          "name": "FSC-A"
+        },
+        {
+          "rel": "chart",
+          "name": "FSC-H"
+        },
+        {
+          "rel": "chart",
+          "name": "FSC-W"
+        },
+        {
+          "rel": "chart",
+          "name": "SSC-A"
+        },
+        {
+          "rel": "chart",
+          "name": "SSC-H"
+        },
+        {
+          "rel": "chart",
+          "name": "SSC-W"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              []
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/display/template-twig/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "selectable": [
+                []
+              ],
+              "template": [
+                "<div>\n    <table>\n        <tr>\n            <td>\n                Resolution:\n            </td>\n            <td>\n                <input type='number' name='each' style='width: 70px'>\n            </td>\n        </tr>\n    </table>\n</div>"
+              ],
+              "modifyInForm": [
+                [
+                  "yes"
+                ]
+              ],
+              "debouncing": [
+                0
+              ],
+              "formOptions": [
+                [
+                  "keepFormValueIfDataUndefined"
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 46,
+            "top": 16
+          },
+          "size": {
+            "width": 34,
+            "height": 3
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "roc": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "roc"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        }
+      },
+      "id": 272,
+      "vars_in": [
+        {
+          "rel": "form",
+          "name": "linePreferences"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 16
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "console.log(API.getData('cellGroups').resurrect())"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {}
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "roc": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "roc"
+        },
+        "preferences": {
+          "position": {
+            "left": 16,
+            "top": 59
+          },
+          "size": {
+            "width": 54,
+            "height": 25
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        }
+      },
+      "id": 273,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "let selectedAnalysis = API.getData('selectedAnalysis').resurrect();\nconst selectedSample = API.getData('selectedSample').resurrect();\n\nconst content = await fetch(selectedAnalysis.url,\n    {credentials:'include'})\n    .then(r => fetchStatus(r, 'string'));\n\nconst wspParser = parser.parseWSP;\nconst { data, summary } = wspParser(content);\n\nAPI.createData('data', data)\nAPI.createData('summary', summary);\n\nconst gates = summary\n    .filter((item) => item.sample.replace(/-/g, ' ').replace(/_/g, ' ') === selectedSample)[0]\n    .gates;\nAPI.createData('gates', gates);\n\nasync function fetchStatus(content, type) {\n    const stream = content.body.getReader();\n    const contentLength = content.headers.get('Content-Length');\n    let data = new Uint8Array(contentLength);\n    let chunkLength = 0;\n    while (chunkLength < contentLength) {\n        const {done, value} = await stream.read();\n        data.set(value, chunkLength);\n        chunkLength += value.length;\n        let status = chunkLength < contentLength? chunkLength: 0;\n        API.createData('statusProgress', {\n            currentStatus: status,\n            iterationsNumber: parseInt(contentLength)\n        });\n    }\n    let result;\n    const decoder = new TextDecoder(\"utf-8\");\n    switch (type) {\n        case 'string': \n            result = decoder.decode(data);\n            break\n        \n        case 'JSON':\n            result = JSON.parse(decoder.decode(data));\n            break\n        \n        case 'dataView':\n            result = new DataView(data.buffer)\n            break\n    }\n    return result\n}"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {
+                "lib": "https://dl.dropboxusercontent.com/s/e00ptzsh1otltqq/wsp-parser.js?dl=0",
+                "alias": "parser"
+              }
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 66
+          },
+          "size": {
+            "width": 63,
+            "height": 61
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 105
+          },
+          "size": {
+            "width": 49,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "roc": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "roc"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        }
+      },
+      "id": 274,
+      "vars_in": [
+        {
+          "rel": "inputValue",
+          "name": "selectedAnalysis"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/edition/slick_grid/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "slickCheck": [
+                [
+                  "enableCellNavigation",
+                  "rowNumbering",
+                  "forceFitColumns",
+                  "highlightScroll",
+                  "forgetLastActive",
+                  "editable"
+                ]
+              ],
+              "copyPaste": [
+                []
+              ],
+              "copyPasteOptions": [
+                [
+                  "newRows"
+                ]
+              ],
+              "autoColumns": [
+                []
+              ],
+              "toolbar": [
+                []
+              ],
+              "colorjpath": [
+                []
+              ],
+              "slick.defaultColumnWidth": [
+                null
+              ],
+              "slick.rowHeight": [
+                null
+              ],
+              "slick.headerRowHeight": [
+                30
+              ],
+              "slick.selectionModel": [
+                "row"
+              ],
+              "idProperty": [
+                ""
+              ],
+              "filterType": [
+                "pref"
+              ],
+              "filterRow": [
+                "// Documentation: https://github.com/NPellet/visualizer/blob/46b40ca86345f8fa313563bf9c6ecb80ba323101/src/modules/types/edition/slick_grid/view.js#L1695-L1735"
+              ],
+              "customJpaths": [
+                ""
+              ]
+            }
+          ],
+          "cols": [
+            [
+              {
+                "name": "Sample",
+                "jpath": [
+                  "name"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 187,
+                "hideColumn": []
+              },
+              {
+                "name": "Number of cells",
+                "jpath": [
+                  "nbCells"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 177,
+                "hideColumn": []
+              },
+              {
+                "name": "Statistics",
+                "jpath": [
+                  "statistic"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "toPrecision: 4",
+                "editorOptions": "",
+                "width": 111,
+                "hideColumn": []
+              }
+            ]
+          ],
+          "actionCols": [
+            [
+              {
+                "backgroundColor": [
+                  255,
+                  255,
+                  255,
+                  0
+                ],
+                "color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "position": "end",
+                "clickMode": "text"
+              }
+            ]
+          ],
+          "groupings": [
+            [
+              {
+                "getter": []
+              }
+            ]
+          ],
+          "actionOutButtons": [
+            [
+              {}
+            ]
+          ],
+          "data": [
+            {
+              "saveInView": [
+                []
+              ],
+              "varname": [
+                ""
+              ],
+              "data": [
+                "[]"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 87,
+            "top": 0
+          },
+          "size": {
+            "width": 49,
+            "height": 15
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "roc": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "roc"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        }
+      },
+      "id": 275,
+      "vars_in": [
+        {
+          "rel": "list",
+          "name": "gates"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onRowActive",
+          "rel": "row",
+          "jpath": [],
+          "name": "selectedNode"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "const labelsList = API.getData('labelsList').resurrect();\nconst selectedSample = API.getData('selectedSample').resurrect();\nconst selectedNode = API.getData('selectedNode').resurrect();\nconst data = API.getData('data').resurrect();\nconst sample = data.filter((item) => item.name.replace(/-/g, ' ').replace(/_/g, ' ') === selectedSample)[0];\nconst node = sample.nodes.filter((item) => item.name === selectedNode.name)[0]\n\nconst { dimensions, vertices } = node.gate;\n\nconst positions = [];\nfor (const vertex of vertices) {\n    positions.push({ x: vertex[0], y: vertex[1] });\n}\n\nlet annotations=[\n  {\n    \"type\": \"polygon\",\n    \"layer\": 0,\n    \"properties\": {\n      \"fillColor\": \"#000000\",\n      \"fillOpacity\": 0.02,\n      \"strokeWidth\": 2,\n      \"strokeColor\": \"#000000\",\n      \"position\": positions\n    }\n  }\n]\n\nAPI.createData('annotations', annotations);\nconst scatterPreferences = API.getData('scatterPreferences');\nscatterPreferences.xAxis = dimensions[0];\nscatterPreferences.yAxis = dimensions[1];\nscatterPreferences.triggerChange();\n\n"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {}
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 70,
+            "top": 65
+          },
+          "size": {
+            "width": 60,
+            "height": 62
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 50,
+            "top": 105
+          },
+          "size": {
+            "width": 60,
+            "height": 41
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "roc": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "roc"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        }
+      },
+      "id": 276,
+      "vars_in": [
+        {
+          "rel": "inputValue",
+          "name": "selectedNode"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 2
+    }
+  ],
+  "variables": [
+    {
+      "jpath": [
+        ""
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "path": "https://dl.dropboxusercontent.com/s/9vy0lg0wz2wsd1q/fcs.js?dl=0",
+      "alias": "FCS"
+    },
+    {
+      "path": "https://www.lactame.com/lib/ml/5.3.0/ml",
+      "alias": "ML"
+    },
+    {
+      "path": "../../lib/spectra-processor/2.5.1/spectra-processor.min",
+      "alias": "SpectraProcessor"
+    },
+    {
+      "path": "https://www.lactame.com/github/cheminfo-js/visualizer-helper/049fbb197431043d8b3950dbad6eebb2ff2793ea/",
+      "alias": "vh"
+    }
+  ],
+  "configuration": {
+    "title": "Flow Cytometry Standard"
+  },
+  "actionscripts": [
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          {
+            "name": [
+              null
+            ],
+            "script": [
+              null
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "init_script": [
+    {
+      "sections": {},
+      "groups": {
+        "general": [
+          {
+            "script": [
+              "const [\n    Renderer,\n    printerFactory,\n    printerHelper,\n    Toc,\n    elnPlugin,\n    Sample,\n    loadTwig,\n] = await API.require([\n    'vh/eln/acs/renderer',\n    'vh/eln/stock/printer/factory',\n    'vh/eln/stock/printer/helper',\n    'vh/eln/Toc',\n    'https://www.lactame.com/lib/eln-plugin/0.0.2/eln-plugin.js',\n    'vh/eln/Sample',\n    'vh/eln/templates/loadTwig',\n]);\n\nRenderer.add();\n\nprinterFactory(async function(printer) {\n    printerHelper.setup(printer, ['sample', 'location']);\n});\n\nconst SpectraProcessor = (await API.require('SpectraProcessor')).SpectraProcessor;\nAPI.cache('spectraProcessor', new SpectraProcessor({}));\n\nif (IframeBridge) {\n    IframeBridge.onMessage(onMessage);\n    IframeBridge.ready();\n    async function onMessage(data) {\n        if(data.type === 'tab.data') {\n            const sample = new Sample(data.message.couchDB, data.message.uuid, {\n                track:true,\n                onSync(synced) {\n                    console.log('received synced event', synced);\n                    API.createData('dataSynced', synced);\n                }\n            });\n            \n            sample.waitSampleLoaded().then((result) => {\n                let content = sample.sample.$content;\n                API.createData('content', content);\n                // API.createData('protocol', content.samplePreparation.protocol);\n            });\n            \n            API.cache('couchDB', data.message.couchDB);\n            API.cache('data', data.message);\n            await API.cache('sample', sample);\n            const roc = API.cache('roc');\n            roc.getGroupMembership().then(groups => API.cache('allGroups', groups));\n            roc.getUserInfo().then( (userInfo) => {\n                userInfo.username = userInfo.username || userInfo.userId || userInfo.email;\n                API.createData('userInfo', userInfo);              \n            });\n\n            var layer=window.localStorage.getItem('defaultSampleLayer') || 'molecule';\n            API.createData('currentLayer', layer);\n        }\n    }\n}\n\n// Load custom font\nrequire(['src/util/util'], function(Util) {\n    Util.loadCss('https://www.lactame.com/lib/cheminfo-font/0.7.2/style.css');\n})\n\nAPI.createData('scatterPreferences', {\n    xAxis: 'FSC-A',\n    yAxis: 'FSC-H',\n    density: true,\n    groupName: '',\n    displayChart: '',\n    normalization: {\n        numberOfPoints: 26000\n    }\n})\n\nAPI.createData('linePreferences', {\n    each: 1000,\n})\n\nAPI.createData('cellGroups',[]);\n"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "custom_filters": [
+    {
+      "sections": {
+        "modules": [
+          {
+            "sections": {},
+            "groups": {
+              "modules": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ],
+        "filtersLib": [
+          {
+            "sections": {},
+            "groups": {
+              "filters": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ],
+        "filters": [
+          {
+            "sections": {},
+            "groups": {
+              "filter": [
+                {
+                  "name": [
+                    null
+                  ],
+                  "script": [
+                    null
+                  ]
+                }
+              ],
+              "libs": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "groups": {}
+    }
+  ],
+  "actionfiles": [
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          [
+            {}
+          ]
+        ]
+      }
+    }
+  ]
+}

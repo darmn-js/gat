@@ -1,0 +1,3658 @@
+{
+  "version": "2.156.0",
+  "grid": {
+    "layers": {
+      "Default layer": {
+        "name": "Default layer"
+      },
+      "Admin": {
+        "name": "Admin"
+      }
+    },
+    "xWidth": 10,
+    "yHeight": 10
+  },
+  "modules": [
+    {
+      "url": "modules/types/client_interaction/code_editor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "mode": [
+                "html"
+              ],
+              "outputType": [
+                null
+              ],
+              "btnvalue": [
+                "Send script"
+              ],
+              "iseditable": [
+                [
+                  "editable"
+                ]
+              ],
+              "hasButton": [
+                []
+              ],
+              "variable": [
+                []
+              ],
+              "storeOnChange": [
+                [
+                  "store"
+                ]
+              ],
+              "debouncing": [
+                250
+              ],
+              "script": [
+                "<div id=\"sample-tiles\"></div>"
+              ]
+            }
+          ],
+          "ace": [
+            {
+              "useSoftTabs": [
+                [
+                  "yes"
+                ]
+              ],
+              "tabSize": [
+                4
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 43,
+            "top": 77
+          },
+          "size": {
+            "width": 58,
+            "height": 11
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 0,
+            "top": 75
+          },
+          "size": {
+            "width": 52,
+            "height": 11
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 697,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onEditorChange",
+          "rel": "data",
+          "jpath": [],
+          "name": "linksTemplate"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/edition/slick_grid/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "slickCheck": [
+                [
+                  "enableCellNavigation",
+                  "rowNumbering",
+                  "forceFitColumns",
+                  "highlightScroll",
+                  "editable",
+                  "enableAddRow"
+                ]
+              ],
+              "copyPaste": [
+                []
+              ],
+              "copyPasteOptions": [
+                [
+                  "newRows"
+                ]
+              ],
+              "autoColumns": [
+                [
+                  "reorder",
+                  "remove"
+                ]
+              ],
+              "toolbar": [
+                []
+              ],
+              "colorjpath": [
+                []
+              ],
+              "slick.defaultColumnWidth": [
+                null
+              ],
+              "slick.rowHeight": [
+                null
+              ],
+              "slick.headerRowHeight": [
+                30
+              ],
+              "slick.selectionModel": [
+                "row"
+              ],
+              "idProperty": [
+                ""
+              ],
+              "filterType": [
+                "pref"
+              ],
+              "filterRow": [
+                "// Documentation: https://github.com/NPellet/visualizer/blob/87ba3af17e07f6766c266385c41b177d5094150b/src/modules/types/edition/slick_grid/view.js#L1253-L1279"
+              ],
+              "customJpaths": [
+                "title,rights,rev,hide,data"
+              ]
+            }
+          ],
+          "cols": [
+            [
+              {
+                "name": "Date",
+                "jpath": [
+                  "date"
+                ],
+                "editor": "string",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "dateFormat:YYYY-MM-DD",
+                "editorOptions": "",
+                "width": 96,
+                "hideColumn": []
+              },
+              {
+                "name": "Id",
+                "jpath": [
+                  "id"
+                ],
+                "editor": "string",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 96,
+                "hideColumn": []
+              },
+              {
+                "name": "Kind",
+                "jpath": [
+                  "kind"
+                ],
+                "editor": "select",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "sample;optionalSample;rawIframe;sampleRawIframe;newTab",
+                "width": 96,
+                "hideColumn": []
+              },
+              {
+                "name": "Description",
+                "jpath": [
+                  "description"
+                ],
+                "editor": "string",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 96,
+                "hideColumn": []
+              },
+              {
+                "name": "viewURL",
+                "jpath": [
+                  "viewURL"
+                ],
+                "editor": "string",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 224,
+                "hideColumn": []
+              },
+              {
+                "name": "rev",
+                "jpath": [
+                  "rev"
+                ],
+                "editor": "string",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 71,
+                "hideColumn": []
+              },
+              {
+                "name": "Icon",
+                "jpath": [
+                  "icon"
+                ],
+                "editor": "string",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 30,
+                "hideColumn": []
+              },
+              {
+                "name": "Title",
+                "jpath": [
+                  "title"
+                ],
+                "editor": "string",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 30,
+                "hideColumn": []
+              },
+              {
+                "name": "BG",
+                "jpath": [
+                  "bgcolor"
+                ],
+                "editor": "color",
+                "forceType": "color",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 33,
+                "hideColumn": []
+              },
+              {
+                "name": "Rights",
+                "jpath": [
+                  "rights"
+                ],
+                "editor": "string",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 209,
+                "hideColumn": []
+              },
+              {
+                "name": "Hide",
+                "jpath": [
+                  "hide"
+                ],
+                "editor": "boolean",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 68,
+                "hideColumn": []
+              },
+              {
+                "name": "Empty",
+                "jpath": [
+                  "empty"
+                ],
+                "editor": "boolean",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 97,
+                "hideColumn": []
+              },
+              {
+                "name": "Data",
+                "jpath": [
+                  "data"
+                ],
+                "editor": "longtext",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 69,
+                "hideColumn": []
+              }
+            ]
+          ],
+          "actionCols": [
+            [
+              {
+                "name": "updateView",
+                "tooltip": "Update view",
+                "icon": "fa-sync",
+                "backgroundColor": [
+                  255,
+                  255,
+                  255,
+                  0
+                ],
+                "color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "action": "updateView",
+                "position": "end",
+                "clickMode": "text",
+                "isAction": true
+              },
+              {
+                "name": "insertAfter",
+                "tooltip": "Insert view after",
+                "icon": "fa-plus",
+                "backgroundColor": [
+                  255,
+                  255,
+                  255,
+                  0
+                ],
+                "color": [
+                  74,
+                  134,
+                  232,
+                  1
+                ],
+                "action": "insertAfter",
+                "position": "end",
+                "clickMode": "text",
+                "isAction": true
+              }
+            ]
+          ],
+          "groupings": [
+            [
+              {
+                "getter": []
+              }
+            ]
+          ],
+          "actionOutButtons": [
+            [
+              {}
+            ]
+          ],
+          "data": [
+            {
+              "saveInView": [
+                [
+                  "yes"
+                ]
+              ],
+              "varname": [
+                "tiles"
+              ],
+              "data": [
+                "[{\"id\":\"Samples\",\"kind\":\"nbSample\",\"description\":\"Number of sample\",\"data\":\"\",\"text\":\"\",\"bgcolor\":\"rgb(255, 242, 204)\",\"fontcolor\":\"black\",\"date\":\"2016-05-06\",\"empty\":false,\"line\":0,\"title\":\"cache:nbSamples\"},{\"id\":\"ELN\",\"viewURL\":\"a6fb774a50448cc3edd52dd6dfd275ea\",\"kind\":\"optionalSample\",\"description\":\"Notebook\",\"icon\":\"ci-icon-glassware-round-flask\",\"bgcolor\":\"rgb(255, 242, 204)\",\"line\":0,\"date\":\"2017-04-30\",\"fontcolor\":\"rgb(0, 0, 0)\",\"hide\":false,\"rev\":\"242-696788f63c038e77d85d771808785955\"},{\"id\":\"Structure search\",\"kind\":\"optionalSample\",\"description\":\"Structure search\",\"viewURL\":\"aaa5f97c7cde94741de2938b106bb0d4\",\"data\":\"\",\"text\":\"\",\"icon\":\"ci-icon-structure-search\",\"bgcolor\":\"rgb(255, 242, 204)\",\"fontcolor\":\"black\",\"date\":\"2016-09-20\",\"line\":0,\"rev\":\"99-8f2ad2b7c265ad232c79207a0d592bff\"},{\"id\":\"OS\",\"kind\":\"sample\",\"requires\":\"sample\",\"description\":\"Open/edit sample\",\"viewURL\":\"15c9a2dcd55c963fdedf2c18a1471b03\",\"data\":\"\",\"text\":\"\",\"icon\":\"fa-edit\",\"bgcolor\":\"rgb(255, 242, 204)\",\"fontcolor\":\"black\",\"date\":\"2016-05-06\",\"line\":0,\"rev\":\"686-75888c894bcea81fbde23985c00a8031\"},{\"date\":\"2018-05-15\",\"id\":\"Lipinski\",\"kind\":\"optionalSample\",\"viewURL\":\"5ba3ccc2681bc1ff7f370e78efd335c3\",\"description\":\"Lipinski\",\"rights\":\"\",\"bgcolor\":\"rgb(255, 242, 204)\",\"line\":0,\"icon\":\"ci-icon-chart-multi2\",\"rev\":\"31-626fe6f9422025eadf8540616b3038d3\"},{\"id\":\"\",\"line\":1,\"empty\":true},{\"id\":\"PP\",\"kind\":\"sample\",\"requires\":\"sample\",\"description\":\"1D NMR peak picking\",\"viewURL\":\"4c986ed7d921b11fbe6f20240f0df3a8\",\"data\":\"\",\"text\":\"\",\"icon\":\"ci-icon-nmr-peak-picking\",\"bgcolor\":\"rgb(182, 215, 168)\",\"fontcolor\":\"black\",\"date\":\"2016-05-06\",\"line\":1,\"rev\":\"960-511e255ad2737a29d1db714a84595388\"},{\"id\":\"Overlay NMR\",\"kind\":\"optionalSample\",\"description\":\"Overlay NMR\",\"viewURL\":\"f162299d0efd3f7c21b5542c85003689\",\"data\":\"\",\"text\":\"\",\"icon\":\"ci-icon-nmr-overlay\",\"bgcolor\":\"rgb(182, 215, 168)\",\"fontcolor\":\"black\",\"date\":\"2016-05-06\",\"line\":1,\"rev\":\"293-573337a573bc7cf13c05e4be25a6c4a1\"},{\"id\":\"1H\",\"kind\":\"sample\",\"requires\":\"sample\",\"description\":\"NMR predict 1H\",\"viewURL\":\"eea0ba081ea2cc99da5c1aed2f29a0a8\",\"data\":\"\",\"text\":\"\",\"icon\":\"ci-icon-nmr-1h\",\"bgcolor\":\"rgb(182, 215, 168)\",\"fontcolor\":\"black\",\"date\":\"2016-07-06\",\"line\":1,\"rev\":\"401-12c05c54750188fd8e9184d623c2b3e4\"},{\"id\":\"13C\",\"kind\":\"sample\",\"requires\":\"sample\",\"description\":\"NMR predict 13C\",\"viewURL\":\"b50564ac9d207212f8e5ae8167a45f3c\",\"icon\":\"ci-icon-nmr-13c\",\"bgcolor\":\"rgb(182, 215, 168)\",\"fontcolor\":\"black\",\"date\":\"2016-08-06\",\"line\":1,\"rev\":\"81-ba083d05ac2bc2ebf70f7e9f77d76850\"},{\"id\":\"COSY\",\"kind\":\"sample\",\"requires\":\"sample\",\"description\":\"NMR predict COSY\",\"viewURL\":\"b50564ac9d207212f8e5ae8167a607ed\",\"icon\":\"ci-icon-nmr-1h1h\",\"bgcolor\":\"rgb(182, 215, 168)\",\"fontcolor\":\"black\",\"date\":\"2016-08-06\",\"line\":1,\"rev\":\"76-cf20e4bff30db8566bb2e725b6cee004\"},{\"id\":\"HMBC\",\"kind\":\"sample\",\"requires\":\"sample\",\"description\":\"NMR predict HMBC\",\"viewURL\":\"b50564ac9d207212f8e5ae8167a68433\",\"icon\":\"ci-icon-nmr-1h13c\",\"bgcolor\":\"rgb(182, 215, 168)\",\"fontcolor\":\"black\",\"date\":\"2016-08-06\",\"line\":1,\"rev\":\"64-de2353757f4958871eb3e58967883515\"},{\"viewURL\":\"901378074eeb9b75396aadff96b3b83a\",\"date\":\"2017-06-20\",\"id\":\"Search\",\"kind\":\"optionalSample\",\"description\":\"Search by δ\",\"icon\":\"ci-icon-nmr-search\",\"bgcolor\":\"rgb(182, 215, 168)\",\"line\":1,\"rights\":\"admin@cheminfo.org\",\"rev\":\"593-8c5464aa86c325e31327a2380e7dbe0c\"},{\"empty\":true},{\"id\":\"F\",\"kind\":\"sample\",\"requires\":\"sample\",\"description\":\"Mass fragmentation\",\"viewURL\":\"0e35f561fff36fef6c9e7341a9eec858\",\"data\":\"\",\"text\":\"\",\"icon\":\"fa-bomb\",\"bgcolor\":\"rgb(244, 204, 204)\",\"fontcolor\":\"black\",\"date\":\"2016-07-06\",\"line\":2,\"hide\":true,\"rev\":\"211-818d3374dd0594150f80ef5797f0015c\"},{\"empty\":false,\"viewURL\":\"daf2eda5bf803818ce48655dd963ca21\",\"id\":\"analyseMS\",\"date\":\"2018-03-20\",\"kind\":\"sample\",\"description\":\"Analyse HR mass\",\"bgcolor\":\"rgb(244, 204, 204)\",\"rights\":\"\",\"line\":2,\"icon\":\"ci-icon-mass-monoisotopic\",\"rev\":\"176-abc05267d8abf6e59584f29cc5ca50f2\"},{\"viewURL\":\"2294a250c8c1da87ca6753a6eb93c166\",\"rights\":\"\",\"date\":\"2018-03-20\",\"id\":\"EM\",\"kind\":\"sample\",\"description\":\"Monoisotopic mass\",\"icon\":\"ci-icon-mass-monoisotopic\",\"bgcolor\":\"rgb(244, 204, 204)\",\"line\":2,\"rev\":\"159-70105a90608cf5c48e0d5a0f4d047593\"},{\"viewURL\":\"4cf732cabaf4941a66d2f19cbc5875f2\",\"kind\":\"optionalSample\",\"id\":\"overlayMS\",\"date\":\"2017-09-01\",\"description\":\"Overlay Mass\",\"rights\":\"\",\"bgcolor\":\"rgb(244, 204, 204)\",\"line\":2,\"icon\":\"ci-icon-mass-overlay\",\"rev\":\"54-87c23a1e130eb1aa18476165c0f95ef3\"},{\"viewURL\":\"b60d4cd22af351b3996cb3321f169a0e\",\"bgcolor\":\"rgb(244, 204, 204)\",\"id\":\"Cont\",\"kind\":\"sample\",\"description\":\"Mass contaminants\",\"fontcolor\":\"rgb(0, 0, 0)\",\"date\":\"2017-05-15\",\"line\":2,\"icon\":\"ci-icon-mass-impurities\",\"rev\":\"278-3054bb50798ec77f14d8264d43bb6835\"},{\"viewURL\":\"8fcf268d9a86be15206e3bc1fa1dca49\",\"id\":\"peptideMS\",\"kind\":\"sample\",\"description\":\"Peptide analysis\",\"bgcolor\":\"rgb(244, 204, 204)\",\"fontcolor\":\"rgb(0, 0, 0)\",\"date\":\"2017-05-15\",\"line\":2,\"icon\":\"ci-icon-misc-peptide\",\"rev\":\"205-12c66ae1b8119e918da5b5dcaf421000\"},{\"empty\":true,\"hide\":true},{\"id\":\"3D\",\"kind\":\"sample\",\"requires\":\"sample\",\"description\":\"3D model\",\"viewURL\":\"0e019bb4d797395213d22aca403d2c93\",\"icon\":\"ci-icon-structure-3d-model\",\"bgcolor\":\"rgb(207, 226, 243)\",\"fontcolor\":\"black\",\"date\":\"2016-08-06\",\"line\":3,\"rev\":\"87-63ea576d1842d4dc482c2ecf9511d6e0\"},{\"id\":\"Conf\",\"kind\":\"sample\",\"requires\":\"sample\",\"description\":\"Conformations\",\"viewURL\":\"0e019bb4d797395213d22aca4043260e\",\"icon\":\"ci-icon-structure-conformers\",\"bgcolor\":\"rgb(207, 226, 243)\",\"fontcolor\":\"black\",\"date\":\"2016-08-06\",\"line\":3,\"rights\":\"\",\"rev\":\"51-d0e0526dfce7ba37a0e569fdf23edc67\"},{\"id\":\"Dia\",\"kind\":\"sample\",\"requires\":\"sample\",\"description\":\"Diastereotopic\",\"viewURL\":\"b50564ac9d207212f8e5ae816795fb39\",\"icon\":\"ci-icon-structure-diastereotopic\",\"bgcolor\":\"rgb(207, 226, 243)\",\"fontcolor\":\"black\",\"date\":\"2016-08-06\",\"line\":3,\"rev\":\"48-de1f5d2b5472aca96fe9ea405e47d6e4\"},{\"kind\":\"optionalSample\",\"viewURL\":\"d9498d0a2ea400ea71efec8840a1273b\",\"description\":\"Property explorer\",\"bgcolor\":\"rgb(207, 226, 243)\",\"id\":\"Info\",\"date\":\"2018-06-30\",\"icon\":\"fa-calculator\",\"line\":3,\"rev\":\"53-555307b7ae8cf156019ca09def9d3195\"},{\"date\":\"2017-06-10\",\"id\":\"Xray\",\"kind\":\"sample\",\"viewURL\":\"07223c3391c6b0cde342518d240d3426\",\"description\":\"Xray structure\",\"icon\":\"ci-icon-misc-cristal2\",\"bgcolor\":\"rgb(207, 226, 243)\",\"line\":3,\"rev\":\"17-5ba9a432c91c8bda09cacb06bd882361\"},{\"empty\":true},{\"rights\":\"\",\"viewURL\":\"0471a3b7a296450267555b7982ae29ad\",\"id\":\"DNA Upload\",\"description\":\"View / Upload DNA seq\",\"date\":\"2018-06-15\",\"bgcolor\":\"rgb(234, 209, 220)\",\"fontcolor\":\"rgb(0, 0, 0)\",\"line\":4,\"icon\":\"ci-icon-bio-upload-dna\",\"kind\":\"sample\",\"rev\":\"51-0ad1b2744da24aff0adf34b21abf34f9\"},{\"date\":\"2018-06-15\",\"id\":\"dnaFeatures\",\"kind\":\"optionalSample\",\"description\":\"Search features\",\"viewURL\":\"0f7ebf89799296e234a73591bafb6e5e\",\"icon\":\"ci-icon-bio-search-dna\",\"bgcolor\":\"rgb(234, 209, 220)\",\"rights\":\"\",\"fontcolor\":\"rgb(0, 0, 0)\",\"line\":4,\"rev\":\"40-24922969325d812eb88dc872694eeb73\"},{\"date\":\"2018-06-15\",\"id\":\"dnaSimilar\",\"kind\":\"optionalSample\",\"description\":\"Search similar\",\"viewURL\":\"b4af40ab0f57303185700745410032db\",\"icon\":\"ci-icon-bio-search-dna\",\"bgcolor\":\"rgb(234, 209, 220)\",\"rights\":\"\",\"line\":4,\"rev\":\"43-ab58bffc410b30d9b2f398501c6774b4\"},{\"id\":\"plasmidSearch\",\"date\":\"2018-06-15\",\"kind\":\"optionalSample\",\"description\":\"Search plasmids\",\"viewURL\":\"9ffc86418ff71dcef36a5def49d944e8\",\"icon\":\"ci-icon-bio-search-dna\",\"bgcolor\":\"rgb(234, 209, 220)\",\"rights\":\"\",\"line\":4,\"rev\":\"18-b2acbc083d0b773fa9f693daee0a55db\"},{\"date\":\"2018-06-15\",\"id\":\"Isoelectric point\",\"kind\":\"optionalSample\",\"description\":\"IEP\",\"viewURL\":\"8a6a09eabcd80af204583be5814e2d4a\",\"bgcolor\":\"rgb(234, 209, 220)\",\"rights\":\"\",\"line\":4,\"icon\":\"ci-icon-misc-peptide\",\"rev\":\"33-024ad0de0c3d0c795e4a2db798818abc\"},{\"icon\":\"ci-icon-bio-protein\",\"bgcolor\":\"rgb(234, 209, 220)\",\"viewURL\":\"46548ab75e0ca6e1e95bbc30663bee0a\",\"id\":\"Prot\",\"kind\":\"optionalSample\",\"date\":\"2018-06-30\",\"description\":\"PDB visualisation\",\"line\":4,\"rev\":\"20-8f3b398b6424f7764d8e2b97e3958f0a\"},{\"empty\":true},{\"id\":\"request\",\"kind\":\"sample\",\"icon\":\"ci-icon-mass-request\",\"bgcolor\":\"rgb(217, 210, 233)\",\"date\":\"2018-06-30\",\"description\":\"Analytical request\",\"viewURL\":\"b1af0ae8843bc4b72b5501c717197b5f\",\"rights\":\"admin@cheminfo.org\",\"line\":5,\"rev\":\"44-4cdf4d66fc8e8212dcf4d249abc16bf6\"},{\"description\":\"Sample manager\",\"viewURL\":\"83e55c39f2601bc912a45f049e7c9645\",\"rights\":\"admin@cheminfo.org\",\"icon\":\"fa-edit\",\"kind\":\"optionalSample\",\"id\":\"sampleManager\",\"line\":5,\"bgcolor\":\"rgb(217, 210, 233)\",\"fontcolor\":\"rgb(0, 0, 0)\",\"rev\":\"73-a33db88e7f390a47fb10e4eb2f8aaad5\"},{\"viewURL\":\"105a8192b3046702221775d1c09485d2\",\"description\":\"Format manager\",\"rights\":\"admin@cheminfo.org\",\"icon\":\"fa-edit\",\"kind\":\"optionalSample\",\"id\":\"formatManager\",\"line\":5,\"bgcolor\":\"rgb(217, 210, 233)\",\"fontcolor\":\"rgb(0, 0, 0)\",\"date\":\"2017-05-01\",\"rev\":\"49-c0f223af4883333e2b99e725bf6edcca\"},{\"id\":\"Add Stock\",\"kind\":\"optionalSample\",\"description\":\"Add Stock\",\"viewURL\":\"435e7dd9a4a474308d681831307220a9\",\"icon\":\"fa-plus\",\"bgcolor\":\"rgb(217, 210, 233)\",\"fontcolor\":\"rgb(0, 0, 0)\",\"date\":\"2017-06-16\",\"rights\":\"\",\"line\":5,\"rev\":\"401-754ee82a49d19c9bd8479a502f161a5a\"},{\"date\":\"2017-06-16\",\"id\":\"Search Stock\",\"kind\":\"optionalSample\",\"description\":\"Search stock\",\"viewURL\":\"eeb03ca6c7a82d043456704a340e6d04\",\"rights\":\"\",\"bgcolor\":\"rgb(217, 210, 233)\",\"fontcolor\":\"rgb(0, 0, 0)\",\"icon\":\"ci-icon-structure-search\",\"line\":5,\"rev\":\"267-8e8bea6175521de7575955eb10d29c57\"},{\"date\":\"2017-06-01\",\"id\":\"Inventory\",\"kind\":\"optionalSample\",\"description\":\"Inventory\",\"viewURL\":\"eeb03ca6c7a82d043456704a34972f4d\",\"icon\":\"fa-book\",\"bgcolor\":\"rgb(217, 210, 233)\",\"fontcolor\":\"rgb(0, 0, 0)\",\"line\":5,\"rev\":\"62-a009de4de51e8d675bf221486d545851\"},{\"date\":\"2017-07-10\",\"id\":\"printAdmin\",\"kind\":\"optionalSample\",\"description\":\"Printer administration\",\"viewURL\":\"a2d22457b39108ecdbaa2d4556395053\",\"icon\":\"fa-print\",\"bgcolor\":\"rgb(217, 210, 233)\",\"fontcolor\":\"rgb(0, 0, 0)\",\"rights\":\"admin@cheminfo.org\",\"line\":5,\"rev\":\"103-1302804aca69f7906e01ba9d73685b20\"},{\"date\":\"2017-07-14\",\"id\":\"reprint\",\"kind\":\"optionalSample\",\"description\":\"Reprint\",\"viewURL\":\"26d3869ff5b6b50a9af9dc2f4e8b438b\",\"icon\":\"fa-print\",\"bgcolor\":\"rgb(217, 210, 233)\",\"line\":5,\"rev\":\"23-0fdfb219e510906475786b48d47972fd\"},{\"date\":\"2018-08-09\",\"id\":\"MS Protein Request\",\"kind\":\"sample\",\"description\":\"Mass Request\",\"icon\":\"ci-icon-mass-request\",\"viewURL\":\"private/2cb2cc4665d60d4b52eee058a6d103a5\",\"rights\":\"admin@cheminfo.org,tstather@mpimf-heidelberg.mpg.de,sfabritz@mpimf-heidelberg.mpg.de\",\"bgcolor\":\"rgb(217, 210, 233)\",\"line\":5},{\"date\":\"2018-08-16\",\"id\":\"MS Molecule Request\",\"kind\":\"sample\",\"description\":\"Mass Request\",\"viewURL\":\"private/62698b2c5930ad7e317b9e318496b3e4\",\"icon\":\"ci-icon-mass-request\",\"bgcolor\":\"rgb(217, 210, 233)\",\"rights\":\"admin@cheminfo.org,tstather@mpimf-heidelberg.mpg.de,sfabritz@mpimf-heidelberg.mpg.de\",\"line\":5},{\"empty\":true},{\"date\":\"2019-01-18\",\"id\":\"SOP\",\"description\":\"Standard Op Procedures\",\"bgcolor\":\"rgb(255, 242, 204)\",\"rights\":\"admin@cheminfo.org,jhiblot@mpimf-heidelberg.mpg.de,bkoch@mpimf-heidelberg.mpg.de\",\"viewURL\":\"/next/mpi/sop/\",\"line\":6,\"kind\":\"newTab\"}]"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 698,
+      "vars_in": [
+        {
+          "rel": "list",
+          "name": "tiles"
+        }
+      ],
+      "actions_in": [
+        {
+          "rel": "prependRow",
+          "name": "prependTile"
+        },
+        {
+          "rel": "insertRow",
+          "name": "insertTile"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "vars_out": [
+        {
+          "event": "onRowsSelect",
+          "rel": "rows",
+          "jpath": [],
+          "name": "selectedButtons"
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "Add view",
+              "icon": "fa-plus-circle",
+              "action": "addView",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 4
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                [
+                  "yes"
+                ]
+              ],
+              "asyncAwait": [
+                []
+              ],
+              "script": [
+                "var tilesData=API.getData('gatTiles');\nvar couchDB = API.cache('couchDB');\nvar printer = API.cache('printerConfig');\nvar domain = API.cache('domain');\nvar couchPublicUrl = 'https://gat.mylims.org/';\nvar couchPublicDatabase = '/roc/db/visualizer/entry/';\nlet sampleClicked;\n\nif (this.variable) {\n    switch(this.variable) {\n        case 'sampleClicked': {\n            sampleClicked = API.getData('sampleClicked')\n            break;\n        }\n        case 'sampleClicked2': {\n            sampleClicked = API.getData('sampleClicked2')\n            break;\n        }\n    }\n}\n\nlet sampleKind;\nif (sampleClicked) {\n    sampleKind = DataObject.resurrect(sampleClicked.value.metadata.kind);\n}\nif(tilesData) {\n    tilesData = tilesData.resurrect().map(t => {\n        return t.empty ? {} : t;\n    })\n    tiles('sample-tiles', {\n        tiles: tilesData,\n        shouldRender: tile => {\n            if(tile.hide) return false;\n            let user = API.cache('user');\n            if(user) user = user.username;\n            return (checkRights(user, tile.rights, true));\n        },\n        ribbon: tile => {\n            if(tile.rights) {\n                return 'LIMITED';\n            } else if (tile.date) {\n                const d = new Date(tile.date);\n                if(new Date() - d < 1296000000) {\n                    return 'NEW';\n                }\n            }\n            return '';\n        },\n        isActive: tile => {\n            const sample = API.getData('sampleClicked');\n            if (tile.kind === 'sample'){\n                switch (sampleKind) {\n                    case 'sample':\n                        if (sample) {\n                            return true;\n                        } else {\n                            return false;\n                        }\n                        break\n                    \n                    case 'extract':\n                        let extract = tile.id === 'Extracts' || tile.id === 'gclc MS' || tile.id === 'Fractions' ? true : false;\n                        if (sample && extract) {\n                            return true;\n                        } else {\n                            return false;\n                        }\n                        break\n    \n                    case 'fraction':\n                        let fraction = tile.id === 'Fractions' || tile.id === 'gclc MS' ? true : false;\n                        if (sample && fraction) {\n                            return true;\n                        } else {\n                            return false;\n                        }\n                        break\n                }\n            } else {\n                return true\n            }\n        },\n        isLink: tile => true,\n        icon: tile => tile.icon,\n        title: tile => tile.icon ? '' : checkCache(tile.title),\n        backgroundColor: tile => String(tile.bgcolor),\n        color: tile => tile.fontcolor || 'black',\n        header: tile => tile.description,\n        footer: tile => tile.id,\n        onTileClick: (event, tile) => {\n            if(event.shiftKey && tile.viewURL) {\n                return showCode(tile);\n            }\n            handleTileClick(tile);\n        },\n        isNewTabLink: (tile) => tile.kind === 'newTab',\n        href: (tile) => window.location.origin + tile.viewURL\n    });\n}\n\nasync function showCode(tile) {\n    const copiedTile = Object.assign({}, tile);\n    delete copiedTile.line;\n    \n    const res = await superagent.get(couchPublicUrl + '/' + couchPublicDatabase + '/' + tile.viewURL)\n    .set('Accept', 'application/json');\n    if(res.status === 200) {\n        copiedTile.rev = res.body._rev;\n    } else {\n        throw new Error('This view might not be public (' + res.status + ')');\n    }\n    \n    const roc = new Roc({\n        url: 'https://gat.mylims.org/',\n        database: 'visualizer'\n    });\n    \n    let title = '';\n    try {\n        const view = await roc.get(tile.viewURL);\n        if(res.body._rev === view._rev) {\n            title = 'Private and public revs match';\n        } else {\n            title = `Private: rev ${revNumber(view._rev)}, Pubilc: rev ${revNumber(res.body._rev)}`;\n        }\n    } catch(e) {\n        title = 'not able to get private revision of the view';\n    }\n    \n    try {\n        await UI.showCode({\n            mode: 'json',\n            content: JSON.stringify(copiedTile, null, '\\t'),\n            title: title\n        });    \n    } catch(e) {\n        UI.showNotification(e.message, 'error');\n    }\n}\n\nfunction handleTileClick(tile) {\n    var sample = API.getData('sampleClicked');\n    API.doAction('handleTileClick', {\n        sample: {\n            uuid: sample && sample.id,\n            reference: sample && sample.key.slice(1).join(' ')\n        },\n        tile\n    })\n}\n\nfunction checkCache(val) {\n    if(val) {\n        const parts = val.split(':');\n        if(parts[0] === 'cache') {\n            const jpath = parts[1].split('.');\n            const name = jpath.splice(0, 1);\n            if(jpath.length === 0) return API.cache(name[0]);\n            return DataObject.resurrect(DataObject.check(Object.assign({}, API.cache(name[0]))).getChildSync(jpath));\n        } else {\n            return val;\n        }\n    }\n}\n\nfunction revNumber(rev) {\n    const m = /^(\\d+)/.exec(rev);\n    return m && m[1];\n}\n"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {
+                "lib": "src/util/ui",
+                "alias": "UI"
+              },
+              {
+                "lib": "superagent",
+                "alias": "superagent"
+              },
+              {
+                "lib": "vh/util/tiles",
+                "alias": "tiles"
+              },
+              {
+                "lib": "vh/util/checkRights",
+                "alias": "checkRights"
+              },
+              {
+                "lib": "vh/rest-on-couch/Roc",
+                "alias": "Roc"
+              }
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 43,
+            "top": 0
+          },
+          "size": {
+            "width": 58,
+            "height": 76
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Converting the hyperlink template to hyperlinks and create functions",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 52,
+            "height": 49
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Converting the hyperlink template to hyperlinks and create functions",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 699,
+      "vars_in": [
+        {
+          "rel": "inputValue",
+          "name": "sampleClicked"
+        },
+        {
+          "rel": "inputValue",
+          "name": "sampleClicked2"
+        }
+      ],
+      "actions_in": [
+        {
+          "rel": "execute",
+          "name": "renderTiles"
+        },
+        {
+          "rel": "execute",
+          "name": "refreshDB"
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "Converting the hyperlink template to hyperlinks and create functions",
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/edition/slick_grid/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "slickCheck": [
+                [
+                  "enableCellNavigation",
+                  "rowNumbering",
+                  "forceFitColumns",
+                  "highlightScroll",
+                  "editable",
+                  "enableAddRow"
+                ]
+              ],
+              "copyPaste": [
+                []
+              ],
+              "copyPasteOptions": [
+                [
+                  "newRows"
+                ]
+              ],
+              "autoColumns": [
+                [
+                  "remove",
+                  "reorder"
+                ]
+              ],
+              "toolbar": [
+                []
+              ],
+              "colorjpath": [
+                []
+              ],
+              "slick.defaultColumnWidth": [
+                null
+              ],
+              "slick.rowHeight": [
+                null
+              ],
+              "slick.headerRowHeight": [
+                30
+              ],
+              "slick.selectionModel": [
+                "row"
+              ],
+              "idProperty": [
+                ""
+              ],
+              "filterType": [
+                "pref"
+              ],
+              "filterRow": [
+                "// Documentation: https://github.com/NPellet/visualizer/blob/46b40ca86345f8fa313563bf9c6ecb80ba323101/src/modules/types/edition/slick_grid/view.js#L1695-L1735"
+              ],
+              "customJpaths": [
+                ""
+              ]
+            }
+          ],
+          "cols": [
+            [
+              {
+                "name": "Date",
+                "jpath": [
+                  "date"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "Id",
+                "jpath": [
+                  "id"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "Kind",
+                "jpath": [
+                  "kind"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "Description",
+                "jpath": [
+                  "description"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "viewURL",
+                "jpath": [],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "rev",
+                "jpath": [],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "Icon",
+                "jpath": [],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "Title",
+                "jpath": [
+                  "title"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "BG",
+                "jpath": [
+                  "bgcolor"
+                ],
+                "editor": "none",
+                "forceType": "color",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "rights",
+                "jpath": [],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "jpath": [],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "Empty",
+                "jpath": [
+                  "empty"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "Data",
+                "jpath": [
+                  "data"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              }
+            ]
+          ],
+          "actionCols": [
+            [
+              {
+                "name": "updateView",
+                "tooltip": "Update view",
+                "icon": "fa-sync",
+                "backgroundColor": [
+                  159,
+                  197,
+                  232,
+                  0
+                ],
+                "color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "action": "updateView",
+                "position": "end",
+                "clickMode": "text",
+                "isAction": true
+              },
+              {
+                "name": "insertAfter",
+                "tooltip": "insert view after",
+                "icon": "fa-plus",
+                "backgroundColor": [
+                  255,
+                  255,
+                  255,
+                  0
+                ],
+                "color": [
+                  99,
+                  143,
+                  228,
+                  1
+                ],
+                "action": "insertAfter",
+                "position": "end",
+                "clickMode": "text",
+                "isAction": true
+              }
+            ]
+          ],
+          "groupings": [
+            [
+              {
+                "getter": []
+              }
+            ]
+          ],
+          "actionOutButtons": [
+            [
+              {}
+            ]
+          ],
+          "data": [
+            {
+              "saveInView": [
+                [
+                  "yes"
+                ]
+              ],
+              "varname": [
+                ""
+              ],
+              "data": [
+                "[{\"id\":\"Samples\",\"kind\":\"nbSample\",\"description\":\"Number of sample\",\"data\":\"\",\"text\":\"\",\"bgcolor\":\"rgb(255, 242, 204)\",\"fontcolor\":\"black\",\"date\":\"2016-05-06\",\"empty\":false,\"line\":0,\"title\":\"cache:nbSamples\"},{\"id\":\"ELN\",\"viewURL\":\"a6fb774a50448cc3edd52dd6dfd275ea\",\"kind\":\"optionalSample\",\"description\":\"Notebook\",\"icon\":\"ci-icon-glassware-round-flask\",\"bgcolor\":\"rgb(255, 242, 204)\",\"line\":0,\"date\":\"2017-04-30\",\"fontcolor\":\"rgb(0, 0, 0)\",\"hide\":false,\"rev\":\"242-696788f63c038e77d85d771808785955\"},{\"id\":\"Structure search\",\"kind\":\"optionalSample\",\"description\":\"Structure search\",\"viewURL\":\"aaa5f97c7cde94741de2938b106bb0d4\",\"data\":\"\",\"text\":\"\",\"icon\":\"ci-icon-structure-search\",\"bgcolor\":\"rgb(255, 242, 204)\",\"fontcolor\":\"black\",\"date\":\"2016-09-20\",\"line\":0,\"rev\":\"99-8f2ad2b7c265ad232c79207a0d592bff\"},{\"id\":\"OS\",\"kind\":\"sample\",\"requires\":\"sample\",\"description\":\"Open/edit sample\",\"viewURL\":\"15c9a2dcd55c963fdedf2c18a1471b03\",\"data\":\"\",\"text\":\"\",\"icon\":\"fa-edit\",\"bgcolor\":\"rgb(255, 242, 204)\",\"fontcolor\":\"black\",\"date\":\"2016-05-06\",\"line\":0,\"rev\":\"686-75888c894bcea81fbde23985c00a8031\"},{\"date\":\"2018-05-15\",\"id\":\"Lipinski\",\"kind\":\"optionalSample\",\"viewURL\":\"5ba3ccc2681bc1ff7f370e78efd335c3\",\"description\":\"Lipinski\",\"rights\":\"\",\"bgcolor\":\"rgb(255, 242, 204)\",\"line\":0,\"icon\":\"ci-icon-chart-multi2\",\"rev\":\"31-626fe6f9422025eadf8540616b3038d3\"},{\"id\":\"\",\"line\":1,\"empty\":true},{\"id\":\"PP\",\"kind\":\"sample\",\"requires\":\"sample\",\"description\":\"1D NMR peak picking\",\"viewURL\":\"4c986ed7d921b11fbe6f20240f0df3a8\",\"data\":\"\",\"text\":\"\",\"icon\":\"ci-icon-nmr-peak-picking\",\"bgcolor\":\"rgb(182, 215, 168)\",\"fontcolor\":\"black\",\"date\":\"2016-05-06\",\"line\":1,\"rev\":\"960-511e255ad2737a29d1db714a84595388\"},{\"id\":\"Overlay NMR\",\"kind\":\"optionalSample\",\"description\":\"Overlay NMR\",\"viewURL\":\"f162299d0efd3f7c21b5542c85003689\",\"data\":\"\",\"text\":\"\",\"icon\":\"ci-icon-nmr-overlay\",\"bgcolor\":\"rgb(182, 215, 168)\",\"fontcolor\":\"black\",\"date\":\"2016-05-06\",\"line\":1,\"rev\":\"293-573337a573bc7cf13c05e4be25a6c4a1\"},{\"id\":\"1H\",\"kind\":\"sample\",\"requires\":\"sample\",\"description\":\"NMR predict 1H\",\"viewURL\":\"eea0ba081ea2cc99da5c1aed2f29a0a8\",\"data\":\"\",\"text\":\"\",\"icon\":\"ci-icon-nmr-1h\",\"bgcolor\":\"rgb(182, 215, 168)\",\"fontcolor\":\"black\",\"date\":\"2016-07-06\",\"line\":1,\"rev\":\"401-12c05c54750188fd8e9184d623c2b3e4\"},{\"id\":\"13C\",\"kind\":\"sample\",\"requires\":\"sample\",\"description\":\"NMR predict 13C\",\"viewURL\":\"b50564ac9d207212f8e5ae8167a45f3c\",\"icon\":\"ci-icon-nmr-13c\",\"bgcolor\":\"rgb(182, 215, 168)\",\"fontcolor\":\"black\",\"date\":\"2016-08-06\",\"line\":1,\"rev\":\"81-ba083d05ac2bc2ebf70f7e9f77d76850\"},{\"id\":\"COSY\",\"kind\":\"sample\",\"requires\":\"sample\",\"description\":\"NMR predict COSY\",\"viewURL\":\"b50564ac9d207212f8e5ae8167a607ed\",\"icon\":\"ci-icon-nmr-1h1h\",\"bgcolor\":\"rgb(182, 215, 168)\",\"fontcolor\":\"black\",\"date\":\"2016-08-06\",\"line\":1,\"rev\":\"76-cf20e4bff30db8566bb2e725b6cee004\"},{\"id\":\"HMBC\",\"kind\":\"sample\",\"requires\":\"sample\",\"description\":\"NMR predict HMBC\",\"viewURL\":\"b50564ac9d207212f8e5ae8167a68433\",\"icon\":\"ci-icon-nmr-1h13c\",\"bgcolor\":\"rgb(182, 215, 168)\",\"fontcolor\":\"black\",\"date\":\"2016-08-06\",\"line\":1,\"rev\":\"64-de2353757f4958871eb3e58967883515\"},{\"viewURL\":\"901378074eeb9b75396aadff96b3b83a\",\"date\":\"2017-06-20\",\"id\":\"Search\",\"kind\":\"optionalSample\",\"description\":\"Search by δ\",\"icon\":\"ci-icon-nmr-search\",\"bgcolor\":\"rgb(182, 215, 168)\",\"line\":1,\"rights\":\"admin@cheminfo.org\",\"rev\":\"593-8c5464aa86c325e31327a2380e7dbe0c\"},{\"empty\":true},{\"id\":\"F\",\"kind\":\"sample\",\"requires\":\"sample\",\"description\":\"Mass fragmentation\",\"viewURL\":\"0e35f561fff36fef6c9e7341a9eec858\",\"data\":\"\",\"text\":\"\",\"icon\":\"fa-bomb\",\"bgcolor\":\"rgb(244, 204, 204)\",\"fontcolor\":\"black\",\"date\":\"2016-07-06\",\"line\":2,\"hide\":true,\"rev\":\"211-818d3374dd0594150f80ef5797f0015c\"},{\"empty\":false,\"viewURL\":\"daf2eda5bf803818ce48655dd963ca21\",\"id\":\"analyseMS\",\"date\":\"2018-03-20\",\"kind\":\"sample\",\"description\":\"Analyse HR mass\",\"bgcolor\":\"rgb(244, 204, 204)\",\"rights\":\"\",\"line\":2,\"icon\":\"ci-icon-mass-monoisotopic\",\"rev\":\"176-abc05267d8abf6e59584f29cc5ca50f2\"},{\"viewURL\":\"2294a250c8c1da87ca6753a6eb93c166\",\"rights\":\"\",\"date\":\"2018-03-20\",\"id\":\"EM\",\"kind\":\"sample\",\"description\":\"Monoisotopic mass\",\"icon\":\"ci-icon-mass-monoisotopic\",\"bgcolor\":\"rgb(244, 204, 204)\",\"line\":2,\"rev\":\"159-70105a90608cf5c48e0d5a0f4d047593\"},{\"viewURL\":\"4cf732cabaf4941a66d2f19cbc5875f2\",\"kind\":\"optionalSample\",\"id\":\"overlayMS\",\"date\":\"2017-09-01\",\"description\":\"Overlay Mass\",\"rights\":\"\",\"bgcolor\":\"rgb(244, 204, 204)\",\"line\":2,\"icon\":\"ci-icon-mass-overlay\",\"rev\":\"54-87c23a1e130eb1aa18476165c0f95ef3\"},{\"viewURL\":\"b60d4cd22af351b3996cb3321f169a0e\",\"bgcolor\":\"rgb(244, 204, 204)\",\"id\":\"Cont\",\"kind\":\"sample\",\"description\":\"Mass contaminants\",\"fontcolor\":\"rgb(0, 0, 0)\",\"date\":\"2017-05-15\",\"line\":2,\"icon\":\"ci-icon-mass-impurities\",\"rev\":\"278-3054bb50798ec77f14d8264d43bb6835\"},{\"viewURL\":\"8fcf268d9a86be15206e3bc1fa1dca49\",\"id\":\"peptideMS\",\"kind\":\"sample\",\"description\":\"Peptide analysis\",\"bgcolor\":\"rgb(244, 204, 204)\",\"fontcolor\":\"rgb(0, 0, 0)\",\"date\":\"2017-05-15\",\"line\":2,\"icon\":\"ci-icon-misc-peptide\",\"rev\":\"205-12c66ae1b8119e918da5b5dcaf421000\"},{\"empty\":true,\"hide\":true},{\"id\":\"3D\",\"kind\":\"sample\",\"requires\":\"sample\",\"description\":\"3D model\",\"viewURL\":\"0e019bb4d797395213d22aca403d2c93\",\"icon\":\"ci-icon-structure-3d-model\",\"bgcolor\":\"rgb(207, 226, 243)\",\"fontcolor\":\"black\",\"date\":\"2016-08-06\",\"line\":3,\"rev\":\"87-63ea576d1842d4dc482c2ecf9511d6e0\"},{\"id\":\"Conf\",\"kind\":\"sample\",\"requires\":\"sample\",\"description\":\"Conformations\",\"viewURL\":\"0e019bb4d797395213d22aca4043260e\",\"icon\":\"ci-icon-structure-conformers\",\"bgcolor\":\"rgb(207, 226, 243)\",\"fontcolor\":\"black\",\"date\":\"2016-08-06\",\"line\":3,\"rights\":\"\",\"rev\":\"51-d0e0526dfce7ba37a0e569fdf23edc67\"},{\"id\":\"Dia\",\"kind\":\"sample\",\"requires\":\"sample\",\"description\":\"Diastereotopic\",\"viewURL\":\"b50564ac9d207212f8e5ae816795fb39\",\"icon\":\"ci-icon-structure-diastereotopic\",\"bgcolor\":\"rgb(207, 226, 243)\",\"fontcolor\":\"black\",\"date\":\"2016-08-06\",\"line\":3,\"rev\":\"48-de1f5d2b5472aca96fe9ea405e47d6e4\"},{\"kind\":\"optionalSample\",\"viewURL\":\"d9498d0a2ea400ea71efec8840a1273b\",\"description\":\"Property explorer\",\"bgcolor\":\"rgb(207, 226, 243)\",\"id\":\"Info\",\"date\":\"2018-06-30\",\"icon\":\"fa-calculator\",\"line\":3,\"rev\":\"53-555307b7ae8cf156019ca09def9d3195\"},{\"date\":\"2017-06-10\",\"id\":\"Xray\",\"kind\":\"sample\",\"viewURL\":\"07223c3391c6b0cde342518d240d3426\",\"description\":\"Xray structure\",\"icon\":\"ci-icon-misc-cristal2\",\"bgcolor\":\"rgb(207, 226, 243)\",\"line\":3,\"rev\":\"17-5ba9a432c91c8bda09cacb06bd882361\"},{\"empty\":true},{\"rights\":\"\",\"viewURL\":\"0471a3b7a296450267555b7982ae29ad\",\"id\":\"DNA Upload\",\"description\":\"View / Upload DNA seq\",\"date\":\"2018-06-15\",\"bgcolor\":\"rgb(234, 209, 220)\",\"fontcolor\":\"rgb(0, 0, 0)\",\"line\":4,\"icon\":\"ci-icon-bio-upload-dna\",\"kind\":\"sample\",\"rev\":\"51-0ad1b2744da24aff0adf34b21abf34f9\"},{\"date\":\"2018-06-15\",\"id\":\"dnaFeatures\",\"kind\":\"optionalSample\",\"description\":\"Search features\",\"viewURL\":\"0f7ebf89799296e234a73591bafb6e5e\",\"icon\":\"ci-icon-bio-search-dna\",\"bgcolor\":\"rgb(234, 209, 220)\",\"rights\":\"\",\"fontcolor\":\"rgb(0, 0, 0)\",\"line\":4,\"rev\":\"40-24922969325d812eb88dc872694eeb73\"},{\"date\":\"2018-06-15\",\"id\":\"dnaSimilar\",\"kind\":\"optionalSample\",\"description\":\"Search similar\",\"viewURL\":\"b4af40ab0f57303185700745410032db\",\"icon\":\"ci-icon-bio-search-dna\",\"bgcolor\":\"rgb(234, 209, 220)\",\"rights\":\"\",\"line\":4,\"rev\":\"43-ab58bffc410b30d9b2f398501c6774b4\"},{\"id\":\"plasmidSearch\",\"date\":\"2018-06-15\",\"kind\":\"optionalSample\",\"description\":\"Search plasmids\",\"viewURL\":\"9ffc86418ff71dcef36a5def49d944e8\",\"icon\":\"ci-icon-bio-search-dna\",\"bgcolor\":\"rgb(234, 209, 220)\",\"rights\":\"\",\"line\":4,\"rev\":\"18-b2acbc083d0b773fa9f693daee0a55db\"},{\"date\":\"2018-06-15\",\"id\":\"Isoelectric point\",\"kind\":\"optionalSample\",\"description\":\"IEP\",\"viewURL\":\"8a6a09eabcd80af204583be5814e2d4a\",\"bgcolor\":\"rgb(234, 209, 220)\",\"rights\":\"\",\"line\":4,\"icon\":\"ci-icon-misc-peptide\",\"rev\":\"33-024ad0de0c3d0c795e4a2db798818abc\"},{\"icon\":\"ci-icon-bio-protein\",\"bgcolor\":\"rgb(234, 209, 220)\",\"viewURL\":\"46548ab75e0ca6e1e95bbc30663bee0a\",\"id\":\"Prot\",\"kind\":\"optionalSample\",\"date\":\"2018-06-30\",\"description\":\"PDB visualisation\",\"line\":4,\"rev\":\"20-8f3b398b6424f7764d8e2b97e3958f0a\"},{\"empty\":true},{\"id\":\"request\",\"kind\":\"sample\",\"icon\":\"ci-icon-mass-request\",\"bgcolor\":\"rgb(217, 210, 233)\",\"date\":\"2018-06-30\",\"description\":\"Analytical request\",\"viewURL\":\"b1af0ae8843bc4b72b5501c717197b5f\",\"rights\":\"admin@cheminfo.org\",\"line\":5,\"rev\":\"44-4cdf4d66fc8e8212dcf4d249abc16bf6\"},{\"description\":\"Sample manager\",\"viewURL\":\"83e55c39f2601bc912a45f049e7c9645\",\"rights\":\"admin@cheminfo.org\",\"icon\":\"fa-edit\",\"kind\":\"optionalSample\",\"id\":\"sampleManager\",\"line\":5,\"bgcolor\":\"rgb(217, 210, 233)\",\"fontcolor\":\"rgb(0, 0, 0)\",\"rev\":\"73-a33db88e7f390a47fb10e4eb2f8aaad5\"},{\"viewURL\":\"105a8192b3046702221775d1c09485d2\",\"description\":\"Format manager\",\"rights\":\"admin@cheminfo.org\",\"icon\":\"fa-edit\",\"kind\":\"optionalSample\",\"id\":\"formatManager\",\"line\":5,\"bgcolor\":\"rgb(217, 210, 233)\",\"fontcolor\":\"rgb(0, 0, 0)\",\"date\":\"2017-05-01\",\"rev\":\"49-c0f223af4883333e2b99e725bf6edcca\"},{\"id\":\"Add Stock\",\"kind\":\"optionalSample\",\"description\":\"Add Stock\",\"viewURL\":\"435e7dd9a4a474308d681831307220a9\",\"icon\":\"fa-plus\",\"bgcolor\":\"rgb(217, 210, 233)\",\"fontcolor\":\"rgb(0, 0, 0)\",\"date\":\"2017-06-16\",\"rights\":\"\",\"line\":5,\"rev\":\"401-754ee82a49d19c9bd8479a502f161a5a\"},{\"date\":\"2017-06-16\",\"id\":\"Search Stock\",\"kind\":\"optionalSample\",\"description\":\"Search stock\",\"viewURL\":\"eeb03ca6c7a82d043456704a340e6d04\",\"rights\":\"\",\"bgcolor\":\"rgb(217, 210, 233)\",\"fontcolor\":\"rgb(0, 0, 0)\",\"icon\":\"ci-icon-structure-search\",\"line\":5,\"rev\":\"267-8e8bea6175521de7575955eb10d29c57\"},{\"date\":\"2017-06-01\",\"id\":\"Inventory\",\"kind\":\"optionalSample\",\"description\":\"Inventory\",\"viewURL\":\"eeb03ca6c7a82d043456704a34972f4d\",\"icon\":\"fa-book\",\"bgcolor\":\"rgb(217, 210, 233)\",\"fontcolor\":\"rgb(0, 0, 0)\",\"line\":5,\"rev\":\"62-a009de4de51e8d675bf221486d545851\"},{\"date\":\"2017-07-10\",\"id\":\"printAdmin\",\"kind\":\"optionalSample\",\"description\":\"Printer administration\",\"viewURL\":\"a2d22457b39108ecdbaa2d4556395053\",\"icon\":\"fa-print\",\"bgcolor\":\"rgb(217, 210, 233)\",\"fontcolor\":\"rgb(0, 0, 0)\",\"rights\":\"admin@cheminfo.org\",\"line\":5,\"rev\":\"103-1302804aca69f7906e01ba9d73685b20\"},{\"date\":\"2017-07-14\",\"id\":\"reprint\",\"kind\":\"optionalSample\",\"description\":\"Reprint\",\"viewURL\":\"26d3869ff5b6b50a9af9dc2f4e8b438b\",\"icon\":\"fa-print\",\"bgcolor\":\"rgb(217, 210, 233)\",\"line\":5,\"rev\":\"23-0fdfb219e510906475786b48d47972fd\"},{\"date\":\"2018-08-09\",\"id\":\"MS Protein Request\",\"kind\":\"sample\",\"description\":\"Mass Request\",\"icon\":\"ci-icon-mass-request\",\"viewURL\":\"private/2cb2cc4665d60d4b52eee058a6d103a5\",\"rights\":\"admin@cheminfo.org,tstather@mpimf-heidelberg.mpg.de,sfabritz@mpimf-heidelberg.mpg.de\",\"bgcolor\":\"rgb(217, 210, 233)\",\"line\":5},{\"date\":\"2018-08-16\",\"id\":\"MS Molecule Request\",\"kind\":\"sample\",\"description\":\"Mass Request\",\"viewURL\":\"private/62698b2c5930ad7e317b9e318496b3e4\",\"icon\":\"ci-icon-mass-request\",\"bgcolor\":\"rgb(217, 210, 233)\",\"rights\":\"admin@cheminfo.org,tstather@mpimf-heidelberg.mpg.de,sfabritz@mpimf-heidelberg.mpg.de\",\"line\":5},{\"empty\":true},{\"date\":\"2019-01-18\",\"id\":\"SOP\",\"description\":\"Standard Op Procedures\",\"bgcolor\":\"rgb(255, 242, 204)\",\"rights\":\"admin@cheminfo.org,jhiblot@mpimf-heidelberg.mpg.de,bkoch@mpimf-heidelberg.mpg.de\",\"viewURL\":\"/next/mpi/sop/\",\"line\":6,\"kind\":\"newTab\"}]"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 96
+          },
+          "size": {
+            "width": 121,
+            "height": 98
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 53,
+            "top": 50
+          },
+          "size": {
+            "width": 100,
+            "height": 28
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 700,
+      "vars_in": [
+        {
+          "rel": "list",
+          "name": "gatTiles"
+        }
+      ],
+      "actions_in": [
+        {
+          "rel": "prependRow",
+          "name": "prependTile"
+        },
+        {
+          "rel": "insertRow",
+          "name": "insertTile"
+        }
+      ],
+      "vars_out": [
+        {
+          "event": "onRowsSelect",
+          "rel": "rows",
+          "jpath": [],
+          "name": "selectedButtons"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                [
+                  "yes"
+                ]
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "let couchDB = API.cache('couchDB');\nlet sampleToc = API.cache('sampleToc')\nlet roc = API.cache('roc');\n\nroc.query('sample_toc', {varName: \"samples\"}).then(function(data) {\n    API.createData('dataGatToc', data);\n})\n\n"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {
+                "lib": "vh/rest-on-couch/Roc",
+                "alias": "Roc"
+              },
+              {
+                "lib": "https://www.lactame.com/lib/eln-plugin/0.0.2/eln-plugin.js",
+                "alias": "elnPlugin"
+              }
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Get DB data",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 141,
+            "top": 0
+          },
+          "size": {
+            "width": 16,
+            "height": 4
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 0,
+            "top": 50
+          },
+          "size": {
+            "width": 52,
+            "height": 24
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        }
+      },
+      "id": 701,
+      "vars_in": [
+        {
+          "rel": "inputValue",
+          "name": "entries"
+        }
+      ],
+      "actions_in": [
+        {
+          "rel": "execute",
+          "name": "afterInit"
+        },
+        {
+          "rel": "execute",
+          "name": "clearForm"
+        },
+        {
+          "rel": "execute",
+          "name": "refreshDB"
+        }
+      ],
+      "vars_out": [
+        {
+          "event": "onScriptEnded",
+          "rel": "outputValue",
+          "jpath": [],
+          "name": "dataGatToc"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "switch(this.action.name) {\n    case 'addView': {\n        const choice = await getViewChoice();\n        if(!choice) return;\n        const doc = await getLatestView(choice.id);\n        API.doAction('prependTile', getTileDefinition(doc));\n        break;\n    }\n    case 'insertAfter': {\n        const row = this.action.value;\n        const arr = row.__parent;\n        const idx = arr.indexOf(row);\n        const choice = await getViewChoice();\n        debugger;\n        const doc = await getLatestView(choice.id);\n        if(!choice) return;\n        API.doAction('insertTile', {\n            row: idx,\n            item: getTileDefinition(doc)\n        });\n        break;\n    }\n    case 'updateView': {\n        let viewURL = this.action.value.viewURL;\n        if(!viewURL) return;\n        viewURL = String(viewURL);\n        const doc = await getLatestView(viewURL);\n        if(doc) {\n            this.action.value.setChildSync(['rev'], doc._rev)\n            ui.showNotification(`revision updated to ${doc._rev}`, 'success')\n        }\n        break;\n    }\n    default: {\n        console.log('unhandled action');\n    }\n}\n\nasync function getViewChoice() {\n    const {body} = await superagent\n        .get('https://gat.mylims.org/couch/cheminfo-public/_design/app/_view/docs?key=[%22c6h6%22,%20%22admin@cheminfo.org%22]')\n        .set('Accept', 'application/json');\n    \n    const choice = await ui.chooseSearch(body.rows, {\n        text: el => el.value.title,\n        groupBy: (el) => el.value.category || 'No category'\n    });\n    return choice;\n}\n\nasync function getLatestView(id) {\n    // Get latest revision\n    const {body: doc} = await superagent\n        .get(`https://gat.mylims.org/couch/cheminfo-public/${id}`)\n        .set('Accept', 'application/json');\n    return doc;\n}\n\nfunction getTileDefinition(doc) {\n    return {\n        id: doc.$content.name,\n        rev: doc._rev,\n        icon: doc.$content.icon,\n        description: doc.$content.title,\n        viewURL: doc._id,\n        bgcolor: 'rgb(255, 255, 255)',\n        empty: false\n    }\n}\n\n"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {
+                "lib": "superagent",
+                "alias": "superagent"
+              },
+              {
+                "lib": "src/util/ui",
+                "alias": "ui"
+              }
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 106,
+            "top": 0
+          },
+          "size": {
+            "width": 47,
+            "height": 49
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        }
+      },
+      "id": 702,
+      "vars_in": [
+        {
+          "rel": "inputValue",
+          "name": "addView"
+        }
+      ],
+      "actions_in": [
+        {
+          "rel": "execute",
+          "name": "addView"
+        },
+        {
+          "rel": "execute",
+          "name": "updateView"
+        },
+        {
+          "rel": "execute",
+          "name": "insertAfter"
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/display/template-twig/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "selectable": [
+                []
+              ],
+              "template": [
+                ""
+              ],
+              "modifyInForm": [
+                []
+              ],
+              "debouncing": [
+                0
+              ],
+              "formOptions": [
+                [
+                  "keepFormValueIfDataUndefined"
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 67,
+            "top": 6
+          },
+          "size": {
+            "width": 84,
+            "height": 78
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 53,
+            "top": 79
+          },
+          "size": {
+            "width": 100,
+            "height": 27
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        }
+      },
+      "id": 703,
+      "vars_in": [
+        {
+          "rel": "value",
+          "name": "links"
+        },
+        {
+          "rel": "value",
+          "name": "userInfo"
+        },
+        {
+          "rel": "tpl",
+          "name": "linksTemplate"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              []
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 1
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                [
+                  "yes"
+                ]
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "\nlet gatTiles = [\n    {\n        id: \"Number of Sample\",\n        description: \"Number of Sample\",\n        title: String('cache:nbSamples'),\n        bgcolor: \"rgb(255, 242, 204)\",\n        fontcolor: \"rgb(0, 0, 0)\"\n    }, {\n        id: \"Extracts and Fractions\",\n        kind: \"optionalSample\",\n        description: \"Extracts and Fractions\",\n        viewURL: \"25ea19619e426f78cee380a631b7a8b8\",\n        icon: \"fa-edit\",\n        data: \"\",\n        bgcolor: \"rgb(182, 215, 168)\",\n        fontcolor: \"rgb(0, 0, 0)\",\n        date: new Date(),\n        rights: \"\",\n        line: 5\n    },{},\n    {\n        id: \"Response\",\n        kind: \"optionalSample\",\n        require: 'sample',\n        description: \"Dose response\",\n        viewURL: '',//\"34942dd9c03b8039173849ba60ae686c\",\n        icon: \"fas fa-capsules\",\n        data: \"\",\n        bgcolor: \"rgb(98, 170, 166)\",\n        fontcolor: \"rgb(0, 0, 0)\",\n        date: new Date(),\n        rights: \"\",\n        line: 0\n    },\n    {\n        id: \"Synergistic\",\n        kind: \"optionalSample\",\n        require: 'sample',\n        description: \"Antagonistic synergistic effect\",\n        viewURL: '',// \"57b2f6553f0c1e83d2e79713f6752c85\",\n        icon: \"fa fa-users\",\n        data: \"\",\n        bgcolor: \"rgb(143, 179, 57)\",\n        fontcolor: \"rgb(0, 0, 0)\",\n        date: new Date(),\n        rights: \"\",\n        line: 5\n    },\n    {\n        id: \"Neuroprotective\",\n        kind: \"optionalSample\",\n        require: 'sample',\n        description: \"Neuroprotective activity\",\n        viewURL: '',// \"f452f52b06cfdb31d7e8a5abd6c403ac\",\n        icon: \"fa-asterisk\",\n        data: \"\",\n        bgcolor: \"rgb(128, 109, 64)\",\n        fontcolor: \"rgb(0, 0, 0)\",\n        date: new Date(),\n        rights: \"\",\n        line: 0\n    },\n    {\n        id: \"Neuroplastic\",\n        kind: \"sample\",\n        require: \"sample\",\n        description: \"Neuroplastic response\",\n        viewURL: \"e6b6d65916b1642ce831063cf2e30aa8\",\n        icon: \"fa-brain\",\n        data: \"\",\n        bgcolor: \"rgb(80, 85, 119)\",\n        fontcolor: \"rgb(0, 0, 0)\",\n        date: new Date(),\n        rights: \"\",\n        line: 5\n    },{},\n    {\n        id: \"Well plate\",\n        kind: \"optionalSample\",\n        description: \"Experimental design\",\n        viewURL: \"37cd0d871996f57659f8d3c22e31c6cf\",\n        icon:\"fa fa-th\",\n        data: \"\",\n        bgcolor: \"rgb(1, 150, 150)\",\n        fontcolor: \"rgb(0, 0, 0)\",\n        date: new Date(),\n        rights: \"\",\n        line: 5\n    },\n    {\n        id: \"Charts\",\n        kind: \"optionalSample\",\n        description: \"Display curves\",\n        viewURL: \"c68bd6754ad2017f727f045eec15f070\",\n        icon:\"ci-icon-chart-multi2\",\n        data: \"\",\n        bgcolor: \"rgb(1, 150, 150)\",\n        fontcolor: \"rgb(0, 0, 0)\",\n        date: new Date(),\n        rights: \"\",\n        line: 5\n    },{},\n    {\n        bgcolor: \"rgb(217, 210, 233)\",\n        date: \"2018-11-20\",\n        description: \"Report\",\n        icon: \"fa-list-alt\",\n        id: \"Report\",\n        kind: \"optionalSample\",\n        line: 6,\n        viewURL: \"b3d3e4537acd6ac11f06b19516c45edb\",\n    },\n    {\n        bgcolor: \"rgb(217, 210, 233)\",\n        date: \"2019-12-50\",\n        description: \"Sample rights\",\n        icon: \"fa-user-cog\",\n        id: \"Sample rights\",\n        kind: \"optionalSample\",\n        line: 6,\n        viewURL: '35ee3a39ff4b3baf83d51603418cb04a',     \n    }, {\n        id: \"Stock\",\n        kind: \"optionalSample\",\n        description: \"Manage stock\",\n        viewURL: \"3e1ab552be1c1e51479765c94d7aee3c\",\n        icon:\"fas fa-archive\",\n        data: \"\",\n        bgcolor: \"rgb(217, 210, 233)\",\n        fontcolor: \"rgb(0, 0, 0)\",\n        date: new Date(),\n        rights: \"\",\n        line: 5\n    },\n]\n\nAPI.createData('gatTiles', gatTiles);\n"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {}
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 53,
+            "top": 0
+          },
+          "size": {
+            "width": 52,
+            "height": 49
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        }
+      },
+      "id": 704,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {
+          "rel": "execute",
+          "name": "refreshDB"
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                [
+                  "yes"
+                ]
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "\nswitch (this.variable) {\n    case 'sampleTocFiltered':\n        this.action={\n            name: 'refreshCount'\n        };\n        break;\n}\n\nconsole.log('PROCESS: ',this.variable, this.action);\nAPI.doAction('updateTiles')\n\nvar roc = API.cache('roc');\nvar couchDB = API.cache('couchDB');\nvar printerConfig = API.cache('printerConfig');\nvar user = API.cache('user');\n// var domain = API.cache('domain');\n\nif(this.event === 'load' && printerConfig) {\n    var printer = await printerLib(printerConfig.couchDB);\n    printerHelper.setup(printer, ['sample']);\n}\n\nif(!roc) {\n    roc = await new Roc({\n            url: couchDB.url,\n            database: couchDB.database,\n            processor: elnPlugin,\n            kind: 'sample'\n        }\n    );\n    \n    var user=await roc.getUser();\n    API.cache('user', user);\n        \n    if (user.authenticated) {\n        var userInfo = await roc.getUserInfo();\n        API.cache('userInfo', userInfo);\n    } else {\n        API.cache('userInfo', {});\n    }\n    \n    refreshSample();\n    API.cache('roc', roc);\n    return;\n}\n\nif(!this.action) return;\n\nswitch(this.action.name) {\n    case 'refreshCount':\n        refreshCount();\n        break;\n    case 'ToggleShowHiddenEntries':\n        let preferences = API.getData('preferences');\n        preferences.showHiddenEntries = ! DataObject.resurrect(preferences.showHiddenEntries);\n        preferences.triggerChange();\n        setTimeout( () => API.doAction('refreshSample'), 10);\n        break;\n    case 'ToggleHiddenEntry':\n        const roc=API.cache('roc');\n        const id = this.action.value.id;\n        if (!id) return;\n        \n        const entry = await roc.get(id);\n        entry.$content.hidden = ! entry.$content.hidden;\n        await roc.update(entry);\n        API.doAction('refreshSample')\n        break;\n        \n    case 'createSample':\n        createSample();\n        break;\n    case 'deleteSample': \n        deleteSample(this.action.value);\n        break;\n    case 'refreshSample':\n        refreshSample();\n        break;\n    case 'rowDoubleClicked':\n        openDefault({\n            uuid:this.action.value.id,\n            reference: this.action.value.key.slice(1).join(' ')\n        });\n        break;\n    case 'printSample':\n        const doc = await DataObject.check(this.action.value.document).get(true);\n        printerHelper.askPrintEntry(doc, 'sample');\n        break;\n    case 'handleTileClick':\n        handleTileClick(DataObject.resurrect(this.action.value));\n        break;\n    case 'openView': {\n        const viewURL = await ui.enterValue({label: 'Enter view uuid'});\n        let sample = API.getData('sampleClicked');\n        if(sample) {\n            sample = {\n                reference: sample.value.reference,\n                uuid: sample.id\n            }\n        }\n        handleTileClick({\n            sample,\n            tile: {\n                kind: 'sample',\n                viewURL,\n                id: viewURL.substr(0, 6)\n            }\n        });\n    }\n    default:\n        console.warn('Unhandled sample action');\n        break;\n}\n\nif(!this.action) return;\n\nfunction createSample(sample) {\n    var entrysample = {$content: {}}\n    ui.form(`\n        <div>\n        <form>\n            <table>\n            <tr>\n            <th align=right>Reference<br><span style='font-size: smaller'>Reaction code</span></th>\n            <td>\n                <input type=\"text\" name=\"code\" pattern=\"[A-Za-z0-9 .,-]{3,}\"/><br>\n                <i>\n                    At least 3 characters and only letters, numbers, space, point, comma and dash\n                </i>\n            </td>\n            </tr>\n            <tr>\n            <th align=right>Batch<br><span style='font-size: smaller'>Fraction</span></th>\n            <td>\n                <input type=\"text\" name=\"batch\" pattern=\"[A-Za-z0-9 .,-]*\"/><br>\n                <i>\n                    Only letters, numbers, space, point, comma and dash\n                </i>\n            </td>\n            </tr>\n            <!--\n            <tr>\n            <th align=right>Sample<br><span style='font-size: smaller'>(empty most of the time)</span></th>\n            <td><input type=\"text\" name=\"sample\" pattern=\"[A-Za-z0-9 .-]*\"/></td>\n            </tr>\n            -->\n            </table>\n            <input type=\"submit\" value=\"Submit\"/>\n        </form>\n        </div>\n    `,{}).then(function(result){\n        if (!result || !result.code || result.batch == null) return;\n        entrysample.$id = [result.code, result.batch];\n        if (result.sample) entrysample.$id.push(result.sample);\n        var reference=result.code + ( result.batch ? ' '+result.batch : '');\n        var userInfo = API.cache('userInfo');\n        \n        if (userInfo && userInfo.allGroups) {\n            entrysample.$owners=userInfo.allGroups;\n        }\n\n        roc.create(entrysample).then(function(sample) {\n            openDefault({\n                uuid: sample._id,\n                reference\n            });\n            // we do like if we would have click on the line we just added\n            API.createData('sampleClicked', {id: sample._id});\n        });\n    });\n}\n\nfunction deleteSample(entry) {\n    ui.confirm('Are you sure you want to delete ' + entry.value.reference)\n    .then(function(res) {\n        if(!res) return;\n        roc.delete(entry.id);\n    });\n}\n\nasync function refreshSample() {\n    var uuid=(API.getData('sampleClicked') || {}).id;\n    let sampleToc = API.cache(\"sampleToc\");\n    let showHidden = DataObject.resurrect(API.getData('preferences').showHiddenEntries);\n    let data=await sampleToc.setFilter(\n        (entry) => entry.value.hidden === showHidden\n    )\n}\n\nfunction refreshCount() {\n    API.cache('nbSamples', API.getData('sampleTocFiltered').length);\n    API.doAction('renderTiles');\n}\n\n\nfunction openDefault(sample) {\n    var defaultTileURL='15c9a2dcd55c963fdedf2c18a1471b03';\n    var defaultTile=API.getData('tiles').filter(a => String(a.viewURL)===defaultTileURL);\n    if (defaultTile.length!==1) {\n        console.log('Default tile not found !!!');\n        return;\n    }\n    var tile=defaultTile[0];\n    handleTileClick({\n            tile,\n            sample\n        }\n    );\n}\n\nfunction handleTileClick(value={}) {\n    let sample = DataObject.resurrect(value).sample;\n    let tile = DataObject.resurrect(value).tile;\n    tile.data = \"\";\n    var uuid = sample.uuid;\n    var reference = sample.reference;\n    var referer=document.location.href.replace(/(\\/\\/.*?\\/).*/,'$1').replace('blob:','');\n    var viewURL=tile.viewURL;\n    viewURL+='?referer='+encodeURIComponent(referer);\n    if (tile.rev) viewURL+='&rev='+tile.rev;\n    switch (String(tile.kind)) {\n        case 'sample':\n            if (! uuid || ! reference) return;\n            IframeBridge.postMessage('tab.open', {\n                id: `${tile.id} ${reference}`,\n                url: 'https://gat.mylims.org/roc/db/visualizer/entry/' + tile.viewURL +'/view.json',\n                data: {\n                    printer: printerConfig,\n                    couchDB,\n                    uuid: String(uuid),\n                    data: tile.data ? JSON.parse(tile.data) : undefined,\n                    reference\n                }\n            });\n            break;\n        case 'optionalSample':\n            uuid = tile.viewURL || '';\n            IframeBridge.postMessage('tab.open', {\n                id: tile.id,\n                url: 'https://gat.mylims.org/roc/db/visualizer/entry/' + uuid +'/view.json',\n                data: {\n                    printer: printerConfig,\n                    couchDB,\n                    uuid: String(uuid),\n                    data: tile.data ? JSON.parse(tile.data) : undefined\n                }\n            });\n            break;\n        case 'rawIframe':\n            IframeBridge.postMessage('tab.open', {\n                id: tile.id,\n                url: tile.viewURL,\n                rawIframe: true,\n                data: {\n                    printer: printerConfig,\n                    couchDB,\n                    uuid: String(uuid),\n                    data: tile.data ? JSON.parse(tile.data) : undefined,\n                }\n            });\n        case 'newTab':\n            break;\n        default:\n            console.warn(`unknown tile kind: ${tile.kind}`);\n            break;\n    }\n}\n\n\n\n"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {
+                "lib": "vh/rest-on-couch/Roc",
+                "alias": "Roc"
+              },
+              {
+                "lib": "lodash",
+                "alias": "_"
+              },
+              {
+                "lib": "src/util/ui",
+                "alias": "ui"
+              },
+              {
+                "lib": "https://www.lactame.com/lib/eln-plugin/0.0.2/eln-plugin.js",
+                "alias": "elnPlugin"
+              },
+              {
+                "lib": "vh/eln/stock/printer/printer",
+                "alias": "printerLib"
+              },
+              {
+                "lib": "vh/eln/stock/printer/helper",
+                "alias": "printerHelper"
+              }
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 154,
+            "top": 0
+          },
+          "size": {
+            "width": 52,
+            "height": 93
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        }
+      },
+      "id": 705,
+      "vars_in": [
+        {
+          "rel": "inputValue",
+          "name": "sampleTocFiltered"
+        }
+      ],
+      "actions_in": [
+        {
+          "rel": "execute",
+          "name": "deleteSample"
+        },
+        {
+          "rel": "execute",
+          "name": "openSample"
+        },
+        {
+          "rel": "execute",
+          "name": "processNMR"
+        },
+        {
+          "rel": "execute",
+          "name": "togglePublic"
+        },
+        {
+          "rel": "execute",
+          "name": "createSample"
+        },
+        {
+          "rel": "execute",
+          "name": "refreshSample"
+        },
+        {
+          "rel": "execute",
+          "name": "updateSample"
+        },
+        {
+          "rel": "execute",
+          "name": "overlayNMR"
+        },
+        {
+          "rel": "execute",
+          "name": "peakPicking"
+        },
+        {
+          "rel": "execute",
+          "name": "rowDoubleClicked"
+        },
+        {
+          "rel": "execute",
+          "name": "printSample"
+        },
+        {
+          "rel": "execute",
+          "name": "handleTileClick"
+        },
+        {
+          "rel": "execute",
+          "name": "openView"
+        },
+        {
+          "rel": "execute",
+          "name": "ToggleShowHiddenEntries"
+        },
+        {
+          "rel": "execute",
+          "name": "ToggleHiddenEntry"
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                [
+                  "yes"
+                ]
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "console.log('variable:', this.variable, 'action:', this.action)\nthis.getButton('agro').setColor('green')\nlet entrysample = {\n  \"$type\": \"entry\",\n  \"$id\": [\n    \"reference\",\n    \"batchID\"\n  ],\n  \"$kind\": \"sample\",\n  \"$owners\": [\n    \"admin@cheminfo.org\",\n    \"pro2@gat.mylims.org\"\n  ],\n  \"$content\": {\n    \"general\": {\n      \"geopos\": {\n          \"lat\": \"\", \n          \"lon\": \"\",\n          \"alt\": \"\"\n      },\n      \"description\": \"\",\n      \"name\": \"\",\n      \"mf\": \"\",\n      \"molfile\": \"\",\n      \"mw\": \"\",\n      \"title\": \"\",\n      \"keyword\": \"\",\n      \"sequence\": \"\",\n      \"kind\": \"\",\n      \"em\": \"\",\n      \"ocl\": {\n        \"value\": \"\",\n        \"coordinates\": \"\",\n        \"index\": []\n      },\n      \"metadata\": {\n        \"date\": \"\",\n        \"collector\": \"\",\n        \"departament\": \"\",\n        \"town\": \"\",\n        \"estate\": \"\",\n        \"terrainShape\": \"\",\n        \"slope\": \"\"\n      }\n    },\n    \"identifier\": {\n      \"cas\": [],\n      \"chemSpiderID\": [],\n      \"taxon\": {\n          \"id\": \"\",\n          \"family\": \"\",\n          \"gender\": \"\",\n          \"specie\": \"\"\n      },\n      \"gisID\": []\n    },\n    \"spectra\": {\n      \"ir\": [],\n      \"mass\": [],\n      \"nmr\": [],\n      \"raman\": [],\n      \"chromatogram\": [],\n      \"differentialScanningCalorimetry\": [],\n      \"elementalAnalysis\": [],\n      \"iv\": [],\n      \"thermogravimetricAnalysis\": [],\n      \"uv\": [],\n      \"xray\": []\n    },\n    \"physical\": {\n      \"bp\": [],\n      \"density\": [],\n      \"mp\": [],\n      \"nd\": []\n    },\n    \"biology\": {\n      \"nucleic\": []\n    },\n    \"image\": [],\n    \"stock\": {\n      \"supplier\": \"\",\n      \"description\": \"\",\n      \"catalogNumber\": \"\",\n      \"qty\": \"\",\n      \"history\": {\n        \"location\": \"\",\n        \"date\": \"\",\n        \"status\": \"\"\n      }\n    },\n    \"misc\": {\n      \"attachments\": \"\",\n      \"category\": \"\",\n      \"reference\": \"\"\n    },\n    \"agro\": {\n      \"agroClimate\": {\n        \"estimatedAgroEcoClass\": \"\",\n        \"ambientTemperature\": \"\",\n        \"relativeHumidity\": \"\",\n        \"soilTemperture\": \"\",\n        \"soilHumidity\": \"\",\n        \"soilCompactation\": \"\",\n        \"soilDeepness\": \"\",\n        \"soilColor\": \"\",\n        \"soilPhenologicalState\": \"\",\n        \"habitat\": \"\",\n        \"cultivatedDensity\": \"\",\n        \"neighboringVegetation\": \"\",\n        \"phytosanitaryState\": \"\",\n        \"seedingDate\": \"\",\n        \"harvestNumber\": \"\",\n        \"slot\": \"\",\n        \"slotArea\": \"\",\n        \"soilAcidityControl\": \"\",\n        \"soilAcidityControlDate\": \"\",\n        \"soilAcidityControlAppliedDose\": \"\",\n        \"soilFertilization\": \"\",\n        \"soilFertilizationDate\": \"\",\n        \"soilFertilizer\": \"\",\n        \"soilFertilizerDose\": \"\",\n        \"shadow\": \"\",\n        \"pestControlMethod\": \"\"\n      },\n      \"soil\": {\n        \"mycorrhization\": \"\",\n        \"sporeDensity\": \"\",\n        \"apparentDensity\": \"\",\n        \"texturalClass\": \"\",\n        \"pH\": \"\",\n        \"interchangeableAcidity\": \"\",\n        \"electricConductivity\": \"\",\n        \"organicCarbon\": \"\",\n        \"organicMaterial \": \"\",\n        \"totalPhosphorus\": \"\",\n        \"availablePhosphorus\": \"\",\n        \"dilutedPhosphorus\": \"\",\n        \"totalNitrogen\": \"\",\n        \"cNratio\": \"\",\n        \"potassium\": \"\",\n        \"calcium\": \"\",\n        \"magnesium\": \"\",\n        \"baseSaturation\": \"\",\n        \"iron\": \"\",\n        \"phosphataseActivity\": \"\",\n        \"aMOactivity\": \"\",\n        \"bGlucosidaseActivity\": \"\",\n        \"dehydrogenaseActivity\": \"\",\n        \"cationExchangeCapacity\": \"\",\n        \"microbiomeTaxonomicGroups\": \"\"\n      },\n      \"vegetal\": {\n         \"collectedPart\": \"\"\n      },\n      \"collected\": {\n        \"herbariumID\": \"\",\n        \"dryingDescription\": \"\",\n        \"extractionDescription\": \"\"\n      }\n    },\n    \"samplePreparation\": {\n      \"method\": \"\",\n      \"protocol\": \"\",\n      \"abbreviation\": \"\",\n      \"solventProportion\": [],\n      \"timeByRefill\": [],\n      \"tlc\": [],\n      \"contactTime\": \"\",\n      \"extractedMass\": \"\",\n      \"yield\": \"\",\n      \"fraction\": {\n          \"amount\": \"\",\n          \"yield\": \"\",\n          \"abbreviation\": \"\",\n          \"protocol\": \"\",\n          \"solventProportion\": [],\n          \"tlc\": []\n      }\n    }\n  },\n  \"$lastModification\": \"\",\n  \"$modificationDate\": \"\",\n  \"$creationDate\": \"\"\n};\nlet roc = API.cache('roc');\nlet userInfo = await roc.getUserInfo();\nlet sampleClicked = API.getData('sampleClicked');\nlet sampleKind;\nlet newEntry\nif (sampleClicked !== null) {\n    let doc = DataObject(sampleClicked.document);\n    doc.fetch().then(result => {\n        return result.value\n    })\n    newEntry = doc.value;\n    sampleKind = DataObject.resurrect(sampleClicked.value.metadata.kind);\n}\n\nlet kind = this.button;\nif (this.button === 'agro') {\n    createSample(entrysample, \"sample\", undefined);\n}\n\nasync function createSample(entrysample, kind, sample) {\n    UI.form(`\n        <div>\n        <form>\n            <table>\n            <tr>\n            <th align=right>Reference<br><span style='font-size: smaller'>Reaction code</span></th>\n            <td>\n                <input type=\"text\" name=\"code\" pattern=\"[A-Za-z0-9 .,-]{3,}\"/><br>\n                <i>\n                    At least 3 characters and only letters, numbers, space, point, comma and dash\n                </i>\n            </td>\n            </tr>\n            <tr>\n            <th align=right>Batch<br><span style='font-size: smaller'>Fraction</span></th>\n            <td>\n                <input type=\"text\" name=\"batch\" pattern=\"[A-Za-z0-9 .,-]*\"/><br>\n                <i>\n                    Only letters, numbers, space, point, comma and dash\n                </i>\n            </td>\n            </tr>\n            <!--\n            <tr>\n            <th align=right>Sample<br><span style='font-size: smaller'>(empty most of the time)</span></th>\n            <td><input type=\"text\" name=\"sample\" pattern=\"[A-Za-z0-9 .-]*\"/></td>\n            </tr>\n            -->\n            </table>\n            <input type=\"submit\" value=\"Submit\"/>\n        </form>\n        </div>\n    `,{}).then(function(result){\n        if (!result || !result.code) return;\n        entrysample._id = null;\n        entrysample.rev = null;\n        entrysample.$id = [result.code, result.batch];\n        entrysample.$content.general.kind = kind;\n        if (result.sample) entrysample.$id.push(result.sample);\n        let reference=result.code + ( result.batch ? ' '+result.batch : '');\n        let userInfo = API.cache('userInfo');\n        if (userInfo) {\n            entrysample.$owners=[userInfo.email, 'pro2@gat.mylims.org'];\n        }\n        roc.create(entrysample)\n    });\n}\n\nAPI.doAction('refreshDB')\n"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {
+                "lib": "src/util/ui",
+                "alias": "UI"
+              }
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "agro",
+                "label": "Add sample",
+                "hide": [],
+                "disable": []
+              },
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [
+                  "hide"
+                ],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 56,
+            "top": 14
+          },
+          "size": {
+            "width": 11,
+            "height": 4
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 1,
+            "top": 87
+          },
+          "size": {
+            "width": 51,
+            "height": 19
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        }
+      },
+      "id": 706,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/edition/slick_grid/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "slickCheck": [
+                [
+                  "enableCellNavigation",
+                  "rowNumbering",
+                  "forceFitColumns",
+                  "highlightScroll",
+                  "forgetLastActive",
+                  "editable",
+                  "enableAddRow",
+                  "autoEdit",
+                  "filterColumns"
+                ]
+              ],
+              "copyPaste": [
+                []
+              ],
+              "copyPasteOptions": [
+                [
+                  "newRows"
+                ]
+              ],
+              "autoColumns": [
+                []
+              ],
+              "toolbar": [
+                []
+              ],
+              "colorjpath": [
+                [
+                  "color"
+                ]
+              ],
+              "slick.defaultColumnWidth": [
+                null
+              ],
+              "slick.rowHeight": [
+                "60"
+              ],
+              "slick.headerRowHeight": [
+                30
+              ],
+              "slick.selectionModel": [
+                "row"
+              ],
+              "idProperty": [
+                ""
+              ],
+              "filterType": [
+                "pref"
+              ],
+              "filterRow": [
+                "// Documentation: https://github.com/NPellet/visualizer/blob/46b40ca86345f8fa313563bf9c6ecb80ba323101/src/modules/types/edition/slick_grid/view.js#L1695-L1735"
+              ],
+              "customJpaths": [
+                ""
+              ]
+            }
+          ],
+          "cols": [
+            [
+              {
+                "name": "Batch",
+                "jpath": [
+                  "value",
+                  "ids",
+                  "1"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "twig:`<div style=\"line-height:normal\"><b>{{reference}}</b><table style=\"font-size:xx-small\">{% for k in keyword %}<tr><th style=\"text-align: left\">{{k.kind}}</th><td>{{k.value}}</td></tr>{%endfor%}{% for key,value in meta %}<tr><th style=\"text-align: left\">{{key}}</th><td>{{value}}</td></tr>{%endfor%}</table></div>`",
+                "editorOptions": "",
+                "width": 123,
+                "hideColumn": []
+              },
+              {
+                "name": "Reference",
+                "jpath": [
+                  "value",
+                  "ids",
+                  "0"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              },
+              {
+                "name": "Kind",
+                "jpath": [
+                  "value",
+                  "generalKind"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": "80",
+                "minWidth": "80",
+                "maxWidth": "80",
+                "hideColumn": []
+              }
+            ]
+          ],
+          "actionCols": [
+            [
+              {
+                "backgroundColor": [
+                  255,
+                  255,
+                  255,
+                  0
+                ],
+                "color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "position": "end",
+                "clickMode": "text"
+              }
+            ]
+          ],
+          "groupings": [
+            [
+              {
+                "getter": []
+              }
+            ]
+          ],
+          "actionOutButtons": [
+            [
+              {}
+            ]
+          ],
+          "data": [
+            {
+              "saveInView": [
+                []
+              ],
+              "varname": [
+                ""
+              ],
+              "data": [
+                "[]"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 19
+          },
+          "size": {
+            "width": 65,
+            "height": 59
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Samples",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 101,
+            "top": 107
+          },
+          "size": {
+            "width": 35,
+            "height": 46
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Samples",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        }
+      },
+      "id": 707,
+      "vars_in": [
+        {
+          "rel": "list",
+          "name": "sampleTocFiltered"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onRowActive",
+          "rel": "row",
+          "jpath": [],
+          "name": "sampleClicked"
+        },
+        {
+          "event": "onRowActive",
+          "rel": "row",
+          "jpath": [],
+          "name": "sampleClicked2"
+        }
+      ],
+      "actions_out": [
+        {
+          "event": "onDoubleClick",
+          "rel": "row",
+          "jpath": [],
+          "name": "openSample"
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              []
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "Samples",
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "let data = API.getData('sampleTocFiltered');\nlet sampleClicked = API.getData('sampleClicked');\n\nlet reference;\nif (sampleClicked) {\n    reference = sampleClicked.key[1].split(\" \")[0];\n}\n\nAPI.createData('sampleByReference', filterByReference(data, reference))\n\nfunction filterByReference(data, reference){\n    let result = data.filter(function(currentValue, index, array){\n        let sampleReference = currentValue.key[1].split(\" \")[0]\n        if (DataObject.resurrect(sampleReference) === reference) {\n            return true\n        } else {\n            return false\n        }\n    })\n    return result\n}\n\nreturn"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {}
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Filter samples by references",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 53,
+            "top": 107
+          },
+          "size": {
+            "width": 47,
+            "height": 46
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Filter samples by references",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        }
+      },
+      "id": 708,
+      "vars_in": [
+        {
+          "rel": "inputValue",
+          "name": "sampleClicked"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "Filter samples by references",
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/array_search/smart_array_filter/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "debounce": [
+                250
+              ],
+              "limit": [
+                0
+              ],
+              "initialValue": [
+                ""
+              ],
+              "placeholder": [
+                "Search for samples"
+              ],
+              "fontSize": [
+                24
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 16,
+            "top": 14
+          },
+          "size": {
+            "width": 40,
+            "height": 5
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        }
+      },
+      "id": 709,
+      "vars_in": [
+        {
+          "rel": "input",
+          "name": "sampleToc"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onQuery",
+          "rel": "output",
+          "jpath": [],
+          "name": "sampleTocFiltered"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/edition/rich_text/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "editable": [
+                []
+              ],
+              "debouncing": [
+                0
+              ],
+              "modifyInVariable": [
+                []
+              ],
+              "storeInView": [
+                [
+                  "yes"
+                ]
+              ],
+              "autoHeight": [
+                []
+              ],
+              "bgColor": [
+                [
+                  255,
+                  255,
+                  255,
+                  1
+                ]
+              ],
+              "postit": [
+                []
+              ],
+              "html": [
+                [
+                  "yes"
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 16,
+            "top": 5
+          },
+          "size": {
+            "width": 51,
+            "height": 9
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        }
+      },
+      "id": 710,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "richtext": "<h2>Recursos Vegetales con Potencial Farmacol&oacute;gico</h2>\n\n<p>&nbsp;</p>\n\n<p>Aproximaci&oacute;n biol&oacute;gica, fitoqu&iacute;mica y agron&oacute;mica para la gesti&oacute;n de recursos vegetales con potencial farmacol&oacute;gico: Aporte a cadena de valor para el sector de los fitomedicamentos en Colombia.</p>\n",
+      "title": "",
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/edition/rich_text/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "editable": [
+                []
+              ],
+              "debouncing": [
+                0
+              ],
+              "modifyInVariable": [
+                []
+              ],
+              "storeInView": [
+                [
+                  "yes"
+                ]
+              ],
+              "autoHeight": [
+                []
+              ],
+              "bgColor": [
+                [
+                  255,
+                  255,
+                  255,
+                  1
+                ]
+              ],
+              "postit": [
+                []
+              ],
+              "html": [
+                [
+                  "yes"
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": -3,
+            "top": 0
+          },
+          "size": {
+            "width": 21,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        }
+      },
+      "id": 711,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "richtext": "<p><a href=\"https://www.javeriana.edu.co/colombia-cientifica/wp-content/uploads/2020/01/cropped-Proyecto-GAT-logo-PNG-1-1.png\"><img alt=\"\" src=\"https://www.javeriana.edu.co/colombia-cientifica/wp-content/uploads/2020/01/cropped-Proyecto-GAT-logo-PNG-1-1.png\" /></a></p>\n",
+      "title": "",
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/client_interaction/code_editor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "mode": [
+                "html"
+              ],
+              "outputType": [
+                null
+              ],
+              "btnvalue": [
+                "Send script"
+              ],
+              "iseditable": [
+                [
+                  "editable"
+                ]
+              ],
+              "hasButton": [
+                [
+                  "button"
+                ]
+              ],
+              "variable": [
+                []
+              ],
+              "storeOnChange": [
+                []
+              ],
+              "debouncing": [
+                0
+              ],
+              "script": [
+                null
+              ]
+            }
+          ],
+          "ace": [
+            {
+              "useSoftTabs": [
+                [
+                  "yes"
+                ]
+              ],
+              "tabSize": [
+                4
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 74,
+            "top": 96
+          },
+          "size": {
+            "width": 91,
+            "height": 36
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        }
+      },
+      "id": 712,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": ""
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "let data = API.getData('sampleTocFiltered');\nlet sampleFiltered = API.getData('sampleFiltered');\n\nlet transparency = 0.2;\n\nlet  palette = [\n    {\n        kind: \"agro\",\n        bgcolor: \"rgb(98, 170, 166, \"+ String(transparency) +\")\"\n    },\n    {\n        kind: \"vegetal\",\n        bgcolor: \"rgb(143, 179, 57, \"+ String(transparency) +\")\"\n    },\n    {\n        kind: \"soil\",\n        bgcolor: \"rgb(128, 109, 64, \"+ String(transparency) +\")\"\n    },\n    {\n        kind: \"extract\",\n        bgcolor: \"rgb(80, 85, 119, \"+ String(transparency) +\")\"\n    },\n    {\n        kind: \"fraction\",\n        bgcolor: \"rgb(255, 123, 100, \"+ String(transparency) +\")\"\n    },\n]\n\n\nlet coloredToc = [];\nfor (let item of palette) {\n    let kind = item.kind;\n    let color = item.bgcolor;\n    let filteredToc = filterByKind(data, kind);\n    for (let i = 0; i < filteredToc.length; i++) {\n        filteredToc[i].color = color;\n        coloredToc.push(filteredToc[i])\n    }\n}\n\nif (this.action) {\n    switch(this.action.name) {\n        case 'showAgroSample': {\n            sampleFiltered = filterByKind(coloredToc, 'agro')\n            break;\n        }\n        case 'showVegetalSample': {\n            sampleFiltered = filterByKind(coloredToc, 'vegetal')\n            break;\n        }\n        case 'showSoilSample': {\n            sampleFiltered = filterByKind(coloredToc, 'soil')\n            break;\n        }\n        case 'showExtractSample': {\n            sampleFiltered = filterByKind(coloredToc, 'extract')\n            break;\n        }\n        case 'showFractionSample': {\n            sampleFiltered = filterByKind(coloredToc, 'fraction')\n            break;\n        }\n        case 'showAll': {\n            sampleFiltered = coloredToc;\n            break;\n        }\n        default: {\n            sampleFiltered = coloredToc;\n        }\n    }\n} else if (this.variable){\n    sampleFiltered = coloredToc\n}\n\nAPI.createData('sampleFiltered', sampleFiltered);\n\nfunction filterByReference(data, reference){\n    let result = data.filter(function(currentValue, index, array){\n        let sampleReference = currentValue.key[1].split(\" \")[0]\n        if (DataObject.resurrect(sampleReference) === reference) {\n            return true\n        } else {\n            return false\n        }\n    })\n    return result\n}\n\nfunction filterByKind(data, kind){\n    let result = data.filter(function(currentValue, index, array){\n        let sampleKind = currentValue.value.metadata.kind;\n        if (DataObject.resurrect(sampleKind) === kind) {\n            return true\n        } else {\n            return false\n        }\n    })\n    return result\n}\n\nreturn\n"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {
+                "lib": "superagent",
+                "alias": "superagent"
+              },
+              {
+                "lib": "src/util/ui",
+                "alias": "ui"
+              }
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Filter TOC by kind",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 1,
+            "top": 107
+          },
+          "size": {
+            "width": 51,
+            "height": 46
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Filter TOC by kind",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        }
+      },
+      "id": 713,
+      "vars_in": [
+        {
+          "rel": "inputValue",
+          "name": "sampleTocFiltered"
+        }
+      ],
+      "actions_in": [
+        {
+          "rel": "execute",
+          "name": "showAgroSample"
+        },
+        {
+          "rel": "execute",
+          "name": "showVegetalSample"
+        },
+        {
+          "rel": "execute",
+          "name": "showSoilSample"
+        },
+        {
+          "rel": "execute",
+          "name": "showExtractSample"
+        },
+        {
+          "rel": "execute",
+          "name": "showFractionSample"
+        },
+        {
+          "rel": "execute",
+          "name": "showAll"
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "Filter TOC by kind",
+      "zindex": 3
+    }
+  ],
+  "variables": [
+    {
+      "varname": "preferences",
+      "jpath": [
+        "preferences"
+      ]
+    },
+    {
+      "varname": "twigTemplate",
+      "jpath": [
+        "twigTemplate"
+      ]
+    },
+    {
+      "varname": "schema",
+      "jpath": [
+        "schema"
+      ]
+    },
+    {
+      "varname": "groupFormSchema",
+      "jpath": [
+        "groupFormSchema"
+      ]
+    },
+    {
+      "varname": "groupForm",
+      "jpath": [
+        "groupForm"
+      ]
+    },
+    {
+      "varname": "entries",
+      "jpath": [
+        "entries"
+      ]
+    },
+    {
+      "varname": "dataGatToc",
+      "jpath": [
+        "dataGatToc"
+      ]
+    },
+    {
+      "varname": "sampleToc",
+      "jpath": [
+        "sampleToc"
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "path": "https://www.lactame.com/github/cheminfo-js/visualizer-helper/29bdf14fc76befab0a5a21bebd0aceb630e67e8c/",
+      "alias": "vh"
+    }
+  ],
+  "configuration": {
+    "title": "Proyecto 7"
+  },
+  "actionscripts": [
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          {
+            "name": [
+              null
+            ],
+            "script": [
+              "require(['superagent', 'src/util/ui'], function(superagent, ui) {\n    var couchUrl = API.cache('couchUrl');\n    var database = API.cache('database');\n    var roc = API.cache('rocReaction');\n    if(value.$owners.indexOf('anonymousRead') !== -1) {\n        makePrivate();\n    } else {\n        makePublic();\n    }\n    \n    function getEntry(id) {\n        roc.get(id);\n    }\n    \n    function makePublic() {\n        superagent.put(couchUrl + 'db/' + database + '/entry/' + value._id + '/_owner/anonymousRead')\n            .withCredentials()\n            .then(function(res) {\n                if(res.status === 200) {\n                    ui.showNotification('reaction was made public', 'success')\n                    getEntry(value._id);\n                } else {\n                    ui.showNotification('make reaction public failed', 'error');\n                }\n            }).catch(function(err) {\n                ui.showNotification('make reaction public failed', 'error');\n            });\n    }\n    \n    function makePrivate() {\n        superagent.del(couchUrl + 'db/' + database + '/entry/' + value._id + '/_owner/anonymousRead')\n            .withCredentials()\n            .then(function(res) {\n                if(res.status === 200) {\n                    ui.showNotification('reaction was made private', 'success');\n                    getEntry(value._id)\n                } else {\n                    ui.showNotification('make reaction private failed', 'error');\n                }\n            }).catch(function(err) {\n                ui.showNotification('make reaction private failed', 'error');\n            });\n    }\n});"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          {
+            "name": [
+              null
+            ],
+            "script": [
+              "var url='https://docs.google.com/document/d/e/2PACX-1vR0GL9cCSK_PI6pGgoiXp6_rCsBKd5Qksg9L75Nc_FKicYZ8NqSGhATSy_xSA3FWzEjxk0c_HJdKCJR/pub?embedded=true';\n \nrequire(['src/util/ui'], function(UI) {\n    UI.dialog(\n        '<iframe frameBorder=\"0\" width=\"100%\" height=\"100%\" src=\"'+url+'\"></iframe>',\n        {width:1000, height: 800}\n    );\n})\n\n\n"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          {
+            "name": [
+              null
+            ],
+            "script": [
+              "require(['vh/rest-on-couch/showUserInfo'], function(showUserInfo) {\n    var userInfo=API.cache('userInfo');\n    showUserInfo(userInfo);\n})"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          {
+            "name": [
+              null
+            ],
+            "script": [
+              "var page='https://form.jotformeu.com/71600609780354'\nvar html='<iframe style=\"border: 0px; \" src=\"' + page + '\" width=\"100%\" height=\"100%\"></iframe>';\n\nrequire(['src/util/ui'], function(UI) {\n    UI.dialog(html, {\n        width: 800,\n        height: 800\n    });\n});\n\n"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "init_script": [
+    {
+      "sections": {},
+      "groups": {
+        "general": [
+          {
+            "script": [
+              "const [\n    Roc,\n    Toc,\n    elnPlugin\n] = await API.require([\n    'vh/rest-on-couch/Roc',\n    'vh/eln/Toc',\n    'https://www.lactame.com/lib/eln-plugin/0.0.2/eln-plugin.js'\n]);\nconst baseUrl = document.location.href.replace(/(\\/\\/.*?\\/).*/,'$1').replace('blob:', ''); \nlet rocUrl = `${baseUrl}roc`;\n\nvar database = 'eln';\nvar couchDB = {\n    url: rocUrl,\n    database: database,\n    kind: 'sample'\n}\n\nlet printerRocUrl = rocUrl;\nlet printerProxy = `${baseUrl}printer-proxy`;\nvar printer = {\n    couchDB: {\n        url: printerRocUrl,\n        database: 'printers'\n     },\n     proxy: printerProxy\n};\n    \nAPI.cache('printerConfig', printer);\nAPI.cache('couchDB',couchDB);\nconst roc = new Roc(couchDB);\nAPI.cache('roc', roc)\n\n\n// For demonstration purpose\nif((typeof IframeBridge)!='undefined'){\n    IframeBridge.onMessage(function(data) {\n        switch (data.type) {\n            case 'tab.message':\n                switch (data.message.action) {\n                    case 'selectEntry':\n                        return selectEntry(data.message.uuid);\n                    default:\n                        console.log('got an unknown message', data.message);\n                        return;\n                }\n                break;\n            case 'tab.focus':\n                API.doAction('refreshSample');\n                break;\n        }\n    });\n    IframeBridge.ready();\n}\n\nfunction selectEntry(uuid) {\n    if (!uuid) return;\n    const samples = API.getData('filteredSamples');\n    if (samples) {\n        const index = samples.findIndex(sample => String(sample.id) === uuid);\n        if (index !== -1) {\n            API.doAction('clickRow', index);\n        }\n    }\n}\n\nvar sampleToc = new Toc(roc, {varName: 'sampleToc', viewName: 'sample_toc'});\nsampleToc.initializeGroupForm({autoRefresh: false});\nAPI.cache('sampleToc', sampleToc);\n\nAPI.createData('preferences', {\n    showHiddenEntries: false\n})\n\nAPI.createData('sampleFiltered', []);\n\n// Load custom font\nrequire(['src/util/util'], function(Util) {\n    Util.loadCss('https://www.lactame.com/lib/cheminfo-font/0.7.2/style.css');\n})"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "custom_filters": [
+    {
+      "sections": {
+        "modules": [
+          {
+            "sections": {},
+            "groups": {
+              "modules": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ],
+        "filtersLib": [
+          {
+            "sections": {},
+            "groups": {
+              "filters": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ],
+        "filters": [
+          {
+            "sections": {},
+            "groups": {
+              "filter": [
+                {
+                  "name": [
+                    null
+                  ],
+                  "script": [
+                    null
+                  ]
+                }
+              ],
+              "libs": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "groups": {}
+    }
+  ],
+  "actionfiles": [
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          [
+            {}
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,2437 @@
+{
+  "version": "2.156.0",
+  "grid": {
+    "layers": {
+      "Default layer": {
+        "name": "Default layer"
+      },
+      "Admin": {
+        "name": "Admin"
+      },
+      "Load": {
+        "name": "Load"
+      }
+    },
+    "xWidth": 10,
+    "yHeight": 10
+  },
+  "modules": [
+    {
+      "url": "modules/types/display/template-twig/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "selectable": [
+                []
+              ],
+              "template": [
+                "{% if legend2d.nucleus %}\n  Nucleus: {{ legend2d.nucleus }} <br>\n{% endif %}\n{% if legend2d.red %}\n  <span style=\"color: red\">———</span> {{ legend2d.red }} <br>\n{% endif %}\n{% if legend2d.green %}\n  <span style=\"color: lightgreen\">———</span> {{ legend2d.green }} <br>\n{% endif %}\n{% if legend2d.blue %}\n  <span style=\"color: blue\">———</span> {{ legend2d.blue }}\n{% endif %}"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 119,
+            "top": 75
+          },
+          "size": {
+            "width": 72,
+            "height": 7
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 119,
+            "top": 75
+          },
+          "size": {
+            "width": 72,
+            "height": 7
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        },
+        "Load": {
+          "position": {
+            "left": 119,
+            "top": 75
+          },
+          "size": {
+            "width": 72,
+            "height": 7
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 1,
+      "vars_in": [
+        {
+          "rel": "value",
+          "name": "legend2d"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "title": "",
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "zindex": 4
+    },
+    {
+      "url": "modules/types/client_interaction/button_action/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "toggle": [
+                "click"
+              ],
+              "label": [
+                "Hide options"
+              ],
+              "onLabel": [
+                "Toggle action off"
+              ],
+              "offLabel": [
+                "Toggle action on"
+              ],
+              "onColor": [
+                [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              ],
+              "offColor": [
+                [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              ],
+              "startState": [
+                "off"
+              ],
+              "text": [
+                "Default layer"
+              ],
+              "askConfirm": [
+                []
+              ],
+              "confirmText": [
+                "Are you sure?"
+              ],
+              "okLabel": [
+                "Ok"
+              ],
+              "cancelLabel": [
+                "Cancel"
+              ],
+              "content": [
+                ""
+              ],
+              "contentType": [
+                "content"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        },
+        "Load": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 2,
+      "vars_in": [],
+      "actions_in": [
+        {}
+      ],
+      "title": "",
+      "vars_out": [],
+      "actions_out": [
+        {
+          "event": "onClick",
+          "rel": "actionText",
+          "jpath": [],
+          "name": "switchLayer"
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "zindex": 5
+    },
+    {
+      "url": "modules/types/client_interaction/button_action/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "toggle": [
+                "click"
+              ],
+              "label": [
+                "Back to main"
+              ],
+              "onLabel": [
+                "Toggle action off"
+              ],
+              "offLabel": [
+                "Toggle action on"
+              ],
+              "onColor": [
+                [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              ],
+              "offColor": [
+                [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              ],
+              "startState": [
+                "off"
+              ],
+              "text": [
+                "Default layer"
+              ],
+              "askConfirm": [
+                []
+              ],
+              "confirmText": [
+                "Are you sure?"
+              ],
+              "okLabel": [
+                "Ok"
+              ],
+              "cancelLabel": [
+                "Cancel"
+              ],
+              "content": [
+                ""
+              ],
+              "contentType": [
+                "content"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 113,
+            "top": 16
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 113,
+            "top": 16
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        },
+        "Load": {
+          "position": {
+            "left": 113,
+            "top": 16
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 3,
+      "vars_in": [],
+      "actions_in": [
+        {}
+      ],
+      "title": "",
+      "vars_out": [],
+      "actions_out": [
+        {
+          "event": "onClick",
+          "rel": "actionText",
+          "jpath": [],
+          "name": "switchLayer"
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "zindex": 5
+    },
+    {
+      "url": "modules/types/edition/slick_grid/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "slickCheck": [
+                [
+                  "enableCellNavigation",
+                  "rowNumbering",
+                  "forceFitColumns",
+                  "highlightScroll",
+                  "editable"
+                ]
+              ],
+              "copyPaste": [
+                []
+              ],
+              "copyPasteOptions": [
+                [
+                  "newRows"
+                ]
+              ],
+              "autoColumns": [
+                [
+                  "select"
+                ]
+              ],
+              "toolbar": [
+                []
+              ],
+              "colorjpath": [
+                []
+              ],
+              "slick.defaultColumnWidth": [
+                null
+              ],
+              "slick.rowHeight": [
+                "100"
+              ],
+              "slick.headerRowHeight": [
+                30
+              ],
+              "slick.selectionModel": [
+                "row"
+              ],
+              "idProperty": [
+                ""
+              ],
+              "filterType": [
+                "pref"
+              ],
+              "filterRow": [
+                "// Documentation: https://github.com/NPellet/visualizer/blob/db85d9cc12c6204e4a3afb69bba6d695f6f8bad5/src/modules/types/edition/slick_grid/view.js#L918-L940"
+              ],
+              "customJpaths": [
+                ""
+              ]
+            }
+          ],
+          "cols": [
+            [
+              {
+                "name": "Reference",
+                "jpath": [
+                  "value"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "twig:` <div style=\"line-height:normal\"> \t<b>{{reference}}</b> \t<table style=\"font-size:xx-small\"> \t{% for k in keyword %} \t\t<tr> \t\t<th style=\"text-align: left\">{{k.kind}}</th> \t\t<td>{{k.value}}</td> \t\t</tr> \t{%endfor%} \t</table> </div>`",
+                "editorOptions": "",
+                "width": 112,
+                "hideColumn": []
+              },
+              {
+                "name": "Structure",
+                "jpath": [
+                  "value",
+                  "ocl"
+                ],
+                "editor": "none",
+                "forceType": "oclid",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 178,
+                "hideColumn": []
+              },
+              {
+                "name": "1H",
+                "jpath": [
+                  "value",
+                  "nb1h"
+                ],
+                "editor": "none",
+                "forceType": "number",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 34,
+                "minWidth": "25",
+                "maxWidth": "35",
+                "hideColumn": []
+              },
+              {
+                "name": "13C",
+                "jpath": [
+                  "value",
+                  "nb13c"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 34,
+                "minWidth": "25",
+                "maxWidth": "35",
+                "hideColumn": []
+              },
+              {
+                "name": "2D",
+                "jpath": [
+                  "value",
+                  "nb2d"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 34,
+                "minWidth": "25",
+                "maxWidth": "35",
+                "hideColumn": []
+              },
+              {
+                "name": "MS",
+                "jpath": [
+                  "value",
+                  "nbMass"
+                ],
+                "editor": "none",
+                "forceType": "number",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 34,
+                "minWidth": "25",
+                "maxWidth": "35",
+                "hideColumn": []
+              },
+              {
+                "name": "IR",
+                "jpath": [
+                  "value",
+                  "nbIR"
+                ],
+                "editor": "none",
+                "forceType": "number",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 34,
+                "minWidth": "25",
+                "maxWidth": "35",
+                "hideColumn": []
+              },
+              {
+                "name": "TGA",
+                "jpath": [
+                  "value",
+                  "nbTGA"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 35,
+                "minWidth": "25",
+                "maxWidth": "35",
+                "hideColumn": []
+              },
+              {
+                "name": "DSC",
+                "jpath": [
+                  "value",
+                  "nbDSC"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 35,
+                "minWidth": "25",
+                "maxWidth": "35",
+                "hideColumn": []
+              }
+            ]
+          ],
+          "actionCols": [
+            [
+              {
+                "name": "Open",
+                "tooltip": "Open sample",
+                "icon": "fa-external-link-alt",
+                "backgroundColor": [
+                  255,
+                  255,
+                  255,
+                  1
+                ],
+                "color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "action": "sendToHome",
+                "position": "end",
+                "clickMode": "text",
+                "isAction": true
+              }
+            ]
+          ],
+          "groupings": [
+            [
+              {
+                "getter": []
+              }
+            ]
+          ],
+          "actionOutButtons": [
+            [
+              {}
+            ]
+          ],
+          "data": [
+            {
+              "saveInView": [
+                []
+              ],
+              "varname": [
+                ""
+              ],
+              "data": [
+                "[]"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 13
+          },
+          "size": {
+            "width": 60,
+            "height": 66
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "List of selected samples",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 47,
+            "height": 68
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "List of selected samples",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        },
+        "Load": {
+          "position": {
+            "left": -2,
+            "top": 43
+          },
+          "size": {
+            "width": 45,
+            "height": 33
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "List of selected samples",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 4,
+      "vars_in": [
+        {
+          "rel": "list",
+          "name": "sampleTocFiltered"
+        }
+      ],
+      "actions_in": [
+        {
+          "rel": "selectRow",
+          "name": "clickSample"
+        }
+      ],
+      "title": "List of selected samples",
+      "vars_out": [
+        {
+          "event": "onRowsSelect",
+          "rel": "rows",
+          "jpath": [],
+          "name": "selected"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              []
+            ]
+          }
+        ]
+      },
+      "zindex": 5,
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/array_search/smart_array_filter/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "debounce": [
+                100
+              ],
+              "limit": [
+                0
+              ],
+              "initialValue": [
+                ""
+              ],
+              "placeholder": [
+                ""
+              ],
+              "fontSize": [
+                20
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 6,
+            "top": 0
+          },
+          "size": {
+            "width": 54,
+            "height": 7
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Search specific entry",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Search specific entry",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        },
+        "Load": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 29,
+            "height": 7
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Search specific entry",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 5,
+      "vars_in": [
+        {
+          "rel": "input",
+          "name": "sampleToc"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "title": "Search specific entry",
+      "vars_out": [
+        {
+          "event": "onQuery",
+          "rel": "output",
+          "jpath": [],
+          "name": "sampleTocFiltered"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              []
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/edition/onde/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "hasButton": [
+                []
+              ],
+              "button_text": [
+                "Export"
+              ],
+              "debouncing": [
+                0
+              ],
+              "output": [
+                "modified"
+              ],
+              "mode": [
+                "schema"
+              ],
+              "schemaSource": [
+                "variable"
+              ],
+              "schema": [
+                "{}"
+              ],
+              "onchangeFilter": [
+                null
+              ]
+            }
+          ],
+          "data": [
+            {
+              "saveInView": [
+                []
+              ],
+              "varname": [
+                ""
+              ],
+              "data": [
+                "{}"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 9
+          },
+          "size": {
+            "width": 25,
+            "height": 8
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 140,
+            "top": 0
+          },
+          "size": {
+            "width": 23,
+            "height": 15
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        },
+        "Load": {
+          "position": {
+            "left": 0,
+            "top": 8
+          },
+          "size": {
+            "width": 19,
+            "height": 8
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 6,
+      "vars_in": [
+        {
+          "rel": "schema",
+          "name": "groupFormSchema"
+        },
+        {
+          "rel": "inputValue",
+          "name": "groupForm"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "title": "",
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "const roc=API.cache('roc');\n\nlet selected=API.getData('selected');\n\nlet data=[];\nAPI.doAction('setTotal', selected.length);\nAPI.doAction('setCurrent', 0);\nfor (let item of selected) {\n    if (item.document.datum) {\n        data.push(item.document.datum);\n    } else {\n        let datum=await roc.get(item.id);\n        data.push(datum);\n        item.document.datum=datum;\n    }\n    API.doAction('increment',1);\n}\nconsole.log(selected);\n\nAPI.createData('data', data);\nconsole.log(data);\n"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {}
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "Generate report",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 103,
+            "top": 0
+          },
+          "size": {
+            "width": 57,
+            "height": 29
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Load the selected samples",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 141,
+            "top": 16
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Load the selected samples",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        },
+        "Load": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 45,
+            "height": 42
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Load the selected samples",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Load"
+        }
+      },
+      "id": 7,
+      "vars_in": [
+        {
+          "rel": "inputValue",
+          "name": "selected"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "Load the selected samples"
+    },
+    {
+      "url": "modules/types/display/template-twig/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "selectable": [
+                [
+                  "yes"
+                ]
+              ],
+              "template": [
+                ""
+              ],
+              "modifyInForm": [
+                []
+              ],
+              "debouncing": [
+                0
+              ],
+              "formOptions": [
+                [
+                  "keepFormValueIfDataUndefined"
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 61,
+            "top": 0
+          },
+          "size": {
+            "width": 75,
+            "height": 79
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 48,
+            "top": 0
+          },
+          "size": {
+            "width": 91,
+            "height": 25
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        },
+        "Load": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Load"
+        }
+      },
+      "id": 8,
+      "vars_in": [
+        {
+          "rel": "tpl",
+          "name": "template"
+        },
+        {
+          "rel": "value",
+          "name": "data"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Print"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": ""
+    },
+    {
+      "url": "modules/types/client_interaction/code_editor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "mode": [
+                "html"
+              ],
+              "outputType": [
+                null
+              ],
+              "btnvalue": [
+                "Send script"
+              ],
+              "iseditable": [
+                [
+                  "editable"
+                ]
+              ],
+              "hasButton": [
+                [
+                  "button"
+                ]
+              ],
+              "variable": [
+                []
+              ],
+              "storeOnChange": [
+                [
+                  "store"
+                ]
+              ],
+              "debouncing": [
+                1000
+              ],
+              "script": [
+                "<style>\n    #result, #result tbody  {\n        font-size: 12px;\n        font-family: Arial, Helvetica, sans-serif;\n    }\n    #result .big {\n        font-size:1.5em;\n        font-weight: bold;\n    }\n    #result table {\n        border-collapse: collapse;\n        width:100%;\n    }\n    #result td, #result th {\n        border-top: 1px solid black;\n        border-bottom: 1px solid black;\n        vertical-align: top;\n        text-align: left;\n        padding: 5px 5px 5px 5px;\n    }\n    #result .number {\n        text-align: right;\n    }\n</style>\n\n<div id='result'>\n<table>\n    <thead>\n        <tr>\n            <th>Product code / batch</th>\n            <th>Name / structure</th>\n            <th>MF / mw</th>\n            <th>NMR</th>\n            <th>Other spectra</th>\n        </tr>\n    </thead>\n{% for sample in data %}\n    {%set content=sample[\"$content\"] %}\n    <tr>\n        <td>\n            <p>\n                <span class=\"big\">{{sample[\"$id\"][0]}}</span><br>\n                <span class=\"big\">{{sample[\"$id\"][1]}}</span>\n            </p>\n            <p>\n                {{rendertype(sample[\"$creationDate\"],{dateFormat:'YYYY-MM-DD'})}}<br>\n                {{rendertype(sample[\"$modificationDate\"],{dateFormat:'YYYY-MM-DD'})}}\n            </p>\n            <p>\n                {% for keyword in content.general.keyword %}\n                    {{keyword.kind}}: {{keyword.value}}<br>\n                {% endfor %}\n            </p>\n        </td>\n        <td>\n            {{content.general.description}}<br>\n            {{rendertype(content.general.molfile,{width:300, height:120},\"mol2d\")}}\n        </td>\n        <td>\n            {% if content.general.mf %}\n                {{rendertype(content.general.mf,\"mf\")}}<br>\n            {% endif %}\n            {% if content.general.mw %}\n                {{rendertype(content.general.mw,{numeral:'0.0000'})}}\n            {% endif %}\n        </td>\n        <td>\n            {% for nmr in content.spectra.nmr %}\n                NMR: {{nmr.pulse}}<br>\n            {% endfor %}\n        </td>\n        <td>\n            {% for ir in content.spectra.ir %}\n                IR: {{ir.experiment}}<br>\n            {% endfor %}\n            {% for mass in content.spectra.mass %}\n                MS: {{mass.experiment}}<br>\n            {% endfor %}\n            {% for uv in content.spectra.uv %}\n                UV: {{uv.experiment}}<br>\n            {% endfor %}\n            \n        </td>\n    </tr> \n{% endfor %}\n</table>\n</div>\n\n"
+              ]
+            }
+          ],
+          "ace": [
+            {
+              "useSoftTabs": [
+                [
+                  "yes"
+                ]
+              ],
+              "tabSize": [
+                4
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 101,
+            "top": 30
+          },
+          "size": {
+            "width": 77,
+            "height": 48
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 48,
+            "top": 26
+          },
+          "size": {
+            "width": 91,
+            "height": 42
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        },
+        "Load": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Load"
+        }
+      },
+      "id": 9,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onEditorChange",
+          "rel": "data",
+          "jpath": [],
+          "name": "template"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              []
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": ""
+    },
+    {
+      "url": "modules/types/edition/slick_grid/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "slickCheck": [
+                [
+                  "enableCellNavigation",
+                  "rowNumbering",
+                  "forceFitColumns",
+                  "highlightScroll",
+                  "forgetLastActive",
+                  "editable"
+                ]
+              ],
+              "copyPaste": [
+                []
+              ],
+              "copyPasteOptions": [
+                [
+                  "newRows"
+                ]
+              ],
+              "autoColumns": [
+                []
+              ],
+              "toolbar": [
+                []
+              ],
+              "colorjpath": [
+                []
+              ],
+              "slick.defaultColumnWidth": [
+                null
+              ],
+              "slick.rowHeight": [
+                null
+              ],
+              "slick.headerRowHeight": [
+                30
+              ],
+              "slick.selectionModel": [
+                "row"
+              ],
+              "idProperty": [
+                ""
+              ],
+              "filterType": [
+                "pref"
+              ],
+              "filterRow": [
+                "// Documentation: https://github.com/NPellet/visualizer/blob/46b40ca86345f8fa313563bf9c6ecb80ba323101/src/modules/types/edition/slick_grid/view.js#L1695-L1735"
+              ],
+              "customJpaths": [
+                ""
+              ]
+            }
+          ],
+          "cols": [
+            [
+              {
+                "name": "Description",
+                "jpath": [
+                  "value",
+                  "title"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              }
+            ]
+          ],
+          "actionCols": [
+            [
+              {
+                "backgroundColor": [
+                  255,
+                  255,
+                  255,
+                  0
+                ],
+                "color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "position": "end",
+                "clickMode": "text"
+              }
+            ]
+          ],
+          "groupings": [
+            [
+              {
+                "getter": []
+              }
+            ]
+          ],
+          "actionOutButtons": [
+            [
+              {}
+            ]
+          ],
+          "data": [
+            {
+              "saveInView": [
+                []
+              ],
+              "varname": [
+                ""
+              ],
+              "data": [
+                "[]"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 137,
+            "top": 0
+          },
+          "size": {
+            "width": 31,
+            "height": 34
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Select a format",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 140,
+            "top": 38
+          },
+          "size": {
+            "width": 21,
+            "height": 23
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Select a format",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        },
+        "Load": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Select a format",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Load"
+        }
+      },
+      "id": 10,
+      "vars_in": [
+        {
+          "rel": "list",
+          "name": "templates"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "vars_out": [
+        {
+          "event": "onRowActive",
+          "rel": "row",
+          "jpath": [
+            "document",
+            "$content",
+            "twig"
+          ],
+          "name": "template"
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            "Select a format"
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "Select a format"
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "\nsendToHome(this.action.value.id);\nfunction sendToHome(id) {\n    IframeBridge.postMessage('tab.message', {\n        id: 'Home',\n        message: {\n            action: 'selectEntry',\n            uuid: String(id)\n        }\n    });\n    IframeBridge.postMessage('tab.focus', 'Home');\n}"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {}
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "sendToHome action",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "sendToHome action",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        },
+        "Load": {
+          "position": {
+            "left": 46,
+            "top": 0
+          },
+          "size": {
+            "width": 70,
+            "height": 30
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "sendToHome action",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Load"
+        }
+      },
+      "id": 11,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {
+          "rel": "execute",
+          "name": "sendToHome"
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "sendToHome action"
+    },
+    {
+      "url": "modules/types/display/progress/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "tpl": [
+                "loading :current / :total"
+              ],
+              "barcolor": [
+                [
+                  204,
+                  204,
+                  204,
+                  1
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 34,
+            "top": 9
+          },
+          "size": {
+            "width": 26,
+            "height": 4
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Admin"
+        },
+        "Load": {
+          "position": {
+            "left": 46,
+            "top": 31
+          },
+          "size": {
+            "width": 66,
+            "height": 17
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Load"
+        }
+      },
+      "id": 12,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {
+          "rel": "inc",
+          "name": "increment"
+        },
+        {
+          "rel": "set",
+          "name": "setCurrent"
+        },
+        {
+          "rel": "total",
+          "name": "setTotal"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "vars_out": [],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": ""
+    }
+  ],
+  "variables": [
+    {
+      "jpath": [
+        ""
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "path": "https://www.lactame.com/github/cheminfo-js/visualizer-helper/b2bd99a3d68afec94ca4e9c81700388d1ea59dc0/",
+      "alias": "vh"
+    },
+    {
+      "path": "http://localhost:9898/cheminfo-js/visualizer-helper/",
+      "alias": "vhxx"
+    }
+  ],
+  "configuration": {
+    "title": "Report of samples"
+  },
+  "actionscripts": [
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          {
+            "name": [
+              null
+            ],
+            "script": [
+              null
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "init_script": [
+    {
+      "sections": {},
+      "groups": {
+        "general": [
+          {
+            "script": [
+              "var Renderer = await API.require('vh/eln/acs/renderer');\nRenderer.add();\n\nrequire(['vh/rest-on-couch/Roc'], function(Roc) {\n    if((typeof IframeBridge)!=='undefined') {\n        IframeBridge.onMessage(onMessage);\n        IframeBridge.ready();\n    }\n    \n    async function onMessage(data) {\n        if(data.type === 'tab.data') {\n            var couchDB = data.message.couchDB;\n            var uuid = data.message.uuid;\n            API.cache('couchDB', couchDB);\n            API.cache('uuid', uuid);\n            var roc = new Roc(couchDB);\n            API.cache('roc', roc);\n             \n            const SampleToc=await API.require('vh/eln/sample/SampleToc');\n            const sampleToc = new SampleToc(roc, {\n                \n            });\n            API.cache('sampleToc', sampleToc);\n            sampleToc.initializeGroupForm();\n            \n            const loadTemplates = await API.require('vh/eln/templates/load');\n            let templates=await loadTemplates(['org.cheminfo.samples.chemical']);\n            console.log(templates);\n\n            \n        }\n    }\n});\n\n/*\nAPI.require('vh/util/tips').then( Tips => {\n    Tips.showTips();\n    Tips.addPageHelp({iconSize:'fa-3x'});\n});\n*/\n"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "custom_filters": [
+    {
+      "sections": {
+        "modules": [
+          {
+            "sections": {},
+            "groups": {
+              "modules": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ],
+        "filtersLib": [
+          {
+            "sections": {},
+            "groups": {
+              "filters": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ],
+        "filters": [
+          {
+            "sections": {},
+            "groups": {
+              "filter": [
+                {
+                  "name": [
+                    null
+                  ],
+                  "script": [
+                    null
+                  ]
+                }
+              ],
+              "libs": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "groups": {}
+    }
+  ],
+  "actionfiles": [
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          [
+            {}
+          ]
+        ]
+      }
+    }
+  ]
+}

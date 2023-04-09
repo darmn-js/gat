@@ -1,0 +1,1178 @@
+{
+  "version": "2.156.0",
+  "grid": {
+    "layers": {
+      "Default layer": {
+        "name": "Default layer"
+      },
+      "Admin": {
+        "name": "Admin"
+      }
+    },
+    "xWidth": 10,
+    "yHeight": 10
+  },
+  "modules": [
+    {
+      "url": "modules/types/edition/slick_grid/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "slickCheck": [
+                [
+                  "enableCellNavigation",
+                  "rowNumbering",
+                  "forceFitColumns",
+                  "highlightScroll",
+                  "editable",
+                  "filterColumns"
+                ]
+              ],
+              "copyPaste": [
+                []
+              ],
+              "copyPasteOptions": [
+                [
+                  "newRows"
+                ]
+              ],
+              "autoColumns": [
+                [
+                  "select"
+                ]
+              ],
+              "toolbar": [
+                []
+              ],
+              "colorjpath": [
+                []
+              ],
+              "slick.defaultColumnWidth": [
+                null
+              ],
+              "slick.rowHeight": [
+                "100"
+              ],
+              "slick.headerRowHeight": [
+                30
+              ],
+              "slick.selectionModel": [
+                "row"
+              ],
+              "idProperty": [
+                ""
+              ],
+              "filterType": [
+                "pref"
+              ],
+              "filterRow": [
+                ""
+              ],
+              "customJpaths": [
+                ""
+              ]
+            }
+          ],
+          "cols": [
+            [
+              {
+                "name": "Product reference",
+                "jpath": [
+                  "value"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "twig:` <div style=\"line-height:normal\"> \t<b>{{reference}}</b> \t<table style=\"font-size:xx-small\"> \t{% for k in keyword %} \t\t<tr> \t\t<th style=\"text-align: left\">{{k.kind}}</th> \t\t<td>{{k.value}}</td> \t\t</tr> \t{%endfor%} \t</table> </div>`",
+                "editorOptions": "",
+                "width": 266,
+                "hideColumn": []
+              },
+              {
+                "name": "Creation",
+                "jpath": [
+                  "value",
+                  "creationDate"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "dateFormat:'YYYY-MM-DD'",
+                "editorOptions": "",
+                "width": 97,
+                "hideColumn": []
+              },
+              {
+                "name": "Last modif.",
+                "jpath": [
+                  "value",
+                  "modificationDate"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "dateFormat:'YYYY-MM-DD'",
+                "editorOptions": "",
+                "width": 109,
+                "hideColumn": []
+              },
+              {
+                "name": "Owners",
+                "jpath": [
+                  "value"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "twig:`<div style=\"line-height:normal\"><table>{% for owner in owners %}<tr><td style=\"text-align: left\">{{owner}}</td><td></tr>{%endfor%}</table></div>`",
+                "editorOptions": "",
+                "width": 144,
+                "hideColumn": []
+              }
+            ]
+          ],
+          "actionCols": [
+            [
+              {
+                "name": "Add  sample",
+                "tooltip": "Add sample",
+                "icon": "fa-plus",
+                "backgroundColor": [
+                  255,
+                  255,
+                  255,
+                  0
+                ],
+                "color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "action": "addSample",
+                "position": "end",
+                "clickMode": "text",
+                "isAction": true
+              }
+            ]
+          ],
+          "groupings": [
+            [
+              {
+                "getter": []
+              }
+            ]
+          ],
+          "actionOutButtons": [
+            [
+              {}
+            ]
+          ],
+          "data": [
+            {
+              "saveInView": [
+                []
+              ],
+              "varname": [
+                ""
+              ],
+              "data": [
+                "[]"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 10
+          },
+          "size": {
+            "width": 67,
+            "height": 73
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Double click to open a sample, one click to select it",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 0,
+            "top": 10
+          },
+          "size": {
+            "width": 67,
+            "height": 72
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Double click to open a sample, one click to select it",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 13,
+      "vars_in": [
+        {
+          "rel": "list",
+          "name": "sampleTocFiltered"
+        }
+      ],
+      "actions_in": [
+        {
+          "rel": "selectRow",
+          "name": "clickRow"
+        }
+      ],
+      "title": "Double click to open a sample, one click to select it",
+      "vars_out": [
+        {
+          "event": "onRowsSelect",
+          "rel": "rows",
+          "jpath": [],
+          "name": "selectedSamples"
+        },
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "event": "onDoubleClick",
+          "rel": "row",
+          "jpath": [],
+          "name": "rowDoubleClicked"
+        }
+      ],
+      "zindex": 3,
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "Refresh",
+              "icon": "fa-sync",
+              "action": "refresh",
+              "position": "end",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            },
+            {
+              "title": "Add selected samples",
+              "icon": "fa-plus",
+              "action": "addSelectedSamples",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              []
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/edition/onde/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "hasButton": [
+                []
+              ],
+              "button_text": [
+                "Export"
+              ],
+              "debouncing": [
+                0
+              ],
+              "output": [
+                "modified"
+              ],
+              "mode": [
+                "schema"
+              ],
+              "schemaSource": [
+                "variable"
+              ],
+              "schema": [
+                ""
+              ],
+              "onchangeFilter": [
+                null
+              ]
+            }
+          ],
+          "data": [
+            {
+              "saveInView": [
+                []
+              ],
+              "varname": [
+                ""
+              ],
+              "data": [
+                "{}"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 43,
+            "top": 4
+          },
+          "size": {
+            "width": 22,
+            "height": 6
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 7,
+            "top": 4
+          },
+          "size": {
+            "width": 22,
+            "height": 6
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 14,
+      "vars_in": [
+        {
+          "rel": "schema",
+          "name": "groupFormSchema"
+        },
+        {
+          "rel": "inputValue",
+          "name": "groupForm"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "title": "",
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "zindex": 3,
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/array_search/smart_array_filter/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "debounce": [
+                250
+              ],
+              "limit": [
+                0
+              ],
+              "initialValue": [
+                ""
+              ],
+              "placeholder": [
+                "Search for samples"
+              ],
+              "fontSize": [
+                24
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 1,
+            "top": 4
+          },
+          "size": {
+            "width": 35,
+            "height": 8
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 7,
+            "top": 0
+          },
+          "size": {
+            "width": 35,
+            "height": 8
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 15,
+      "vars_in": [
+        {
+          "rel": "input",
+          "name": "sampleToc"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "title": "",
+      "vars_out": [
+        {
+          "event": "onQuery",
+          "rel": "output",
+          "jpath": [],
+          "name": "sampleTocFiltered"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "zindex": 2,
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "if (! this.action) {\n    this.action={\n        name: this.button\n    }\n}\n\nconst userInfo = API.cache('userInfo');\nconst selected = API.getData('selected');\nconst roc = API.cache('roc');\n\nconsole.log(selected);\n\nswitch (this.action.name) {\n  case 'addSample':\n    addIfNotExists(this.action.value);\n    break;\n  case 'addSelectedSamples':\n    for (let sample of API.getData('selectedSamples')) {\n      addIfNotExists(sample);\n    }\n    break;\n  case 'addSample':\n    JSON.parse(JSON.stringify(selected.push(this.action.value)));\n    break;\n  case 'clearSelected':\n    selected.length = 0;\n    break;\n  case 'refresh':\n    API.cache('sampleToc').refresh();\n    return;\n  case 'addOwner':\n      addOwner(selected);\n      break;\ncase 'deleteOwner':\n    deleteOwner(selected);\n    break;\n}\n\nselected.triggerChange();\n\nfunction addIfNotExists(sample) {\n  let exists = selected.filter(item => item.id == sample.id);\n  if (exists.length === 0) {\n    sample = JSON.parse(JSON.stringify(sample));\n    selected.push(sample);\n  }\n}\n\nfunction addOwner(samples, owner) {\n  addDeleteOwner(samples, 'add', owner);\n}\n\nfunction deleteOwner(samples, owner) {\n  addDeleteOwner(samples, 'delete', owner);\n}\n\nfunction addDeleteOwner(samples, method, groupName) {\n  var counter = 0;\n  function updateCounter() {\n    counter++;\n  }\n  if (!groupName) {\n    groupName = UI.enterValue({\n      description:\n        'Enter the name of the group you want to add to the selected entries',\n      label: 'Group name',\n      buttonLabel: 'Proceed'\n    });\n  } else {\n    groupName = Promise.resolve(groupName);\n  }\n  \n  var prom = Promise.resolve();\n  groupName.then(function(groupName) {\n    if (!groupName) return;\n    UI.confirm(\n      `Are you sure you want to ${method} the group \"${groupName}\" to ${samples.length} samples?`\n    ).then(function(ok) {\n      if (!ok) return;\n      for (let i = 0; i < samples.length; i++) {\n        prom = prom.then(function() {\n          return roc[method === 'delete' ? 'deleteGroup' : 'addGroup'](\n            samples[i].id,\n            groupName,\n            {\n              mute: true,\n              noUpdate: true\n            }\n          ).then(updateCounter);\n        });\n      }\n\n      prom.then(function() {\n        if (counter !== 0) {\n          UI.showNotification(\n            `Successfully updated ${counter} sample(s)`,\n            'success'\n          );\n        }\n      });\n      prom\n        .catch(function(err) {\n          UI.showNotification(\n            `error occured while adding group, successfully updated ${count} samples`,\n            'error'\n          );\n        })\n        .then(function() {\n          API.doAction('refresh');\n        });\n    });\n  });\n}\n"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {
+                "lib": "src/util/ui",
+                "alias": "UI"
+              }
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "addOwner",
+                "label": "Add owner / group",
+                "hide": [],
+                "disable": []
+              },
+              {
+                "name": "deleteOwner",
+                "label": "Delete owner / group",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 83,
+            "top": 4
+          },
+          "size": {
+            "width": 55,
+            "height": 5
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 68,
+            "top": 24
+          },
+          "size": {
+            "width": 86,
+            "height": 63
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 16,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {
+          "rel": "execute",
+          "name": "addSample"
+        },
+        {
+          "rel": "execute",
+          "name": "addSelectedSamples"
+        },
+        {
+          "rel": "execute",
+          "name": "refresh"
+        },
+        {
+          "rel": "execute",
+          "name": "clearSelected"
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": ""
+    },
+    {
+      "url": "modules/types/edition/slick_grid/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "slickCheck": [
+                [
+                  "enableCellNavigation",
+                  "rowNumbering",
+                  "forceFitColumns",
+                  "highlightScroll",
+                  "forgetLastActive"
+                ]
+              ],
+              "copyPaste": [
+                []
+              ],
+              "copyPasteOptions": [
+                [
+                  "newRows"
+                ]
+              ],
+              "autoColumns": [
+                [
+                  "remove"
+                ]
+              ],
+              "toolbar": [
+                []
+              ],
+              "colorjpath": [
+                []
+              ],
+              "slick.defaultColumnWidth": [
+                null
+              ],
+              "slick.rowHeight": [
+                null
+              ],
+              "slick.headerRowHeight": [
+                30
+              ],
+              "slick.selectionModel": [
+                "row"
+              ],
+              "idProperty": [
+                ""
+              ],
+              "filterType": [
+                "pref"
+              ],
+              "filterRow": [
+                "// Documentation: https://github.com/NPellet/visualizer/blob/46b40ca86345f8fa313563bf9c6ecb80ba323101/src/modules/types/edition/slick_grid/view.js#L1695-L1735"
+              ],
+              "customJpaths": [
+                ""
+              ]
+            }
+          ],
+          "cols": [
+            [
+              {
+                "name": "Refrence",
+                "jpath": [
+                  "value",
+                  "reference"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": [],
+                "width": 271
+              },
+              {
+                "name": "MF",
+                "jpath": [
+                  "value",
+                  "mf"
+                ],
+                "editor": "none",
+                "forceType": "mf",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": [],
+                "width": 30
+              },
+              {
+                "name": "Creation date",
+                "jpath": [
+                  "value",
+                  "creationDate"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "dateFormat:'YYYY-MM-DD'",
+                "editorOptions": "",
+                "hideColumn": [],
+                "width": 90
+              },
+              {
+                "name": "Last modification date",
+                "jpath": [
+                  "value",
+                  "modificationDate"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "dateFormat:'YYYY-MM-DD'",
+                "editorOptions": "",
+                "hideColumn": [],
+                "width": 129
+              }
+            ]
+          ],
+          "actionCols": [
+            [
+              {
+                "backgroundColor": [
+                  255,
+                  255,
+                  255,
+                  0
+                ],
+                "color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "position": "end",
+                "clickMode": "text"
+              }
+            ]
+          ],
+          "groupings": [
+            [
+              {
+                "getter": []
+              }
+            ]
+          ],
+          "actionOutButtons": [
+            [
+              {}
+            ]
+          ],
+          "data": [
+            {
+              "saveInView": [
+                []
+              ],
+              "varname": [
+                ""
+              ],
+              "data": [
+                "[]"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 68,
+            "top": 10
+          },
+          "size": {
+            "width": 59,
+            "height": 73
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "List of selected samples",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Admin": {
+          "position": {
+            "left": 68,
+            "top": 0
+          },
+          "size": {
+            "width": 55,
+            "height": 22
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "List of selected samples",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 17,
+      "vars_in": [
+        {
+          "rel": "list",
+          "name": "selected"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "Clear selection",
+              "icon": "fa-eraser",
+              "action": "clearSelected",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              []
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "List of selected samples"
+    }
+  ],
+  "variables": [
+    {
+      "jpath": [
+        ""
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "path": "https://www.lactame.com/github/cheminfo-js/visualizer-helper/398556feabeec7f82f7212fd03277f2dae3d681e",
+      "alias": "vh"
+    }
+  ],
+  "configuration": {
+    "title": "Sample access rights"
+  },
+  "actionscripts": [
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          {
+            "name": [
+              null
+            ],
+            "script": [
+              null
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "init_script": [
+    {
+      "sections": {},
+      "groups": {
+        "general": [
+          {
+            "script": [
+              "\nconst [\n    Roc,\n    Toc,\n] = await API.require([\n    'vh/rest-on-couch/Roc',\n    'vh/eln/Toc',\n]);\n\n\nif((typeof IframeBridge)!=='undefined') {\n    IframeBridge.onMessage(onMessage);\n    IframeBridge.ready();\n}\n\n\nasync function onMessage(data) {\n    if(data.type === 'tab.data') {\n        const couchDB = data.message.couchDB;\n        const roc = new Roc(couchDB);\n        API.cache('roc', roc);\n        \n        const sampleToc = new Toc(roc, {\n            viewName: 'sample_owners'\n        });\n        sampleToc.initializeGroupForm();\n        API.cache('sampleToc', sampleToc);\n        API.cache('userInfo', await roc.getUserInfo());\n    }\n}\n\n\nAPI.createData('selected',[]);\n/*\nAPI.require('vh/util/tips').then( Tips => {\n    Tips.showTips();\n    Tips.addPageHelp({iconSize:'fa-4x'});\n});\n*/\n"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "custom_filters": [
+    {
+      "sections": {
+        "modules": [
+          {
+            "sections": {},
+            "groups": {
+              "modules": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ],
+        "filtersLib": [
+          {
+            "sections": {},
+            "groups": {
+              "filters": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ],
+        "filters": [
+          {
+            "sections": {},
+            "groups": {
+              "filter": [
+                {
+                  "name": [
+                    null
+                  ],
+                  "script": [
+                    null
+                  ]
+                }
+              ],
+              "libs": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "groups": {}
+    }
+  ],
+  "actionfiles": [
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          [
+            {}
+          ]
+        ]
+      }
+    }
+  ]
+}

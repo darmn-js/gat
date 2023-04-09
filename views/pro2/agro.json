@@ -1,0 +1,5011 @@
+{
+  "version": "2.156.0",
+  "grid": {
+    "layers": {
+      "admin": {
+        "name": "admin"
+      },
+      "preferences": {
+        "name": "preferences"
+      },
+      "Default layer": {
+        "name": "Default layer"
+      },
+      "agronomic": {
+        "name": "agronomic"
+      },
+      "images": {
+        "name": "images"
+      }
+    },
+    "xWidth": 10,
+    "yHeight": 10
+  },
+  "modules": [
+    {
+      "url": "modules/types/client_interaction/code_editor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "mode": [
+                "json"
+              ],
+              "outputType": [
+                null
+              ],
+              "btnvalue": [
+                "Send script"
+              ],
+              "iseditable": [
+                [
+                  "editable"
+                ]
+              ],
+              "hasButton": [
+                [
+                  "button"
+                ]
+              ],
+              "variable": [
+                []
+              ],
+              "storeOnChange": [
+                []
+              ],
+              "debouncing": [
+                0
+              ],
+              "script": [
+                "{\n    \"type\": \"object\",    \n    \"properties\": {\n        \"Parameters\": {\n            \"type\":\"object\",\n             \"properties\":{\n                \"Gene\": {\n                    \"type\":\"string\",\n                    \"label\":\"Gene\",\n                    \"title\":\"Molecular formula\"\n                },\n                \"orf\": {\n                    \"type\":\"number\",\n                    \"label\":\"ORF\",\n                    \"title\":\"Open reading frame\"\n                }\n            }\n        },\n        \"sample\": {\n            \"type\":\"object\",\n             \"properties\":{\n                \"ypd\": {\n                    \"type\":\"number\",\n                    \"label\":\"YPD\",\n                    \"title\":\"Yeast protein database\"\n                },\n                \"ypdge\": {\n                    \"type\":\"number\",\n                    \"label\":\"YPDGE\",\n                    \"title\":\"ypdge\"\n                },\n                \"ype\": {\n                    \"type\":\"number\",\n                    \"label\":\"YPE\",\n                    \"title\":\"ype\"\n                },\n                \"ypl\": {\n                    \"type\":\"number\",\n                    \"label\":\"YPL\",\n                    \"title\":\"ypl\"\n                },\n                \"ypg\": {\n                    \"type\":\"number\",\n                    \"label\":\"YPG\",\n                    \"title\":\"ypg\"\n                }\n            }\n        },\n        \"info\": {\n            \"label\":\"Submitter\",\n            \"type\":\"object\",\n            \"properties\":{\n                \"firstname\": {\n                    \"type\":\"string\",\n                    \"label\":\"Firstname\"\n                },\n                \"lastname\": {\n                    \"type\":\"string\",\n                    \"label\":\"Lastname\"\n                },\n                \"email\": {\n                    \"type\":\"string\",\n                    \"label\":\"Email\"\n                }\n            }\n        },\n        \"remarks\": {\n            \"type\":\"string\",\n            \"label\":\"Remarks\",\n            \"format\": \"multiline\"\n        },\n        \"submit\": {\n            \"type\":\"boolean\",\n            \"title\":\"Submit new form\",\n            \"label\":\"Submit\"\n        }\n    }\n }"
+              ]
+            }
+          ],
+          "ace": [
+            {
+              "useSoftTabs": [
+                [
+                  "yes"
+                ]
+              ],
+              "tabSize": [
+                4
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "preferences": {
+          "position": {
+            "left": 99,
+            "top": 26
+          },
+          "size": {
+            "width": 35,
+            "height": 13
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "JSON schema",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Default layer": {
+          "position": {
+            "left": 99,
+            "top": 26
+          },
+          "size": {
+            "width": 35,
+            "height": 13
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "JSON schema",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "agronomic": {
+          "position": {
+            "left": 99,
+            "top": 26
+          },
+          "size": {
+            "width": 35,
+            "height": 13
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "JSON schema",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "images": {
+          "position": {
+            "left": 99,
+            "top": 26
+          },
+          "size": {
+            "width": 35,
+            "height": 13
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "JSON schema",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 551,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onEditorChange",
+          "rel": "jsonValue",
+          "jpath": [],
+          "name": "schema"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/client_interaction/code_editor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "mode": [
+                "json"
+              ],
+              "outputType": [
+                null
+              ],
+              "btnvalue": [
+                "Send script"
+              ],
+              "iseditable": [
+                [
+                  "editable"
+                ]
+              ],
+              "hasButton": [
+                [
+                  "button"
+                ]
+              ],
+              "variable": [
+                []
+              ],
+              "storeOnChange": [
+                []
+              ],
+              "debouncing": [
+                0
+              ],
+              "script": [
+                "{\n    \"type\": \"object\",    \n    \"properties\": {\n        \"Parameters\": {\n            \"type\":\"object\",\n             \"properties\":{\n                \"Gene\": {\n                    \"type\":\"string\",\n                    \"label\":\"Gene\",\n                    \"title\":\"Molecular formula\"\n                },\n                \"orf\": {\n                    \"type\":\"number\",\n                    \"label\":\"ORF\",\n                    \"title\":\"Open reading frame\"\n                }\n            }\n        },\n        \"sample\": {\n            \"type\":\"object\",\n             \"properties\":{\n                \"ypd\": {\n                    \"type\":\"number\",\n                    \"label\":\"YPD\",\n                    \"title\":\"Yeast protein database\"\n                },\n                \"ypdge\": {\n                    \"type\":\"number\",\n                    \"label\":\"YPDGE\",\n                    \"title\":\"ypdge\"\n                },\n                \"ype\": {\n                    \"type\":\"number\",\n                    \"label\":\"YPE\",\n                    \"title\":\"ype\"\n                },\n                \"ypl\": {\n                    \"type\":\"number\",\n                    \"label\":\"YPL\",\n                    \"title\":\"ypl\"\n                },\n                \"ypg\": {\n                    \"type\":\"number\",\n                    \"label\":\"YPG\",\n                    \"title\":\"ypg\"\n                }\n            }\n        },\n        \"info\": {\n            \"label\":\"Submitter\",\n            \"type\":\"object\",\n            \"properties\":{\n                \"firstname\": {\n                    \"type\":\"string\",\n                    \"label\":\"Firstname\"\n                },\n                \"lastname\": {\n                    \"type\":\"string\",\n                    \"label\":\"Lastname\"\n                },\n                \"email\": {\n                    \"type\":\"string\",\n                    \"label\":\"Email\"\n                }\n            }\n        },\n        \"remarks\": {\n            \"type\":\"string\",\n            \"label\":\"Remarks\",\n            \"format\": \"multiline\"\n        },\n        \"submit\": {\n            \"type\":\"boolean\",\n            \"title\":\"Submit new form\",\n            \"label\":\"Submit\"\n        }\n    }\n }"
+              ]
+            }
+          ],
+          "ace": [
+            {
+              "useSoftTabs": [
+                [
+                  "yes"
+                ]
+              ],
+              "tabSize": [
+                4
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "preferences": {
+          "position": {
+            "left": 99,
+            "top": 26
+          },
+          "size": {
+            "width": 35,
+            "height": 13
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "JSON schema",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Default layer": {
+          "position": {
+            "left": 99,
+            "top": 26
+          },
+          "size": {
+            "width": 35,
+            "height": 13
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "JSON schema",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "agronomic": {
+          "position": {
+            "left": 99,
+            "top": 26
+          },
+          "size": {
+            "width": 35,
+            "height": 13
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "JSON schema",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "images": {
+          "position": {
+            "left": 99,
+            "top": 26
+          },
+          "size": {
+            "width": 35,
+            "height": 13
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "JSON schema",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        }
+      },
+      "id": 552,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onEditorChange",
+          "rel": "jsonValue",
+          "jpath": [],
+          "name": "schema"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                [
+                  "yes"
+                ]
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "let dataSynced = API.getData('dataSynced');\n\nconsole.log(dataSynced && !dataSynced.resurrect());\n\nif (dataSynced) {\n    this.getButton('save').setColor('green');\n    this.enableButton('save');\n} else {\n    this.getButton('save').setColor('grey');\n    this.disableButton('save');\n}\n\nvar layers={\n    'default': {\n        layer: 'Default layer'\n    },\n    'agronomic': {\n        layer: 'agronomic'\n    },\n    'images': {\n        layer: 'images'\n    }\n}\n\nif (layers[this.button]) {\n    for (var key of Object.keys(layers)) {\n        this.enableButton(key);\n    }\n    API.switchToLayer(layers[this.button].layer);\n    if (layers[this.button].callback) {\n        layers[this.button].callback();\n    }\n    this.disableButton(this.button);\n} else {\n    switch (this.button) {\n        case 'save':\n            API.doAction('save');\n            break;\n    }\n}\n\n\n"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {}
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "default",
+                "label": "Overview",
+                "hide": [],
+                "disable": []
+              },
+              {
+                "name": "vegetal",
+                "label": "Vegetal",
+                "hide": [
+                  "hide"
+                ],
+                "disable": []
+              },
+              {
+                "name": "soil",
+                "label": "Soil",
+                "hide": [
+                  "hide"
+                ],
+                "disable": []
+              },
+              {
+                "name": "agronomic",
+                "label": "Agronomy and weather",
+                "hide": [],
+                "disable": []
+              },
+              {
+                "name": "images",
+                "label": "Images",
+                "hide": [],
+                "disable": []
+              },
+              {
+                "name": "save",
+                "label": "Save data",
+                "hide": [],
+                "disable": []
+              },
+              {
+                "name": "admin",
+                "label": "Code",
+                "hide": [
+                  "hide"
+                ],
+                "disable": []
+              },
+              {
+                "name": "preferences",
+                "label": "Preferences",
+                "hide": [
+                  "hide"
+                ],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "admin": {
+          "position": {
+            "left": 1,
+            "top": -1
+          },
+          "size": {
+            "width": 47,
+            "height": 5
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "admin"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 1
+          },
+          "size": {
+            "width": 35,
+            "height": 5
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "Default layer": {
+          "position": {
+            "left": 41,
+            "top": 13
+          },
+          "size": {
+            "width": 74,
+            "height": 5
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "agronomic": {
+          "position": {
+            "left": 41,
+            "top": 13
+          },
+          "size": {
+            "width": 74,
+            "height": 5
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Add data"
+        },
+        "images": {
+          "position": {
+            "left": 41,
+            "top": 13
+          },
+          "size": {
+            "width": 74,
+            "height": 5
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Add data"
+        }
+      },
+      "id": 553,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 1
+    },
+    {
+      "url": "modules/types/edition/object_editor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "editable": [
+                "view"
+              ],
+              "expanded": [
+                []
+              ],
+              "storeObject": [
+                [
+                  "expand"
+                ]
+              ],
+              "displayValue": [
+                []
+              ],
+              "searchBox": [
+                [
+                  "search"
+                ]
+              ],
+              "sendButton": [
+                []
+              ],
+              "output": [
+                "new"
+              ],
+              "storedObject": [
+                "{\"_id\":\"b6c41dd2e2c5bde41fe27d40bb307ea6\",\"_rev\":\"3-3205264fa6b9a920b4e777889f8bbad7\",\"$type\":\"entry\",\"$id\":[\"Bogota\",\"Orquidea\"],\"$kind\":\"sample\",\"$owners\":[\"admin@cheminfo.org\",\"pro2@gat.mylims.org\"],\"$content\":{\"general\":{\"geopos\":{\"lat\":\"\",\"lon\":\"\",\"alt\":\"\"},\"description\":\"<p><br></p>\",\"name\":\"\",\"mf\":\"\",\"molfile\":\"\",\"mw\":0,\"title\":\"\",\"keyword\":\"\",\"sequence\":\"\",\"kind\":\"agro\",\"em\":0,\"ocl\":{\"value\":\"\",\"coordinates\":\"\",\"index\":[]},\"metadata\":{\"date\":\"\",\"collector\":\"\",\"departament\":\"\",\"town\":\"\",\"estate\":\"\",\"parent\":{},\"terrainShape\":\"\",\"slope\":\"\",\"sampleIdentifier\":\"Orquidea\"},\"meta\":{}},\"identifier\":{\"cas\":[],\"chemSpiderID\":[],\"taxon\":{\"id\":\"\",\"family\":\"\",\"gender\":\"\",\"specie\":\"\"},\"gisID\":[]},\"spectra\":{\"ir\":[],\"mass\":[],\"nmr\":[],\"raman\":[],\"chromatogram\":[],\"differentialScanningCalorimetry\":[],\"elementalAnalysis\":[],\"iv\":[],\"thermogravimetricAnalysis\":[],\"uv\":[],\"xray\":[],\"cyclicVoltammetry\":[]},\"physical\":{\"bp\":[],\"density\":[],\"mp\":[],\"nd\":[]},\"biology\":{\"nucleic\":[]},\"image\":[],\"stock\":{\"supplier\":\"\",\"description\":\"\",\"catalogNumber\":\"\",\"qty\":\"\",\"history\":{\"location\":\"\",\"date\":\"\",\"status\":\"\"}},\"misc\":{\"attachments\":\"\",\"category\":\"\",\"reference\":\"\"},\"agro\":{\"agroClimate\":{\"estimatedAgroEcoClass\":\"432\",\"ambientTemperature\":\"243\",\"relativeHumidity\":\"432\",\"soilTemperture\":\"432\",\"soilHumidity\":\"432\",\"soilCompactation\":\"43\",\"soilDeepness\":\"243\",\"soilColor\":\"243\",\"soilPhenologicalState\":\"24\",\"habitat\":\"324\",\"cultivatedDensity\":\"32\",\"neighboringVegetation\":\"432\",\"phytosanitaryState\":\"432\",\"seedingDate\":\"432\",\"harvestNumber\":\"43\",\"slot\":\"243\",\"slotArea\":\"243\",\"soilAcidityControl\":\"2\",\"soilAcidityControlDate\":\"432\",\"soilAcidityControlAppliedDose\":\"432\",\"soilFertilization\":\"432\",\"soilFertilizationDate\":\"43\",\"soilFertilizer\":\"243\",\"soilFertilizerDose\":\"24\",\"shadow\":\"32\",\"pestControlMethod\":\"423\"},\"soil\":{\"mycorrhization\":\"\",\"sporeDensity\":\"\",\"apparentDensity\":\"\",\"texturalClass\":\"\",\"pH\":\"\",\"interchangeableAcidity\":\"\",\"electricConductivity\":\"\",\"organicCarbon\":\"\",\"organicMaterial \":\"\",\"totalPhosphorus\":\"\",\"availablePhosphorus\":\"\",\"dilutedPhosphorus\":\"\",\"totalNitrogen\":\"\",\"cNratio\":\"\",\"potassium\":\"\",\"calcium\":\"\",\"magnesium\":\"\",\"baseSaturation\":\"\",\"iron\":\"\",\"phosphataseActivity\":\"\",\"aMOactivity\":\"\",\"bGlucosidaseActivity\":\"\",\"dehydrogenaseActivity\":\"\",\"cationExchangeCapacity\":\"\",\"microbiomeTaxonomicGroups\":\"\"},\"vegetal\":{\"collectedPart\":\"\"},\"collected\":{\"herbariumID\":\"\",\"dryingDescription\":\"\",\"extractionDescription\":\"\"}},\"samplePreparation\":{\"method\":\"\",\"protocol\":\"\",\"abbreviation\":\"\",\"solventProportion\":[],\"timeByRefill\":[],\"tlc\":[],\"contactTime\":\"\",\"extractedMass\":\"\",\"yield\":\"\",\"fraction\":{\"amount\":\"\",\"yield\":\"\",\"abbreviation\":\"\",\"protocol\":\"\",\"solventProportion\":[],\"tlc\":[]}}},\"$lastModification\":\"admin@cheminfo.org\",\"$modificationDate\":1612840276701,\"$creationDate\":1612840217026,\"attachmentList\":[],\"_dataChange\":{}}"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "preferences": {
+          "position": {
+            "left": 121,
+            "top": 8
+          },
+          "size": {
+            "width": 47,
+            "height": 71
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        },
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "agronomic": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Add data"
+        },
+        "images": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Add data"
+        }
+      },
+      "id": 554,
+      "vars_in": [
+        {
+          "rel": "value",
+          "name": "sample"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 36
+    },
+    {
+      "url": "modules/types/edition/rich_text/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "editable": [
+                [
+                  "isEditable"
+                ]
+              ],
+              "debouncing": [
+                0
+              ],
+              "modifyInVariable": [
+                []
+              ],
+              "storeInView": [
+                [
+                  "yes"
+                ]
+              ],
+              "autoHeight": [
+                []
+              ],
+              "bgColor": [
+                [
+                  255,
+                  255,
+                  255,
+                  1
+                ]
+              ],
+              "postit": [
+                []
+              ],
+              "html": [
+                [
+                  "yes"
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "admin": {
+          "position": {
+            "left": 150,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        },
+        "Default layer": {
+          "position": {
+            "left": -3,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "agronomic": {
+          "position": {
+            "left": -3,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Add data"
+        },
+        "images": {
+          "position": {
+            "left": -3,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Add data"
+        }
+      },
+      "id": 555,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "richtext": "<p>98<a href=\"https://www.javeriana.edu.co/colombia-cientifica/wp-content/uploads/2020/01/cropped-Proyecto-GAT-logo-PNG-1-1.png\"><img alt=\"\" src=\"https://www.javeriana.edu.co/colombia-cientifica/wp-content/uploads/2020/01/cropped-Proyecto-GAT-logo-PNG-1-1.png\" /></a></p>\n",
+      "title": "",
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/display/single_value/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "append": [
+                []
+              ],
+              "maxEntries": [
+                1
+              ],
+              "editable": [
+                [
+                  "yes"
+                ]
+              ],
+              "editSearchRegexp": [
+                null
+              ],
+              "editReplace": [
+                null
+              ],
+              "debounce": [
+                0
+              ],
+              "defaultvalue": [
+                null
+              ],
+              "font": [
+                null
+              ],
+              "fontcolor": [
+                [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              ],
+              "fontsize": [
+                "18pt"
+              ],
+              "align": [
+                "center"
+              ],
+              "valign": [
+                "middle"
+              ],
+              "rendererOptions": [
+                ""
+              ],
+              "forceType": [
+                ""
+              ],
+              "sprintf": [
+                null
+              ],
+              "sprintfOrder": [
+                null
+              ],
+              "preformatted": [
+                []
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Title",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Title",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        },
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 19
+          },
+          "size": {
+            "width": 74,
+            "height": 7
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Title",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "agronomic": {
+          "position": {
+            "left": 0,
+            "top": 19
+          },
+          "size": {
+            "width": 74,
+            "height": 7
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Title",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "soil"
+        },
+        "images": {
+          "position": {
+            "left": 0,
+            "top": 19
+          },
+          "size": {
+            "width": 74,
+            "height": 7
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Title",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "soil"
+        }
+      },
+      "id": 556,
+      "vars_in": [
+        {
+          "rel": "value",
+          "name": "sampleIdentifier"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "Title",
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/edition/quill_editor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "editable": [
+                [
+                  "isEditable"
+                ]
+              ],
+              "toolbarMode": [
+                "light"
+              ],
+              "debouncing": [
+                0
+              ],
+              "storeInView": [
+                [
+                  "yes"
+                ]
+              ],
+              "modifyVarIn": [
+                [
+                  "yes"
+                ]
+              ],
+              "className": [
+                "quill"
+              ],
+              "css": [
+                ".quill {}"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Description",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Description",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        },
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 27
+          },
+          "size": {
+            "width": 74,
+            "height": 14
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Description",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "agronomic": {
+          "position": {
+            "left": 0,
+            "top": 27
+          },
+          "size": {
+            "width": 74,
+            "height": 14
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Description",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "soil"
+        },
+        "images": {
+          "position": {
+            "left": 0,
+            "top": 27
+          },
+          "size": {
+            "width": 74,
+            "height": 14
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Description",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "soil"
+        }
+      },
+      "id": 557,
+      "vars_in": [
+        {
+          "rel": "html",
+          "name": "description"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "Description",
+      "richtext": {
+        "ops": [
+          {
+            "insert": "\n"
+          }
+        ]
+      },
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/edition/slick_grid/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "slickCheck": [
+                [
+                  "enableCellNavigation",
+                  "rowNumbering",
+                  "forceFitColumns",
+                  "highlightScroll",
+                  "forgetLastActive"
+                ]
+              ],
+              "copyPaste": [
+                []
+              ],
+              "copyPasteOptions": [
+                [
+                  "newRows"
+                ]
+              ],
+              "autoColumns": [
+                []
+              ],
+              "toolbar": [
+                []
+              ],
+              "colorjpath": [
+                []
+              ],
+              "slick.defaultColumnWidth": [
+                null
+              ],
+              "slick.rowHeight": [
+                null
+              ],
+              "slick.headerRowHeight": [
+                30
+              ],
+              "slick.selectionModel": [
+                "row"
+              ],
+              "idProperty": [
+                ""
+              ],
+              "filterType": [
+                "pref"
+              ],
+              "filterRow": [
+                "// Documentation: https://github.com/NPellet/visualizer/blob/46b40ca86345f8fa313563bf9c6ecb80ba323101/src/modules/types/edition/slick_grid/view.js#L1695-L1735"
+              ],
+              "customJpaths": [
+                ""
+              ]
+            }
+          ],
+          "cols": [
+            [
+              {
+                "jpath": [],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              }
+            ]
+          ],
+          "actionCols": [
+            [
+              {
+                "backgroundColor": [
+                  255,
+                  255,
+                  255,
+                  0
+                ],
+                "color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "position": "end",
+                "clickMode": "text"
+              }
+            ]
+          ],
+          "groupings": [
+            [
+              {
+                "getter": []
+              }
+            ]
+          ],
+          "actionOutButtons": [
+            [
+              {}
+            ]
+          ],
+          "data": [
+            {
+              "saveInView": [
+                []
+              ],
+              "varname": [
+                ""
+              ],
+              "data": [
+                "[]"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        },
+        "Default layer": {
+          "position": {
+            "left": 39,
+            "top": 42
+          },
+          "size": {
+            "width": 35,
+            "height": 37
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "agronomic": {
+          "position": {
+            "left": 39,
+            "top": 42
+          },
+          "size": {
+            "width": 35,
+            "height": 33
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "soil"
+        },
+        "images": {
+          "position": {
+            "left": 39,
+            "top": 42
+          },
+          "size": {
+            "width": 35,
+            "height": 33
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "soil"
+        }
+      },
+      "id": 558,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/display/template-twig/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "selectable": [
+                []
+              ],
+              "template": [
+                ""
+              ],
+              "modifyInForm": [
+                []
+              ],
+              "debouncing": [
+                0
+              ],
+              "formOptions": [
+                [
+                  "keepFormValueIfDataUndefined"
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "preferences": {
+          "position": {
+            "left": 65,
+            "top": 8
+          },
+          "size": {
+            "width": 55,
+            "height": 71
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        },
+        "Default layer": {
+          "position": {
+            "left": 75,
+            "top": 19
+          },
+          "size": {
+            "width": 53,
+            "height": 60
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "agronomic": {
+          "position": {
+            "left": 75,
+            "top": 19
+          },
+          "size": {
+            "width": 53,
+            "height": 60
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "soil"
+        },
+        "images": {
+          "position": {
+            "left": 80,
+            "top": 19
+          },
+          "size": {
+            "width": 48,
+            "height": 60
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "soil"
+        }
+      },
+      "id": 559,
+      "vars_in": [
+        {
+          "rel": "tpl",
+          "name": "overviewTemplate"
+        },
+        {
+          "rel": "value",
+          "name": "sample"
+        },
+        {
+          "rel": "value",
+          "name": "userInfo"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/client_interaction/code_editor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "mode": [
+                "html"
+              ],
+              "outputType": [
+                null
+              ],
+              "btnvalue": [
+                "Send script"
+              ],
+              "iseditable": [
+                [
+                  "editable"
+                ]
+              ],
+              "hasButton": [
+                [
+                  "button"
+                ]
+              ],
+              "variable": [
+                []
+              ],
+              "storeOnChange": [
+                [
+                  "store"
+                ]
+              ],
+              "debouncing": [
+                2000
+              ],
+              "script": [
+                "<style>\n    #agroForm {\n        padding: 10px;\n    }\n    #agroForm .addRow {\n        color: green;\n        font-weight: bold;\n        font-size: 12px;\n        padding: .4em .6em;\n    }\n    #agroForm .removeRow {\n        color: red;\n        font-weight: bold;\n        font-size: 12px;\n        padding: .4em .8em;\n    }\n    #agroForm h1 {\n        font-size: 16px;\n        padding-top: 12px;\n        padding-bottom: 4px;\n        space\n    }\n    #agroForm h2 {\n        font-size: 12px;\n        margin-top: 12px;\n        margin-bottom: 4px;\n        space\n    }\n    #agroForm input[type=number]{\n        width: 60px;\n    }\n    #agroForm input, #agroForm select {\n        margin-top: 3px;\n        margin-bottom: 3px;\n    } \n</style>\n\n<div id='agroForm'>\n    <h1> Vegetal sample </h1>\n    <table style=\"padding-left: 10px\">\n        <tr>\n            <td style=\"padding-right: 15px\">\n                <h1> Soil </h1>\n            </td>\n            <td>\n                <table style=\"padding-top: 20px\">\n                    <tr>\n                        <th align=\"left\"> Agroeconomic class </th>\n                        <th align=\"left\"> Ambient temperature </th>\n                        <th align=\"left\"> Relative humidity </th>\n                        <th align=\"left\"> Temperature </th>\n                    </tr>\n                    <tr>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.estimatedAgroEcoClass\" type=\"string\" size=\"14\"></td>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.ambientTemperature\" type=\"string\" size=\"14\"></td>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.relativeHumidity\" type=\"string\" size=\"14\"></td>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.soilTemperture\" type=\"string\" size=\"14\"></td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n        <tr>\n            <td style=\"padding-right: 15px\">\n                <h1> </h1>\n            </td>\n            <td>\n                <table>\n                    <tr>\n                        <th align=\"left\"> Humidity </th>\n                        <th align=\"left\"> Compactation </th>\n                        <th align=\"left\"> Deepness</th>\n                        <th align=\"left\"> Color </th>\n                    </tr>\n                    <tr>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.soilHumidity\" type=\"string\" size=\"14\"></td>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.soilCompactation\" type=\"string\" size=\"14\"></td>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.soilDeepness\" type=\"string\" size=\"14\"></td>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.soilColor\" type=\"string\" size=\"14\"></td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n        <tr>\n            <td style=\"padding-right: 15px\">\n                <h1> </h1>\n            </td>\n            <td>\n                <table>\n                    <tr>\n                        <th align=\"left\"> Phenological state </th>\n                        <th align=\"center\"> Habitat </th>\n                        <th align=\"left\"> Cultivated density</th>\n                        <th align=\"left\"> Neigh. vegetation </th>\n                    </tr>\n                    <tr>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.soilPhenologicalState\" type=\"string\" size=\"14\"></td>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.habitat\" type=\"string\" size=\"14\"></td>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.cultivatedDensity\" type=\"string\" size=\"14\"></td>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.neighboringVegetation\" type=\"string\" size=\"14\"></td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n        <tr>\n            <td style=\"padding-right: 15px\">\n                <h1> </h1>\n            </td>\n            <td>\n                <table>\n                    <tr>\n                        <th align=\"left\"> Phytosanitary state </th>\n                        <th align=\"center\"> Seeding date </th>\n                        <th align=\"left\"> Harvest number</th>\n                        <th align=\"left\"> Slot </th>\n                    </tr>\n                    <tr>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.phytosanitaryState\" type=\"string\" size=\"14\"></td>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.seedingDate\" type=\"string\" size=\"14\"></td>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.harvestNumber\" type=\"string\" size=\"14\"></td>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.slot\" type=\"string\" size=\"14\"></td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n        <tr>\n            <td style=\"padding-right: 15px\">\n                <h1> </h1>\n            </td>\n            <td>\n                <table>\n                    <tr>\n                        <th align=\"left\"> Slot area </th>\n                        <th align=\"center\"> Acidity control </th>\n                        <th align=\"left\"> Acidity control date</th>\n                        <th align=\"left\"> Acidity control dose </th>\n                    </tr>\n                    <tr>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.slotArea\" type=\"string\" size=\"14\"></td>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.soilAcidityControl\" type=\"string\" size=\"14\"></td>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.soilAcidityControlDate\" type=\"string\" size=\"14\"></td>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.soilAcidityControlAppliedDose\" type=\"string\" size=\"14\"></td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n        <tr>\n            <td style=\"padding-right: 15px\">\n                <h1> </h1>\n            </td>\n            <td>\n                <table>\n                    <tr>\n                        <th align=\"left\"> Fertilization </th>\n                        <th align=\"center\"> Fertilization date </th>\n                        <th align=\"left\"> Fertilizer </th>\n                        <th align=\"left\"> Fertilizer dose </th>\n                    </tr>\n                    <tr>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.soilFertilization\" type=\"string\" size=\"14\"></td>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.soilFertilizationDate\" type=\"string\" size=\"14\"></td>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.soilFertilizer\" type=\"string\" size=\"14\"></td>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.soilFertilizerDose\" type=\"string\" size=\"14\"></td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n        <tr>\n            <td style=\"padding-right: 15px\">\n                <h1> </h1>\n            </td>\n            <td>\n                <table>\n                    <tr>\n                        <th align=\"left\"> Shadow </th>\n                        <th align=\"center\"> Pest control method </th>\n                    </tr>\n                    <tr>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.shadow\" type=\"string\" size=\"14\"></td>\n                        <td style=\"padding-right: 20px\"><input name=\"agro.agroClimate.pestControlMethod\" type=\"string\" size=\"14\"></td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n        \n        <tr><br></tr>\n    </table>\n</div>\n\n"
+              ]
+            }
+          ],
+          "ace": [
+            {
+              "useSoftTabs": [
+                [
+                  "yes"
+                ]
+              ],
+              "tabSize": [
+                4
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "agroForm",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "fractions"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "agroForm",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 80
+          },
+          "size": {
+            "width": 64,
+            "height": 42
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "agroForm",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        },
+        "agronomic": {
+          "position": {
+            "left": 75,
+            "top": 16
+          },
+          "size": {
+            "width": 63,
+            "height": 71
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "agroForm",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "soil"
+        },
+        "images": {
+          "position": {
+            "left": 75,
+            "top": 16
+          },
+          "size": {
+            "width": 63,
+            "height": 71
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "agroForm",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "soil"
+        }
+      },
+      "id": 560,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onEditorChange",
+          "rel": "data",
+          "jpath": [],
+          "name": "agroTwig"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "agroForm",
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/display/template-twig/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "selectable": [
+                []
+              ],
+              "template": [
+                ""
+              ],
+              "modifyInForm": [
+                [
+                  "yes"
+                ]
+              ],
+              "debouncing": [
+                0
+              ],
+              "formOptions": [
+                [
+                  "keepFormValueIfDataUndefined"
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        },
+        "agronomic": {
+          "position": {
+            "left": 0,
+            "top": 27
+          },
+          "size": {
+            "width": 74,
+            "height": 52
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "soil"
+        },
+        "images": {
+          "position": {
+            "left": 0,
+            "top": 24
+          },
+          "size": {
+            "width": 74,
+            "height": 63
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "soil"
+        }
+      },
+      "id": 561,
+      "vars_in": [
+        {
+          "rel": "tpl",
+          "name": "agroTwig"
+        },
+        {
+          "rel": "form",
+          "name": "content"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/display/panzoom/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "highlightStrategy": [
+                "none"
+              ],
+              "transformThrottling": [
+                0
+              ]
+            }
+          ],
+          "img": [
+            [
+              {
+                "variable": "photos",
+                "opacity": "1",
+                "order": "",
+                "rendering": "default",
+                "scaling": "max",
+                "rerender": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Add data"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        },
+        "agronomic": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "agronomic"
+        },
+        "images": {
+          "position": {
+            "left": 33,
+            "top": 19
+          },
+          "size": {
+            "width": 46,
+            "height": 60
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "images"
+        }
+      },
+      "id": 562,
+      "vars_in": [
+        {
+          "rel": "picture",
+          "name": "selectedImage"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/client_interaction/code_editor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "mode": [
+                "html"
+              ],
+              "outputType": [
+                null
+              ],
+              "btnvalue": [
+                "Send script"
+              ],
+              "iseditable": [
+                [
+                  "editable"
+                ]
+              ],
+              "hasButton": [
+                [
+                  "button"
+                ]
+              ],
+              "variable": [
+                []
+              ],
+              "storeOnChange": [
+                [
+                  "store"
+                ]
+              ],
+              "debouncing": [
+                2000
+              ],
+              "script": [
+                "<style>\n    #result, #result tbody  {\n        font-size: 12px;\n        font-family: Arial, Helvetica, sans-serif;\n    }\n    #result h1 {\n        font-size:20px;\n        text-align: center;\n    }\n    #result td,  #result th {\n        vertical-align: top;\n    }\n    #result .number {\n        text-align: right;\n    }\n    #result .header {\n        font-size: 20px;\n        font-weight: bold;\n        width: 100%;\n    }\n    #result .headerCode {\n        font-size: 24px;\n    } \n    #result .reagents {\n        font-size: 10px;\n    }\n       \n    #result .reagents{\n         border-collapse: collapse;\n         border-width: 1px 0px 1px 0px;\n    }\n    \n    #result .reagents td, #result .samples td,\n    #result .reagents th, #result .samples th {\n        border-style: solid;\n        border-width: 1px 0px 1px 0px;\n        font-size: 10px;\n        vertical-align: center;\n        height: 20px;\n    }\n</style>\n\n{%set content=sample[\"$content\"] %}\n\n\n{% if content %}\n<div id='result'>\n \n    <table class=\"header\">\n      <tr>\n          <td class='headerCode'>\n              {{sample[\"$id\"][0]}}<br>\n              <span style=\"font-size: 18px\">{{sample[\"$id\"][1]}}</span>\n          </td>\n          <td style='zoom: 0.5' align=\"center\">\n                {%set barcode2=userInfo.username ~ \"_\" ~ sample[\"$id\"][0] ~ \"_\" ~ sample[\"$id\"][1] %}\n                {{ rendertype(barcode2, {\n                        \"width\": 1,\n                        \"height\": 40,\n                        \"displayValue\": true,\n                        \"fontSize\": 16},'barcode' ) }}\n          </td>\n          <td align=\"right\">\n            {{rendertype(sample[\"$creationDate\"],{dateFormat:'YYYY-MM-DD'})}}<br>\n            {{rendertype(sample[\"$modificationDate\"],{dateFormat:'YYYY-MM-DD'})}}\n          </td>\n      </tr> \n    </table>\n    \n    \n    {{content.general.description}}\n    \n    {{rendertype(content.general.molfile,{width:500, height:200},\"mol2d\")}}\n    \n    {% for key,file in sample._attachments %} \n        {% if key > \"image/overview\" and key < \"image/overviex\" %}\n            <center>\n                <img style=\"max-width:600px; max-height:200px;\" src=\"{{file.url}}?{{ file.digest }}\" />\n            </center>\n        {% endif %}\n    {% endfor %}\n    <table>\n    {% if content.general.sampleID %}\n        <tr>\n            <td>\n                Sample ID\n            </td>\n            <td>\n                {{rendertype(content.general.sampleID)}}\n            </td>\n        </tr>\n    {% endif %}\n    </table>\n    {% for i in 0..(content.general.image.length - 1) %}\n    <table>\n    {% if content.image[0].description %}\n        <tr>\n            <td>\n                Description\n            </td>\n            <td>\n                {{rendertype(content.image[0].description)}}\n            </td>\n        </tr>\n    {% endif %}\n    {% if content.image[0].file %}\n        <tr>\n            <td>\n                Photo\n            </td>\n            <td>\n                {{rendertype(content.image[0].file, {width:200, height:200}, 'image')}}\n            </td>\n        </tr>\n    {% endif %}\n    <tr><td style=\"padding-bottom: 30px\"></td></tr>\n    </table>\n    {% endfor %}\n    <table>\n        <h1> General information </h1>\n        {% if content.general.metadata.date %}\n            <tr>\n                <td>\n                    Date\n                </td>\n                <td>\n                    {{rendertype(content.general.metadata.date, \"Date\")}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.general.metadata.collector %}\n            <tr>\n                <td>\n                    Collector\n                </td>\n                <td>\n                    {{rendertype(content.general.metadata.collector)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.general.metadata.departament %}\n            <tr>\n                <td>\n                    Departament\n                </td>\n                <td>\n                    {{rendertype(content.general.metadata.departament)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.general.metadata.town %}\n            <tr>\n                <td>\n                    Town\n                </td>\n                <td>\n                    {{rendertype(content.general.metadata.town)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.general.metadata.estate %}\n            <tr>\n                <td>\n                    Estate\n                </td>\n                <td>\n                    {{rendertype(content.general.metadata.estate)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.general.metadata.terrainShape %}\n            <tr>\n                <td>\n                    Terrain shape\n                </td>\n                <td>\n                    {{rendertype(content.general.metadata.terrainShape)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.general.metadata.slope %}\n            <tr>\n                <td>\n                    Terrain slope\n                </td>\n                <td>\n                    {{rendertype(content.general.metadata.slope)}}\n                </td>\n            </tr>\n        {% endif %}\n        <tr><td style=\"padding-bottom: 30px\"></td></tr>\n    </table>\n    <table>\n        <h1> Identifier </h1>\n        {% if content.identifier.taxon.id %}\n            <tr>\n                <td>\n                    Taxon ID\n                </td>\n                <td>\n                    {{rendertype(content.identifier.taxon.id)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.identifier.taxon.family %}\n            <tr>\n                <td>\n                    Family\n                </td>\n                <td>\n                    {{rendertype(content.identifier.taxon.family)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.identifier.taxon.gender%}\n            <tr>\n                <td>\n                    Gender\n                </td>\n                <td>\n                    {{rendertype(content.identifier.taxon.gender)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.identifier.taxon.specie%}\n            <tr>\n                <td>\n                    Specie\n                </td>\n                <td>\n                    {{rendertype(content.identifier.taxon.specie)}}\n                </td>\n            </tr>\n        {% endif %}\n        <tr><td style=\"padding-bottom: 30px\"></td></tr>\n    </table>\n    <table>\n        <h1> Agronomy and weather</h1>\n        {% if content.agro.agroClimate.estimatedAgroEcoClass %}\n            <tr>\n                <td>\n                    Estimated agroecoclass\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.estimatedAgroEcoClass)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.ambientTemperature %}\n            <tr>\n                <td>\n                    Estimated ambientTemperature\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.ambientTemperature)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.relativeHumidity %}\n            <tr>\n                <td>\n                    Relative humidity\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.relativeHumidity)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.soilTemperature %}\n            <tr>\n                <td>\n                    Soil temperature\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.soilTemperature)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.soilHumidity %}\n            <tr>\n                <td>\n                    Soil humidity\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.soilHumidity)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.soilCompactation %}\n            <tr>\n                <td>\n                    Soil compactation\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.soilCompactation)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.soilDeepness %}\n            <tr>\n                <td>\n                    Soil deepness\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.soilDeepness)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.soilColor %}\n            <tr>\n                <td>\n                    Soil color\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.soilColor)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.soilPhenologicalState %}\n            <tr>\n                <td>\n                    Soil phenological state\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.soilPhenologicalState)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.habitat %}\n            <tr>\n                <td>\n                    Habitat\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.habitat)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.cultivatedDensity %}\n            <tr>\n                <td>\n                    Cultivated densidty\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.cultivatedDensity)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.neighboringVegetation %}\n            <tr>\n                <td>\n                    Neighboring vegetation\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.neighboringVegetation)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.phytosanitaryState %}\n            <tr>\n                <td>\n                    Phytosanitary state\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.phytosanitaryState)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.seedingDate %}\n            <tr>\n                <td>\n                    Seeding date\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.seedingDate)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.harvestNumber %}\n            <tr>\n                <td>\n                    Harvest number\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.harvestNumber)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.slot %}\n            <tr>\n                <td>\n                    Slot\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.slot)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.slotArea %}\n            <tr>\n                <td>\n                    Slot area\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.slotArea)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.soilAcidityControl %}\n            <tr>\n                <td>\n                    Soil acidity control\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.soilAcidityControl)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.soilAcidityControlDate %}\n            <tr>\n                <td>\n                    Soil acidity control date\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.soilAcidityControlDate)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.soilAcidityControlAppliedDose %}\n            <tr>\n                <td>\n                    Soil acidity control applied dose\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.soilAcidityControlAppliedDose)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.soilFertilization %}\n            <tr>\n                <td>\n                    Soil fertilization\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.soilFertilization)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.soilFertilizationDate %}\n            <tr>\n                <td>\n                    Soil fertilization date\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.soilFertilizationDate)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.soilFertilizer %}\n            <tr>\n                <td>\n                    Soil fertilizer\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.soilFertilizer)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.soilFertilizerDose %}\n            <tr>\n                <td>\n                    Soil fertilizer dose\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.soilFertilizerDose)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.shadow %}\n            <tr>\n                <td>\n                    Shadow\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.shadow)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.agroClimate.pestControlMethod %}\n            <tr>\n                <td>\n                    Pest control method\n                </td>\n                <td>\n                    {{rendertype(content.agro.agroClimate.pestControlMethod)}}\n                </td>\n            </tr>\n        {% endif %}\n        <tr><td style=\"padding-bottom: 30px\"></td></tr>\n    </table>\n    \n    <table>\n        <h1> Soil </h1>\n        {% if content.agro.soil.mycorrhization %}\n            <tr>\n                <td>\n                    Mycorrhization\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.mycorrhization)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.sporeDensity %}\n            <tr>\n                <td>\n                    Spore density\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.sporeDensity)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.apparentDensity %}\n            <tr>\n                <td>\n                    Apparent density\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.apparentDensity)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.texturalClass %}\n            <tr>\n                <td>\n                    Textural class\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.texturalClass)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.pH %}\n            <tr>\n                <td>\n                    pH\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.pH)}}\n                </td>\n            </tr>\n        {% endif %}\n        \n    \n        {% if content.agro.soil.interchangeableAcidity %}\n            <tr>\n                <td>\n                    Interchangeable acidity\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.interchangeableAcidity)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.electricConductivity %}\n            <tr>\n                <td>\n                    Electric conductivity\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.electricConductivity)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.organicCarbon %}\n            <tr>\n                <td>\n                    Organic carbon\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.organicCarbon)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.organicMaterial %}\n            <tr>\n                <td>\n                    Organic material\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.organicMaterial)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.totalPhosphorus %}\n            <tr>\n                <td>\n                    Total phosphorus\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.totalPhosphorus)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.availablePhosphorus %}\n            <tr>\n                <td>\n                    Available phosphorus\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.availablePhosphorus)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.dilutedPhosphorus %}\n            <tr>\n                <td>\n                    Diluted phosphorus\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.dilutedPhosphorus)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.totalNitrogen %}\n            <tr>\n                <td>\n                    Total nitrogen\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.totalNitrogen)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.cnRatio %}\n            <tr>\n                <td>\n                    C/N ratio\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.cNratio)}}\n                </td>\n            </tr>\n        {% endif %}\n        \n        \n        {% if content.agro.soil.potassium %}\n            <tr>\n                <td>\n                    Potassium\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.potassium)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.calcium %}\n            <tr>\n                <td>\n                    Calcium\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.calcium)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.magnesium %}\n            <tr>\n                <td>\n                    Magnesium\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.magnesium)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.baseSaturation %}\n            <tr>\n                <td>\n                    Base saturation\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.baseSaturation)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.iron %}\n            <tr>\n                <td>\n                    Iron\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.iron)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.phosphataseActivity %}\n            <tr>\n                <td>\n                    Phosphatase activity\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.phosphataseActivity)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.amoActivity %}\n            <tr>\n                <td>\n                    AMO activity\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.amoActivity)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.bGlucosidaseActivity %}\n            <tr>\n                <td>\n                    beta glucosidase activity\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.bGlucosidaseActivity)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.dehydrogenaseActivity %}\n            <tr>\n                <td>\n                    Dehydrogenase activity\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.dehydrogenaseActivity)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.cationExchangeCapacity %}\n            <tr>\n                <td>\n                    Cation exchange capacity\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.cationExchangeCapacity)}}\n                </td>\n            </tr>\n        {% endif %}\n        {% if content.agro.soil.microbiomeTaxonomicGroups %}\n            <tr>\n                <td>\n                    Microbiome taxonomic groups\n                </td>\n                <td>\n                    {{rendertype(content.agro.soil.microbiomeTaxonomicGroups)}}\n                </td>\n            </tr>\n        {% endif %}\n\n    </table>\n    {%if userInfo %}\n    <br>\n    <table width=\"100%\">\n            {%set barcode1=sample[\"$id\"][0] ~ \"_\" ~ sample[\"$id\"][1] %}\n            <tr>\n                <td>\n                    {{ rendertype(barcode1, {\n                    \"width\": 1,\n                    \"height\": 30,\n                    \"displayValue\": true,\n                    \"fontSize\": 16},'barcode' ) }}\n                </td>\n            </tr>\n        </table>\n    {% endif %}\n</div>\n{% endif %}"
+              ]
+            }
+          ],
+          "ace": [
+            {
+              "useSoftTabs": [
+                [
+                  "yes"
+                ]
+              ],
+              "tabSize": [
+                4
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 8
+          },
+          "size": {
+            "width": 64,
+            "height": 71
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        },
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "fractions"
+        },
+        "agronomic": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Add data"
+        },
+        "images": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Add data"
+        }
+      },
+      "id": 563,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onEditorChange",
+          "rel": "data",
+          "jpath": [],
+          "name": "overviewTemplate"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 3
+    },
+    {
+      "url": "modules/types/edition/rich_text/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "editable": [
+                [
+                  "isEditable"
+                ]
+              ],
+              "debouncing": [
+                0
+              ],
+              "modifyInVariable": [
+                []
+              ],
+              "storeInView": [
+                [
+                  "yes"
+                ]
+              ],
+              "autoHeight": [
+                []
+              ],
+              "bgColor": [
+                [
+                  255,
+                  255,
+                  255,
+                  1
+                ]
+              ],
+              "postit": [
+                []
+              ],
+              "html": [
+                [
+                  "yes"
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": -3,
+            "top": 0
+          },
+          "size": {
+            "width": 22,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        },
+        "agronomic": {
+          "position": {
+            "left": -3,
+            "top": 0
+          },
+          "size": {
+            "width": 21,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "agronomic"
+        },
+        "images": {
+          "position": {
+            "left": -3,
+            "top": 0
+          },
+          "size": {
+            "width": 21,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "images"
+        }
+      },
+      "id": 564,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "richtext": "<p><a href=\"https://www.javeriana.edu.co/colombia-cientifica/wp-content/uploads/2020/01/cropped-Proyecto-GAT-logo-PNG-1-1.png\"><img alt=\"\" src=\"https://www.javeriana.edu.co/colombia-cientifica/wp-content/uploads/2020/01/cropped-Proyecto-GAT-logo-PNG-1-1.png\" /></a></p>\n",
+      "title": "",
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/edition/rich_text/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "editable": [
+                []
+              ],
+              "debouncing": [
+                0
+              ],
+              "modifyInVariable": [
+                []
+              ],
+              "storeInView": [
+                [
+                  "yes"
+                ]
+              ],
+              "autoHeight": [
+                []
+              ],
+              "bgColor": [
+                [
+                  255,
+                  255,
+                  255,
+                  1
+                ]
+              ],
+              "postit": [
+                []
+              ],
+              "html": [
+                [
+                  "yes"
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 16,
+            "top": 5
+          },
+          "size": {
+            "width": 51,
+            "height": 9
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        },
+        "agronomic": {
+          "position": {
+            "left": 16,
+            "top": 5
+          },
+          "size": {
+            "width": 51,
+            "height": 9
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "agronomic"
+        },
+        "images": {
+          "position": {
+            "left": 16,
+            "top": 5
+          },
+          "size": {
+            "width": 51,
+            "height": 9
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": false,
+          "created": true,
+          "name": "images"
+        }
+      },
+      "id": 565,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "richtext": "<h2>Recursos Vegetales con Potencial Farmacol&oacute;gico</h2>\n\n<p>&nbsp;</p>\n\n<p>Aproximaci&oacute;n biol&oacute;gica, fitoqu&iacute;mica y agron&oacute;mica para la gesti&oacute;n de recursos vegetales con potencial farmacol&oacute;gico: Aporte a cadena de valor para el sector de los fitomedicamentos en Colombia.</p>\n",
+      "title": "",
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "var action=getAction() || {name:''};\nconst roc = API.cache('roc')\nlet sample=API.cache('sample');\nif (!sample) return;\nsample.sample.$content.general.metadata.sampleIdentifier = API.getData('sampleIdentifier').resurrect();\nlet uuid=sample.uuid;\nlet id=sample.sample.$id;\nif(this.action) {\n    switch (this.action.name) {\n        case 'save':\n        default:\n            sample.handleAction(this.action);\n    }\n} else if (this.variable) {\n    switch (this.variable) {\n        case 'droppedData':\n            sample.handleDrop(this.variable, true, {\n                autoJcamp: true\n            });\n            break;\n        case 'droppedVideo':\n        case 'droppedImage':\n        case 'droppedOther':\n            await sample.handleDrop(this.variable);\n            break;\n        case 'droppedOverview':\n            sample.handleOverview(this.variable);\n            break;\n    }\n}\n"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {
+                "lib": "src/util/ui",
+                "alias": "UI"
+              }
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 142,
+            "top": 16
+          },
+          "size": {
+            "width": 50,
+            "height": 33
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Deal with actions",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 6
+          },
+          "size": {
+            "width": 63,
+            "height": 59
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        },
+        "agronomic": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "agronomic"
+        },
+        "images": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "images"
+        }
+      },
+      "id": 566,
+      "vars_in": [
+        {
+          "rel": "inputValue",
+          "name": "droppedChrom"
+        },
+        {
+          "rel": "inputValue",
+          "name": "droppedOther"
+        },
+        {
+          "rel": "inputValue",
+          "name": "droppedImage"
+        }
+      ],
+      "actions_in": [
+        {
+          "rel": "execute",
+          "name": "refresh"
+        },
+        {
+          "rel": "execute",
+          "name": "save"
+        },
+        {
+          "rel": "execute",
+          "name": "deleteAttachment"
+        },
+        {
+          "rel": "execute",
+          "name": "updateAttachments"
+        },
+        {
+          "rel": "execute",
+          "name": "unattach"
+        }
+      ],
+      "title": "",
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "zindex": 2,
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/client_interaction/dragdrop/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "label": [
+                "Drag and drop your image"
+              ],
+              "dragoverlabel": [
+                null
+              ],
+              "hoverlabel": [
+                "Drag'n drop or paste here"
+              ],
+              "fileSelectLabel": [
+                "Select file"
+              ],
+              "labelFontSize": [
+                22
+              ],
+              "checkOptions": [
+                [
+                  "promptAmbiguous"
+                ]
+              ],
+              "inputOptions": [
+                [
+                  "allowDrop",
+                  "allowPaste",
+                  "allowFileInput"
+                ]
+              ]
+            }
+          ],
+          "vars": [
+            [
+              {
+                "filter": "ext",
+                "extension": "*",
+                "filetype": "base64",
+                "type": "",
+                "variable": "file"
+              }
+            ]
+          ],
+          "string_general": [
+            {
+              "askFilename": [
+                [
+                  "yes"
+                ]
+              ]
+            }
+          ],
+          "string": [
+            [
+              {
+                "filter": "ext",
+                "extension": "*",
+                "type": "",
+                "variable": "str"
+              }
+            ]
+          ],
+          "photo": [
+            [
+              {
+                "variable": "photo"
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 42,
+            "top": 69
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Plant photos",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        },
+        "agronomic": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "agronomic"
+        },
+        "images": {
+          "position": {
+            "left": 0,
+            "top": 69
+          },
+          "size": {
+            "width": 32,
+            "height": 10
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "images"
+        }
+      },
+      "id": 567,
+      "vars_out": [
+        {
+          "event": "onRead",
+          "rel": "dataarray",
+          "jpath": [],
+          "name": "droppedImage"
+        }
+      ],
+      "vars_in": [],
+      "actions_in": [
+        {}
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              []
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            "Plant photos"
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 5
+    },
+    {
+      "url": "modules/types/edition/slick_grid/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "slickCheck": [
+                [
+                  "enableCellNavigation",
+                  "rowNumbering",
+                  "forceFitColumns",
+                  "highlightScroll",
+                  "editable"
+                ]
+              ],
+              "copyPaste": [
+                []
+              ],
+              "copyPasteOptions": [
+                [
+                  "newRows"
+                ]
+              ],
+              "autoColumns": [
+                []
+              ],
+              "toolbar": [
+                []
+              ],
+              "colorjpath": [
+                []
+              ],
+              "slick.defaultColumnWidth": [
+                null
+              ],
+              "slick.rowHeight": [
+                null
+              ],
+              "slick.headerRowHeight": [
+                30
+              ],
+              "slick.selectionModel": [
+                "row"
+              ],
+              "idProperty": [
+                ""
+              ],
+              "filterType": [
+                "pref"
+              ],
+              "filterRow": [
+                "if (this.event === 'rowsChanged') {\n    for (let i=0; i<this.rows.length; i++) {\n        this.rows[i].item.image.dUrl = this.rows[i].item.image.dUrl.replace(/%2F/gi, '/');\n        this.rows[i].item.image.data.value = this.rows[i].item.image.data.value.replace(/%2F/gi, '/');\n    }\n    rerender();    \n}\n\n"
+              ],
+              "customJpaths": [
+                "image.dUrl,image.data,image.code"
+              ]
+            }
+          ],
+          "cols": [
+            [
+              {
+                "name": "Filename",
+                "jpath": [
+                  "image",
+                  "filename"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 148,
+                "hideColumn": []
+              },
+              {
+                "name": "Code",
+                "jpath": [
+                  "image",
+                  "code"
+                ],
+                "editor": "string",
+                "forceType": "string",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 184,
+                "hideColumn": []
+              },
+              {
+                "name": "Download",
+                "jpath": [
+                  "image",
+                  "dUrl"
+                ],
+                "editor": "none",
+                "forceType": "downloadlink",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 63,
+                "hideColumn": []
+              }
+            ]
+          ],
+          "actionCols": [
+            [
+              {
+                "name": "...",
+                "tooltip": "Delete attachment and linked metadata",
+                "icon": "fa-trash",
+                "backgroundColor": [
+                  255,
+                  255,
+                  255,
+                  0
+                ],
+                "color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "action": "unattach",
+                "position": "begin",
+                "clickMode": "text",
+                "isAction": true
+              }
+            ]
+          ],
+          "groupings": [
+            [
+              {
+                "getter": []
+              }
+            ]
+          ],
+          "actionOutButtons": [
+            [
+              {}
+            ]
+          ],
+          "data": [
+            {
+              "saveInView": [
+                []
+              ],
+              "varname": [
+                ""
+              ],
+              "data": [
+                "[]"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        },
+        "agronomic": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "agronomic"
+        },
+        "images": {
+          "position": {
+            "left": 0,
+            "top": 19
+          },
+          "size": {
+            "width": 32,
+            "height": 49
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "images"
+        }
+      },
+      "id": 568,
+      "vars_in": [
+        {
+          "rel": "list",
+          "name": "image"
+        },
+        {
+          "rel": "script",
+          "name": "slickScript"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onRowActive",
+          "rel": "row",
+          "jpath": [
+            "image",
+            "data"
+          ],
+          "name": "selectedImage"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 25
+    },
+    {
+      "url": "modules/types/edition/slick_grid/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "slickCheck": [
+                [
+                  "enableCellNavigation",
+                  "rowNumbering",
+                  "forceFitColumns",
+                  "highlightScroll",
+                  "editable"
+                ]
+              ],
+              "copyPaste": [
+                []
+              ],
+              "copyPasteOptions": [
+                [
+                  "newRows"
+                ]
+              ],
+              "autoColumns": [
+                []
+              ],
+              "toolbar": [
+                []
+              ],
+              "colorjpath": [
+                []
+              ],
+              "slick.defaultColumnWidth": [
+                null
+              ],
+              "slick.rowHeight": [
+                null
+              ],
+              "slick.headerRowHeight": [
+                30
+              ],
+              "slick.selectionModel": [
+                "row"
+              ],
+              "idProperty": [
+                ""
+              ],
+              "filterType": [
+                "pref"
+              ],
+              "filterRow": [
+                "if (this.event === 'rowsChanged') {\n    for (let i=0; i<this.rows.length; i++) {\n        this.rows[i].item.image.dUrl = this.rows[i].item.image.dUrl.replace(/%2F/gi, '/');\n        this.rows[i].item.image.data.value = this.rows[i].item.image.data.value.replace(/%2F/gi, '/');\n    }\n    rerender();    \n}"
+              ],
+              "customJpaths": [
+                ""
+              ]
+            }
+          ],
+          "cols": [
+            [
+              {
+                "name": "Name",
+                "jpath": [
+                  "name"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 108,
+                "hideColumn": []
+              },
+              {
+                "name": "Content type",
+                "jpath": [
+                  "content_type"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 92,
+                "hideColumn": []
+              },
+              {
+                "name": "Size",
+                "jpath": [
+                  "length"
+                ],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "numeral: '0b'",
+                "editorOptions": "",
+                "width": 45,
+                "hideColumn": []
+              },
+              {
+                "name": "Download",
+                "jpath": [
+                  "url"
+                ],
+                "editor": "none",
+                "forceType": "downloadlink",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "width": 62,
+                "hideColumn": []
+              },
+              {
+                "jpath": [],
+                "editor": "none",
+                "forceType": "",
+                "formatter": "typerenderer",
+                "copyFormatter": "default",
+                "visibility": "both",
+                "rendererOptions": "",
+                "editorOptions": "",
+                "hideColumn": []
+              }
+            ]
+          ],
+          "actionCols": [
+            [
+              {
+                "name": "delete",
+                "tooltip": "Delete this attachment",
+                "icon": "fa-trash",
+                "backgroundColor": [
+                  255,
+                  255,
+                  255,
+                  0
+                ],
+                "color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "action": "deleteAttachment",
+                "position": "end",
+                "clickMode": "text",
+                "isAction": true
+              }
+            ]
+          ],
+          "groupings": [
+            [
+              {
+                "getter": []
+              }
+            ]
+          ],
+          "actionOutButtons": [
+            [
+              {}
+            ]
+          ],
+          "data": [
+            {
+              "saveInView": [
+                []
+              ],
+              "varname": [
+                ""
+              ],
+              "data": [
+                "[]"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 42
+          },
+          "size": {
+            "width": 38,
+            "height": 23
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "List of attachments",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "extracts"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        },
+        "agronomic": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "agronomic"
+        },
+        "images": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "images"
+        }
+      },
+      "id": 569,
+      "vars_in": [
+        {
+          "rel": "list",
+          "name": "otherAttachments"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onRowActive",
+          "rel": "row",
+          "jpath": [
+            "url"
+          ],
+          "name": "dbUrl"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              []
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "List of attachments",
+      "zindex": 18
+    },
+    {
+      "url": "modules/types/client_interaction/dragdrop/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "label": [
+                "Upload miscellaneous file"
+              ],
+              "dragoverlabel": [
+                null
+              ],
+              "hoverlabel": [
+                "Drag'n drop or paste here"
+              ],
+              "fileSelectLabel": [
+                "Select file"
+              ],
+              "labelFontSize": [
+                26
+              ],
+              "checkOptions": [
+                [
+                  "promptAmbiguous"
+                ]
+              ],
+              "inputOptions": [
+                [
+                  "allowDrop",
+                  "allowPaste",
+                  "allowFileInput"
+                ]
+              ]
+            }
+          ],
+          "vars": [
+            [
+              {
+                "filter": "ext",
+                "extension": "*",
+                "filetype": "base64",
+                "type": "",
+                "variable": "file"
+              }
+            ]
+          ],
+          "string_general": [
+            {
+              "askFilename": [
+                []
+              ]
+            }
+          ],
+          "string": [
+            [
+              {
+                "filter": "ext",
+                "extension": "*",
+                "type": "",
+                "variable": "str"
+              }
+            ]
+          ],
+          "photo": [
+            [
+              {
+                "variable": "photo"
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 66
+          },
+          "size": {
+            "width": 38,
+            "height": 13
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "extracts"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        },
+        "preferences": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "preferences"
+        },
+        "agronomic": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "agronomic"
+        },
+        "images": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "images"
+        }
+      },
+      "id": 570,
+      "vars_out": [
+        {
+          "event": "onRead",
+          "rel": "dataarray",
+          "jpath": [],
+          "name": "droppedOther"
+        }
+      ],
+      "vars_in": [],
+      "actions_in": [
+        {}
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "title": "",
+      "zindex": 2
+    }
+  ],
+  "variables": [
+    {
+      "varname": "entries",
+      "jpath": [
+        "entries"
+      ]
+    },
+    {
+      "varname": "fileredentry",
+      "jpath": [
+        "fileredentry"
+      ]
+    },
+    {
+      "varname": "schema",
+      "jpath": [
+        "schema"
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "path": "https://www.lactame.com/github/cheminfo-js/visualizer-helper/97f3ea58a23269f2ebd6deecd1d037005e61cd22/rest-on-couch/Roc",
+      "alias": "Roc"
+    },
+    {
+      "path": "https://www.lactame.com/lib/screening/1.0.2/screening",
+      "alias": "Screening"
+    },
+    {
+      "path": "https://www.lactame.com/github/cheminfo-js/visualizer-helper/604c72282ff4ee3c5dae1487da780a936d96e3eb/",
+      "alias": "vh"
+    },
+    {
+      "path": "http://localhost:9898/cheminfo-js/visualizer-helper/",
+      "alias": "vhxx"
+    },
+    {
+      "path": "https://www.lactame.com/lib/eln-plugin/0.0.2/eln-plugin.js",
+      "alias": "elnPlugin"
+    },
+    {
+      "path": "https://www.lactame.com/lib/image-js/HEAD/image",
+      "alias": "IJS"
+    }
+  ],
+  "configuration": {
+    "title": "data"
+  },
+  "actionscripts": [
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          {
+            "name": [
+              "ModulePrefs"
+            ],
+            "script": [
+              "const modulePrefsManager=API.cache('modulePrefsManager');\nmodulePrefsManager.updateSlickGridPrefs(value);"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          {
+            "name": [
+              "LoadPrefs"
+            ],
+            "script": [
+              "const modulePrefsManager=API.cache('modulePrefsManager');\nmodulePrefsManager.reloadModulePrefs(value);"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "init_script": [
+    {
+      "sections": {},
+      "groups": {
+        "general": [
+          {
+            "script": [
+              "const [\n    Renderer,\n    printerFactory,\n    printerHelper,\n    Toc,\n    elnPlugin,\n    Sample,\n    loadTwig,\n] = await API.require([\n    'vh/eln/acs/renderer',\n    'vh/eln/stock/printer/factory',\n    'vh/eln/stock/printer/helper',\n    'vh/eln/Toc',\n    'https://www.lactame.com/lib/eln-plugin/0.0.2/eln-plugin.js',\n    'vh/eln/Sample',\n    'vh/eln/templates/loadTwig',\n]);\n\nRenderer.add();\nconst baseUrl = document.location.href.replace(/(\\/\\/.*?\\/).*/,'$1').replace('blob:', ''); \n\nprinterFactory(async function(printer) {\n    printerHelper.setup(printer, ['sample', 'location']);\n});\n\nif (IframeBridge) {\n    IframeBridge.onMessage(onMessage);\n    IframeBridge.ready();\n    async function onMessage(data) {\n        if(data.type === 'tab.data') {\n            \n            const sample = new Sample(data.message.couchDB, data.message.uuid, {\n                track:true,\n                onSync(synced) {\n                    console.log('received synced event', synced);\n                    API.createData('dataSynced', synced);\n                }\n            });\n            \n            sample.waitSampleLoaded().then((result) => {\n                let content = sample.sample.$content;\n                API.createData('content', content);\n                API.createData('sampleIdentifier', sample.sample.$content.general.metadata.sampleIdentifier);\n            });\n            \n            API.cache('couchDB', data.message.couchDB);\n            API.cache('data', data.message);\n            await API.cache('sample', sample);\n            const roc = API.cache('roc');\n            roc.getGroupMembership().then(groups => API.cache('allGroups', groups));\n            roc.getUserInfo().then( (userInfo) => {\n                userInfo.username = userInfo.username || userInfo.userId || userInfo.email;\n                API.createData('userInfo', userInfo);              \n            });\n\n            var layer=window.localStorage.getItem('defaultSampleLayer') || 'molecule';\n            API.createData('currentLayer', layer);\n        }\n    }\n}\n\n// Load custom font\nrequire(['src/util/util'], function(Util) {\n    Util.loadCss('https://www.lactame.com/lib/cheminfo-font/0.7.2/style.css');\n})\n\n\nAPI.createData('videoLinks', {\n    display: 'database',\n    youtube: undefined,\n    drive: undefined,\n})\n\n\n"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "custom_filters": [
+    {
+      "sections": {
+        "modules": [
+          {
+            "sections": {},
+            "groups": {
+              "modules": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ],
+        "filtersLib": [
+          {
+            "sections": {},
+            "groups": {
+              "filters": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ],
+        "filters": [
+          {
+            "sections": {},
+            "groups": {
+              "filter": [
+                {
+                  "name": [
+                    null
+                  ],
+                  "script": [
+                    "return {\n    filter: function(value, resolve) {\n        var roc = API.cache('rocReaction');\n        var v = value.get();\n        if(roc) {\n            roc.typeUrl(v.$content, v);    \n        }\n        return resolve(value)\n    }\n}"
+                  ]
+                }
+              ],
+              "libs": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "groups": {}
+    }
+  ],
+  "actionfiles": [
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          [
+            {}
+          ]
+        ]
+      }
+    }
+  ]
+}
