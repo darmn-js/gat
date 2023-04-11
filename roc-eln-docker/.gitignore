@@ -1,0 +1,6 @@
+/couchdb-data
+/flavor-config*
+/www/*
+!/www/visualizer
+.env
+node_modules

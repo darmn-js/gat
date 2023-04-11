@@ -1,0 +1,2 @@
+name: rest-on-couch
+script: /rest-on-couch-source/bin/rest-on-couch-server.js
